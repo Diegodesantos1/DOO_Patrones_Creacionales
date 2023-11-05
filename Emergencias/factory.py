@@ -78,7 +78,7 @@ class VisualizacionHistograma:
 
 
 def client_code(factory: AbstractFactoryAnalisis) -> None:
-    data = pd.read_csv('Ejercicio1/data/Emergencias_limpio.csv',
+    data = pd.read_csv('Emergencias/data/Emergencias_limpio.csv',
                        sep=';')
 
     columnas = ["DIAS", "CATEGORIA", "AUDIENCIA"]

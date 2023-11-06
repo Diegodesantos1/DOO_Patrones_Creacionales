@@ -1,5 +1,3 @@
-# haz un main que ejecute emergencias/main.py y que imprima el resultado de la ejecución.
-
 eleccion =int(input("¿Qué ejercicio quieres ejecutar?\nEmergencias\nPizzeria\n"))
 
 if eleccion == 1:

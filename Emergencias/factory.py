@@ -63,7 +63,6 @@ class VisualizacionHistograma:
         grafica.set_ylabel('Frecuencia')
         plt.show()
 
-
     def barras_frecuencia(self, data, variable):
         data[variable] = data[variable].str.split(",").str[0]
         data[variable].value_counts().plot.bar()
@@ -83,7 +82,6 @@ def client_code(factory: AbstractFactoryAnalisis) -> None:
 
     columnas = ["DIAS", "CATEGORIA", "AUDIENCIA"]
 
-
     analisis = factory.create_analisis_estadistico(data["PRECIO"])
     visualizacion = factory.create_visualizacion(data["PRECIO"])
     print("Analisis de la columna {}".format("PRECIO"))
@@ -100,8 +98,6 @@ def client_code(factory: AbstractFactoryAnalisis) -> None:
         visualizacion.barras_frecuencia(data, columna)
         visualizacion.circular_frecuencia(data, columna)
         print("-"*40)
-
-
 
 
 if __name__ == "__main__":

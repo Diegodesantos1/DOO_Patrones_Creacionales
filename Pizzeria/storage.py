@@ -10,7 +10,7 @@ class CSVStorage:
 
     def guardar_pizza(self, pizza):
         # Abre el archivo en modo 'a' (append) para agregar la pizza
-        with open(self.file_path, mode='a', newline='') as file:
+        with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
             writer = csv.writer(file)
             writer.writerow([
                 pizza.masa,

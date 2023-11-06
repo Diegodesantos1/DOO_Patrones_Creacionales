@@ -13,7 +13,6 @@ class CSVStorage:
         with open(self.file_path, mode='a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([
-                pizza.numero_pedido,
                 pizza.masa,
                 pizza.salsa,
                 ', '.join(pizza.ingredientes),

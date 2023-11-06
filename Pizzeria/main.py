@@ -3,7 +3,7 @@
 from models import Pizza, Ingredientes
 from recommendations import Recomendaciones
 from storage import CSVStorage
-from utils import calcular_tiempo_coccion, es_pizza_vegetariana, EventLogger
+from utils import calcular_tiempo_coccion, es_pizza_vegetariana
 from builder import PizzaBuilder
 
 if __name__ == "__main__":
@@ -11,8 +11,6 @@ if __name__ == "__main__":
     ingredientes = Ingredientes()
     recomendaciones = Recomendaciones()
     storage = CSVStorage('pizzas.csv')
-    logger = EventLogger('event_log.txt')
-
     # Interacción con el usuario
     print("¡Bienvenido a Delizioso! Crea tu propia pizza personalizada.")
 

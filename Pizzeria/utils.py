@@ -19,3 +19,15 @@ def es_pizza_vegetariana(pizza):
         if ingrediente in ingredientes_no_vegetarianos:
             return False
     return True
+
+# Función para calcular el precio de una pizza
+def calcular_precio_pizza(pizza):
+    precio = 0
+    if pizza.masa == "Delgada":
+        precio += 5
+    elif pizza.masa == "Pan":
+        precio += 8
+    elif pizza.masa == "Fermentada":
+        precio += 10
+    precio += len(pizza.ingredientes) * 1.5  # $1.50 por ingrediente
+    return precio

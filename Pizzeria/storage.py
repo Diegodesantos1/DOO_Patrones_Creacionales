@@ -1,6 +1,6 @@
 # storage.py
 
-from models import Pizza
+from Pizzeria.models import Pizza
 
 import csv
 

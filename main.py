@@ -1,4 +1,4 @@
-eleccion =int(input("¿Qué ejercicio quieres ejecutar?\nEmergencias\nPizzeria\n"))
+eleccion =int(input("¿Qué ejercicio quieres ejecutar?\n1 --> Emergencias\n2 --> Pizzeria\n"))
 
 if eleccion == 1:
     from Emergencias.main import *
@@ -7,4 +7,15 @@ if eleccion == 1:
         client_code(FactoryEstadisticas())
 
 elif eleccion == 2:
-    pass
+    eleccion2 = int(input("¿Qué ejercicio quieres ejecutar?\n1 --> Terminal\n2 --> Interfaz Gráfica\n"))
+
+    if eleccion2 == 1:
+        from Pizzeria.main import *
+        if __name__ == "__main__":
+            ejecutar_pizzeria()
+
+    elif eleccion2 == 2:
+        import Pizzeria.interfaz
+        if __name__ == "__main__":
+            Pizzeria.interfaz.main()
+            

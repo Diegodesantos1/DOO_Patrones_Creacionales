@@ -1,13 +1,13 @@
 # main.py
 from colorama import init, Fore, Back, Style
 import os
-from models import Pizza, Ingredientes
-from recommendations import Recomendaciones
-from storage import CSVStorage
-from utils import calcular_tiempo_coccion, es_pizza_vegetariana, calcular_precio_pizza
-from builder import PizzaBuilder
+from Pizzeria.models import Pizza, Ingredientes
+from Pizzeria.recommendations import Recomendaciones
+from Pizzeria.storage import CSVStorage
+from Pizzeria.utils import calcular_tiempo_coccion, es_pizza_vegetariana, calcular_precio_pizza
+from Pizzeria.builder import PizzaBuilder
 
-if __name__ == "__main__":
+def ejecutar_pizzeria():
     # Crear instancias de las clases necesarias
     ingredientes = Ingredientes()
     recomendaciones = Recomendaciones()
@@ -74,8 +74,6 @@ if __name__ == "__main__":
     print(Fore.CYAN + "¡Tu pizza está lista!" + Style.RESET_ALL)
     print(f"Tiempo de Cocción: {tiempo_coccion} minutos")
     print(f"¿Es vegetariana? {'Sí' if es_vegetariana else 'No'}")
-    print("Detalles de la pizza:")
-    print(pizza_personalizada)
 
     print("Recomendaciones:")
     for key, value in recomendaciones.recomendaciones.items():

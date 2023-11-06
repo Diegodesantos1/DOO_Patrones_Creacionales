@@ -1,6 +1,6 @@
 # builders.py
 
-from models import Pizza
+from Pizzeria.models import Pizza
 
 class PizzaBuilder:
     def __init__(self):

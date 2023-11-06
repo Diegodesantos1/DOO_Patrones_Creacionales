@@ -1,7 +1,7 @@
 import tkinter as tk
-from models import Pizza
-from builder import PizzaBuilder
-from storage import CSVStorage
+from Pizzeria.models import Pizza
+from Pizzeria.builder import PizzaBuilder
+from Pizzeria.storage import CSVStorage
 
 def guardar_pizza():
     masa = masa_var.get()
@@ -84,5 +84,6 @@ resultado_label.pack()
 # Inicializar el objeto de almacenamiento CSV
 storage = CSVStorage('pizzas.csv')
 
-# Iniciar la ventana
-ventana.mainloop()
+def main():
+    # Iniciar la ventana
+    ventana.mainloop()

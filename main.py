@@ -15,7 +15,6 @@ elif eleccion == 2:
             ejecutar_pizzeria()
 
     elif eleccion2 == 2:
-        import Pizzeria.interfaz
         if __name__ == "__main__":
+            import Pizzeria.interfaz
             Pizzeria.interfaz.main()
-            

@@ -23,25 +23,6 @@ def pizza(request):
     if request.method == 'POST':
         form = PizzaForm(request.POST)
         if form.is_valid():
-            masa = form.cleaned_data['masa']
-            salsa = form.cleaned_data['salsa']
-            ingredientes = form.cleaned_data['ingredientes']
-            tecnica = form.cleaned_data['tecnica']
-            presentacion = form.cleaned_data['presentacion']
-            maridaje = form.cleaned_data['maridaje']
-            extras = form.cleaned_data['extras']
-            return HttpResponse("Pizza creada con masa: " + masa + ", salsa: " + salsa + ", ingredientes: " + ingredientes + ", técnica: " + tecnica + ", presentación: " + presentacion + ", maridaje: " + maridaje + ", extras: " + extras)
-    else:
-        form = PizzaForm()
-
-    return render(request, 'PizzeriaWebApp/pizza.html', {'form': form})
-
-
-
-def pizza(request):
-    if request.method == 'POST':
-        form = PizzaForm(request.POST)
-        if form.is_valid():
             # Procesar los datos del formulario
             masa = form.cleaned_data['masa']
             salsa = form.cleaned_data['salsa']

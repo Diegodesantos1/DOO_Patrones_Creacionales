@@ -1,11 +1,14 @@
 
 from django import forms
 
+# importar los modelos
+from .models import Pizza, Masa, Salsa, Ingredientes, Tecnica, Presentacion, Maridaje
+
 class PizzaForm(forms.Form):
-    masa = forms.ChoiceField(choices=[('Delgada', 'Delgada'), ('Pan', 'Pan'), ('Fermentada', 'Fermentada')])
-    salsa = forms.ChoiceField(choices=[('Tomate', 'Tomate'), ('Pesto', 'Pesto'), ('BBQ', 'BBQ')])
-    ingredientes = forms.CharField(max_length=255)
-    tecnica = forms.ChoiceField(choices=[('Horno tradicional', 'Horno tradicional'), ('Cocina a la leña', 'Cocina a la leña'), ('Cocina molecular', 'Cocina molecular')])
-    presentacion = forms.ChoiceField(choices=[('Clásica', 'Clásica'), ('Artística', 'Artística'), ('Personalizada', 'Personalizada')])
-    maridaje = forms.ChoiceField(choices=[('Vino', 'Vino'), ('Cerveza', 'Cerveza'), ('Coctel', 'Coctel')])
-    extras = forms.CharField(max_length=255)
+    masa = forms.ChoiceField(choices=Masa.masas_disponibles())
+    salsa = forms.ChoiceField(choices=Salsa.salsas_disponibles())
+    ingredientes = forms.MultipleChoiceField(choices=Ingredientes.ingredientes_disponibles())
+    tecnica = forms.ChoiceField(choices=Tecnica.tecnicas_disponibles())
+    presentacion = forms.ChoiceField(choices=Presentacion.presentaciones_disponibles())
+    maridaje = forms.ChoiceField(choices=Maridaje.maridajes_disponibles())
+    extras = forms.MultipleChoiceField(choices=Ingredientes.ingredientes_disponibles())

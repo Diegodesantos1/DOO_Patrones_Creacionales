@@ -23,10 +23,18 @@
     <form method="post" action="{% url 'pizza' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Guardar Pizza">
+        <input type="submit" value="Guardar Pizza" id="guardarPizzaButton">
     </form>
-
-
+    <script>
+        // Obtén una referencia al botón
+        const guardarPizzaButton = document.getElementById('guardarPizzaButton');
+    
+        // Agrega un event listener al botón
+        guardarPizzaButton.addEventListener('click', function() {
+            // Redirige a la página index.html
+            window.location.href = "{% url 'index' %}";
+        });
+    </script>
 </body>
 
 </html>

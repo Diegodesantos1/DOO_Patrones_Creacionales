@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <title>Menú - Pizzería Delizioso</title>
+</head>
+
+<body>
+    <h1>Menú</h1>
+    <header>
+        <h1>Pizzería Delizioso</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'menu' %}">Menú</a></li>
+                <li><a href="{% url 'pizza' %}">Pizza</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Nuestro Menú</h2>
+        <div class="menu-item">
+            <h3>Pizza Margarita</h3>
+            <p>Tomate, mozzarella, albahaca.</p>
+            <p>$10.99</p>
+        </div>
+        <div class="menu-item">
+            <h3>Pizza Pepperoni</h3>
+            <p>Tomate, mozzarella, pepperoni.</p>
+            <p>$12.99</p>
+        </div>
+    </section>
+</body>
+
+</html>

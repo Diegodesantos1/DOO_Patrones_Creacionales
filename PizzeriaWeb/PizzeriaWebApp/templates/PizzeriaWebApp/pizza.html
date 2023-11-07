@@ -10,6 +10,16 @@
 
 <body>
     <h1>Crea tu pizza personalizada</h1>
+    <header>
+        <h1>Pizzería Delizioso</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="{% url 'menu' %}">Menú</a></li>
+                <li><a href="{% url 'pizza' %}">Pizza</a></li>
+            </ul>
+        </nav>
+    </header>
     <form method="post" action="{% url 'pizza' %}">
         {% csrf_token %}
         {{ form.as_p }}

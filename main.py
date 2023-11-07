@@ -21,5 +21,5 @@ elif eleccion == 2:
             Pizzeria.interfaz.main()
 
     elif eleccion2 == 3:
-        os.system("cd PizzeriaWeb")
-        os.system("python manage.py runserver")
+        print("Ejecutando servidor Django...")
+        os.system("python PizzeriaWeb/manage.py runserver")

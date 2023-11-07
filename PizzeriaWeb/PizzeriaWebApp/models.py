@@ -26,7 +26,7 @@ class Masa(models.Model):
             ("Pan", "Pan"),
             ("Fermentada", "Fermentada"),
             ("Sin gluten", "Sin gluten")
-            
+
         ]
 
 
@@ -70,6 +70,7 @@ class Maridaje(models.Model):
             ("Cerveza", "Cerveza"),
             ("Coctel", "Coctel"),
         ]
+
 
 class Ingredientes(models.Model):
     @classmethod

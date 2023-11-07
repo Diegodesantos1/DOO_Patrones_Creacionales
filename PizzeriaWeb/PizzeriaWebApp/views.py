@@ -19,6 +19,10 @@ def pizza(request):
     return render(request, "PizzeriaWebApp/pizza.html")
 
 
+def registro(request):
+    return render(request, "PizzeriaWebApp/registro.html")
+
+
 def pizza(request):
     if request.method == 'POST':
         form = PizzaForm(request.POST)
@@ -47,7 +51,8 @@ def pizza(request):
             storage = CSVStorage('pizzas.csv')
             storage.guardar_pizza(pizza)
 
-            return redirect('pizza')  # Redirigir a la página de creación de pizza
+            # Redirigir a la página de creación de pizza
+            return redirect('pizza')
 
     else:
         form = PizzaForm()

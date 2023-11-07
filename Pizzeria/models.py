@@ -12,7 +12,6 @@ class Pizza:
         self.presentacion = None
         self.maridaje = None
         self.extras = []
-        Pizza.next_order_number += 1
 
 
 class Ingredientes:

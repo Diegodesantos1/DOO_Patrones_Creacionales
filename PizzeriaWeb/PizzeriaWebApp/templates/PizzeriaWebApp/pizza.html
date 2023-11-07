@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <title>Crea tu pizza personalizada</title>
+</head>
+
+<body>
+    <h1>Crea tu pizza personalizada</h1>
+    <form method="post" action="{% url 'pizza' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Guardar Pizza">
+    </form>
+
+
+</body>
+
+</html>

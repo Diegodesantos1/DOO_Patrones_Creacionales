@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <h1>Crea tu pizza personalizada</h1>
     <header>
         <h1>Pizzería Delizioso</h1>
         <nav>
@@ -20,6 +19,7 @@
             </ul>
         </nav>
     </header>
+    <h2>Crea tu pizza personalizada</h2>
     <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
         {{ form.as_p }}

@@ -37,6 +37,9 @@ class Salsa(models.Model):
             ("Tomate", "Tomate"),
             ("Pesto", "Pesto"),
             ("BBQ", "BBQ"),
+            ("Yogur", "Yogur"),
+            ("Carbonara", "Carbonara"),
+            ("Sin salsa", "Sin salsa"),
         ]
 
 # Haz lo mismo para las otras clases (Ingredientes, Tecnica, Presentacion, Maridaje).

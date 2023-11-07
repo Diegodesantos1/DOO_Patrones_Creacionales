@@ -15,8 +15,6 @@ class FabricaDatosNumericos(FabricaCentral):
     def crear_datos_texto(self) -> Tuple[Datos_Estadisticos, Datos_Estadisticos, Datos_Estadisticos, Datos_Estadisticos, Datos_Estadisticos]:
         return (Media(), Mediana(), Moda(), DesviacionTipica(), Varianza())
 
-# Resto del código sin cambios
-
 
 class FabricaGraficas(FabricaCentral):
     """

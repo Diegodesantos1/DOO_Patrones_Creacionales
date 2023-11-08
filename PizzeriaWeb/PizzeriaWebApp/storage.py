@@ -78,4 +78,3 @@ class CSVStorage:
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar los usuarios.")
         return usuarios
-

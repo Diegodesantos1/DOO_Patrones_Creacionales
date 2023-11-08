@@ -68,7 +68,7 @@ def pizza(request):
             storage = CSVStorage('pizzas.csv')
             storage.guardar_pizza(pizza)
 
-            return redirect('index')
+            return redirect('pedidos')
 
     else:
         form = PizzaBuilderForm()
@@ -122,3 +122,14 @@ def login(request):
         form = LoginBuilderForm()
 
     return render(request, 'PizzeriaWebApp/login.html', {'form': form})
+
+
+def pedidos(request):
+    # Cargar los datos del archivo CSV
+    storage = CSVStorage('pizzas.csv')
+    pizzas = storage.leer_pizzas()
+
+    # toma la última pizza
+    pizza = pizzas[-1]
+
+    return render(request, 'PizzeriaWebApp/pedidos.html', {'pizza': pizza})

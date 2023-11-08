@@ -81,7 +81,6 @@ class PizzaBuilderForm(forms.Form):
     presentacion = forms.ChoiceField(choices=[('', 'Seleccione una presentación')] + PRESENTACION_CHOICES)
     maridaje = forms.ChoiceField(
         choices=[('', 'Seleccione un maridaje')] + MARIDAJE_CHOICES,
-        required=False
     )
     extras = forms.MultipleChoiceField(
         choices=EXTRAS_CHOICES,

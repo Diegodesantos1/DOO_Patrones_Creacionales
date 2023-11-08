@@ -11,4 +11,5 @@ urlpatterns = [
     path("pizza/", views.pizza, name="pizza"),
     path('datos/', views.datos, name='datos'),
     path("datos_usuarios/", views.datos_usuarios, name="datos_usuarios"),
+    path("pedidos/", views.pedidos, name="pedidos"),
 ]

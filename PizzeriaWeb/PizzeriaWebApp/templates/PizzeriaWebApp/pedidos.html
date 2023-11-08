@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Datos de las Pizzas</title>
+    <link href="{% static 'PizzeriaWebApp/css/datos.css' %}" rel="stylesheet">
+    <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Pizzería Delizioso</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'menu' %}">Recomendaciones</a></li>
+                <li><a href="{% url 'pizza' %}">Pizza</a></li>
+                <li><a href="{% url 'datos' %}">Datos</a></li>
+            </ul>
+            <div>
+                <p>Bienvenido {{ request.session.username }}</p>
+            </div>
+        </nav>
+    </header>
+    <h2>Pedidos</h2>
+    <p style="text-align: center;">En esta sección se mostrarán los pedidos realizados por los usuarios</p>
+    <table>
+        <tr>
+            <th>Masa</th>
+            <th>Salsa</th>
+            <th>Ingredientes</th>
+            <th>Técnica de Cocción</th>
+            <th>Presentación</th>
+            <th>Maridaje</th>
+            <th>Extras</th>
+        </tr>
+        <tr>
+            <td>{{ pizza.masa }}</td>
+            <td>{{ pizza.salsa }}</td>
+            <td>{{ pizza.ingredientes|join:", " }}</td>
+            <td>{{ pizza.tecnica }}</td>
+            <td>{{ pizza.presentacion }}</td>
+            <td>{{ pizza.maridaje }}</td>
+            <td>{{ pizza.extras|join:", " }}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

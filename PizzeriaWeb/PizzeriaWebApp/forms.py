@@ -86,3 +86,7 @@ class PizzaBuilderForm(forms.Form):
         widget=forms.CheckboxSelectMultiple
     )
 
+class UsuarioBuilderForm(forms.Form):
+    usuario = forms.CharField(max_length=100)
+    contraseña = forms.CharField(max_length=100)
+    confirmar_contraseña = forms.CharField(widget=forms.PasswordInput, label='Confirmar Contraseña')

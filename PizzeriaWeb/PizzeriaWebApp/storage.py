@@ -4,6 +4,7 @@ from .models import Pizza, Usuario
 
 import csv
 
+
 class CSVStorage:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -32,7 +33,8 @@ class CSVStorage:
                 for row in reader:
                     # Procesa cada fila y crea instancias de Pizza
                     masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras = row
-                    ingredientes = [ingrediente.strip() for ingrediente in ingredientes.split(', ')]
+                    ingredientes = [ingrediente.strip()
+                                    for ingrediente in ingredientes.split(', ')]
                     extras = [extra.strip() for extra in extras.split(', ')]
                     pizza = Pizza(
                         masa,
@@ -48,13 +50,14 @@ class CSVStorage:
             print("El archivo CSV no existe. Crea uno para almacenar las pizzas.")
         return pizzas
 
-    def registro(self,usuario):
+    def guardar_usuario(self, usuario):
         with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
             writer = csv.writer(file)
             writer.writerow([
                 usuario.usuario,
                 usuario.contraseña,
             ])
+
     def leer_usuarios(self):
         usuarios = []
         try:

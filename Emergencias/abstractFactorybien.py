@@ -3,7 +3,6 @@ from abc import ABC, abstractmethod
 import pandas as pd
 import numpy
 import matplotlib.pyplot as plt
-from typing import Tuple
 
 
 class FabricaCentral(ABC):
@@ -15,157 +14,89 @@ class FabricaCentral(ABC):
     def crear_graficos(self) -> Datos_Graficos:
         pass
 
-
 # Fábrica concreta 1
+
+
 class FabricaDatosNumericos(FabricaCentral):
-    def crear_datos_texto(self) -> Datos_Estadisticos:
+    def crear_datos(self) -> Datos_Estadisticos:
         return Media()
 
-    def crear_datos_texto(self) -> Datos_Estadisticos:
-        return Mediana()
-
-    def crear_datos_texto(self) -> Datos_Estadisticos:
-        return Moda()
-
-    def crear_datos_texto(self) -> Datos_Estadisticos:
-        return DesviacionTipica()
-
-    def crear_datos_texto(self) -> Datos_Estadisticos:
-        return Varianza()
-
-
-# Fábrica concreta 2
-class FabricaGrafica(FabricaCentral):
     def crear_graficos(self) -> Datos_Graficos:
         return Histograma()
 
-    def crear_graficos(self) -> Datos_Graficos:
-        return Circular()
+# Fábrica concreta 2
+
+
+class FabricaGrafica(FabricaCentral):
+    def crear_datos(self) -> Datos_Estadisticos:
+        return Mediana()
 
     def crear_graficos(self) -> Datos_Graficos:
-        return Barras()
+        return Circular()
 
 
 # Producto abstracto A
 
 class Datos_Estadisticos(ABC):
     @abstractmethod
-    def useful_function_a(self) -> None:
+    def mostrar_datos(self) -> str:
         pass
 
 # Producto concreto A1
 
 
 class Media(Datos_Estadisticos):
-    def useful_function_a(self) -> str:
+    def mostrar_datos(self) -> str:
         return "La media es: " + str(numpy.mean(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
 
 # Producto concreto A2
 
-
 class Mediana(Datos_Estadisticos):
-    def useful_function_a(self) -> str:
+    def mostrar_datos(self) -> str:
         return "La mediana es: " + str(numpy.median(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
-
-# Producto concreto A3
-
-
-class Moda(Datos_Estadisticos):
-    def useful_function_a(self) -> str:
-        data = pd.read_csv(
-            'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])
-        mode_result = data.mode()
-        if not mode_result.empty:
-            mode_value = mode_result.iloc[0, 0]
-            return f"La moda es: {mode_value}"
-        else:
-            return "No hay moda en los datos."
-
-# Producto concreto A4
-
-
-class DesviacionTipica(Datos_Estadisticos):
-    def useful_function_a(self) -> str:
-        data = pd.read_csv(
-            'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])
-        std_result = data.std(axis=0)
-        return f"La desviación típica es: {std_result.iloc[0]}"
-
-# Producto concreto A5
-
-
-class Varianza(Datos_Estadisticos):
-    def useful_function_a(self) -> str:
-        data = pd.read_csv(
-            'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])
-        var_result = data.var(axis=0)
-        return f"La varianza es: {var_result.iloc[0]}"
-
-
-# Producto abstracto B
 
 class Datos_Graficos(ABC):
     @abstractmethod
-    def useful_function_a(self) -> None:
+    def useful_function_b(self) -> None:
         pass
 
 # Producto concreto B1
-class Histograma(Datos_Graficos):
-    def useful_function_a(self) -> None:
-        columnas = ["DIAS", "CATEGORIA", "AUDIENCIA"]
-        for columna in columnas:
-            data = pd.read_csv(
-                'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=[columna])
 
-            if columna == "DIAS":
-                data[columna] = data[columna].str.split(",").str[0]
-                plt.hist(data, bins=10)
-                plt.title('Histograma de {}'.format(columna))
-                plt.xlabel(f"{columna}")
-                plt.ylabel('Frecuencia')
-                plt.show()
-                print("Histograma de {}".format(columna))
+
+class Histograma(Datos_Graficos):
+    def useful_function_b(self) -> None:
+        data = pd.read_csv(
+            'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=["DIAS"])
+        data["DIAS"] = data["DIAS"].str.split(",").str[0]
+        plt.hist(data, bins=10)
+        plt.title('Histograma de {}'.format("DIAS"))
+        plt.xlabel('Dias')
+        plt.ylabel('Frecuencia')
+        plt.show()
+        return "Histograma de {}".format("DIAS")
 
 # Producto concreto B2
+
+
 class Circular(Datos_Graficos):
-    def useful_function_a(self) -> None:
-        columnas = ["DIAS", "CATEGORIA", "AUDIENCIA"]
-        for columna in columnas:
-            data = pd.read_csv(
-                'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=[columna])
-            frecuencias = data[columna].str.split(",").str[0].value_counts()
-            labels = frecuencias.index
-            sizes = frecuencias.values
-            plt.pie(sizes, labels=labels, autopct='%1.1f%%')
-            plt.title('Gráfico Circular de {}'.format(columna))
-            plt.show()
-            print("Gráfico Circular de {}".format(columna))
-
-# Producto concreto B3
-class Barras(Datos_Graficos):
-    def useful_function_a(self) -> None:
-        columnas = ["DIAS", "CATEGORIA", "AUDIENCIA"]
-        for columna in columnas:
-            data = pd.read_csv(
-                'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=[columna])
-            frecuencias = data[columna].str.split(",").str[0].value_counts()
-            etiquetas = frecuencias.index
-            alturas = frecuencias.values
-            plt.bar(etiquetas, alturas)
-            plt.title('Gráfico de Barras de {}'.format(columna))
-            plt.xlabel(f"{columna}")
-            plt.ylabel('Frecuencia')
-            plt.show()
-            print("Gráfico de Barras de {}".format(columna))
-
+    def useful_function_b(self) -> None:
+        data = pd.read_csv(
+            'Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=["CATEGORIA"])
+        frecuencias = data["CATEGORIA"].str.split(",").str[0].value_counts()
+        labels = frecuencias.index
+        sizes = frecuencias.values
+        plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+        plt.title('Gráfico Circular de {}'.format("CATEGORIA"))
+        plt.show()
+        return "Gráfico Circular de {}".format("CATEGORIA")
 
 
 def client_code(factory: FabricaCentral) -> None:
     product_a = factory.crear_datos()
     product_b = factory.crear_graficos()
 
-    print(product_a.useful_function_a(), end="")
-    print(product_b.useful_function_b(), end="")
+    print(f"{product_a.mostrar_datos()}")
+    print(f"{product_b.useful_function_b()}", end="")
 
 
 if __name__ == "__main__":

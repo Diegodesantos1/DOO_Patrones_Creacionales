@@ -64,37 +64,3 @@ class PizzaDirector:
         self.builder.set_extras(["Orégano", "Aceitunas"])
 
         return self.builder.build()
-
-# Ejemplo de uso
-
-
-class PizzaChef(PizzaBuilder):
-    def __init__(self):
-        self.reset()
-
-    def reset(self):
-        self.pizza = Pizza("", "", [], "", "", None, [])
-
-    def set_masa(self, masa: str):
-        self.pizza.masa = masa
-
-    def set_salsa(self, salsa: str):
-        self.pizza.salsa = salsa
-
-    def set_ingredientes(self, ingredientes: List[str]):
-        self.pizza.ingredientes = ingredientes
-
-    def set_tecnica(self, tecnica: str):
-        self.pizza.tecnica = tecnica
-
-    def set_presentacion(self, presentacion: str):
-        self.pizza.presentacion = presentacion
-
-    def set_maridaje(self, maridaje: Optional[str]):
-        self.pizza.maridaje = maridaje
-
-    def set_extras(self, extras: List[str]):
-        self.pizza.extras = extras
-
-    def build(self) -> Pizza:
-        return self.pizza

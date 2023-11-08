@@ -19,28 +19,22 @@
             </ul>
         </nav>
     </header>
-    <section class="hero">
+    <div class>
         <h2>Las Mejores Pizzas</h2>
         <p>¡Ven y prueba nuestras deliciosas pizzas!</p>
         <a href="{% url 'menu' %}">Ver Menú</a>
+    </div>
+    <section>
+        <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza2.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza3.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza4.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza5.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza6.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza7.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza8.jpg' %}" alt="Pizza">
     </section>
-    <section class="menu">
-        <h2>Nuestro Menú</h2>
-        <div class="menu-item">
-            <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza Margarita">
-            <h3>Pizza Margarita</h3>
-            <p>Tomate, mozzarella, albahaca.</p>
-            <span>$10.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="{% static 'PizzeriaWebApp/img/pizza2.jpg' %}" alt="Pizza Pepperoni">
-            <h3>Pizza Pepperoni</h3>
-            <p>Tomate, mozzarella, pepperoni.</p>
-            <span>$12.99</span>
-        </div>
-        <!-- Agrega más elementos del menú aquí -->
-    </section>
-    <section class="contact">
+    <div class="contact">
         <h2>Contacto</h2>
         <p>¡Contáctanos para hacer tu pedido!</p>
         <address>
@@ -48,7 +42,7 @@
             <p>Teléfono: +1 (123) 456-7890</p>
             <p>Email: info@pizzeria-delizioso.com</p>
         </address>
-    </section>
+    </div>
     <footer>
         <p>&copy; 2023 Pizzería Delizioso</p>
     </footer>

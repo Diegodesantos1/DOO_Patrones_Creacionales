@@ -1,5 +1,6 @@
 from django import forms
 
+
 class PizzaBuilderForm(forms.Form):
     MASA_CHOICES = [
         ('Delgada', 'Delgada'),
@@ -64,3 +65,4 @@ class PizzaBuilderForm(forms.Form):
         choices=INGREDIENTES_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
+

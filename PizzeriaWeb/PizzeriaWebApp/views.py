@@ -3,9 +3,7 @@ from .forms import PizzaBuilderForm
 from .models import Pizza
 from .storage import CSVStorage
 
-
 # Create your views here.
-
 
 def index(request):
     return render(request, "PizzeriaWebApp/index.html")
@@ -25,9 +23,8 @@ def registro(request):
 
 def pizza(request):
     if request.method == 'POST':
-        form = PizzaBuilderForm(request.POST)  # Corrige el nombre del formulario aquí
+        form = PizzaBuilderForm(request.POST)
         if form.is_valid():
-            # Procesar los datos del formulario
             masa = form.cleaned_data['masa']
             salsa = form.cleaned_data['salsa']
             ingredientes = form.cleaned_data['ingredientes']
@@ -36,7 +33,6 @@ def pizza(request):
             maridaje = form.cleaned_data['maridaje']
             extras = form.cleaned_data['extras']
 
-            # Crear una instancia de Pizza
             pizza = Pizza(
                 masa=masa,
                 salsa=salsa,
@@ -47,12 +43,10 @@ def pizza(request):
                 extras=extras
             )
 
-            # Guardar la pizza en el archivo CSV
             storage = CSVStorage('pizzas.csv')
             storage.guardar_pizza(pizza)
 
-            # Redirigir a la página de creación de pizza
-            return redirect('pizza')
+            return redirect('index')
 
     else:
         form = PizzaBuilderForm()

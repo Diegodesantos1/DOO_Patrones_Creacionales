@@ -5,6 +5,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <!-- Agregar enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Crea tu pizza personalizada</title>
 </head>
 
@@ -19,12 +21,17 @@
             </ul>
         </nav>
     </header>
-    <h2>Crea tu pizza personalizada</h2>
-    <form method="post" action="{% url 'pizza' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Guardar Pizza">
-    </form>
+    <div class="container">
+        <h2>Crea tu pizza personalizada</h2>
+        <form method="post" action="{% url 'pizza' %}">
+            {% csrf_token %}
+            <!-- Utilizar las clases de Bootstrap para dar estilo al formulario -->
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Pizza</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -47,6 +47,14 @@ class PizzaBuilderForm(forms.Form):
         ('Vino', 'Vino'),
         ('Cerveza', 'Cerveza'),
         ('Coctel', 'Coctel'),
+        ('Refresco', 'Refresco'),
+        ('Agua', 'Agua'),
+    ]
+
+    EXTRAS_CHOICES = [
+        ('Queso extra', 'Queso extra'),
+        ('Salsa extra', 'Salsa extra'),
+        ('Borde de queso', 'Borde de queso'),
     ]
 
     masa = forms.ChoiceField(choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
@@ -62,7 +70,7 @@ class PizzaBuilderForm(forms.Form):
         required=False
     )
     extras = forms.MultipleChoiceField(
-        choices=INGREDIENTES_CHOICES,
+        choices=EXTRAS_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
 

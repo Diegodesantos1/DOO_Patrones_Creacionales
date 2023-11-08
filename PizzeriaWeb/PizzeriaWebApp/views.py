@@ -52,3 +52,10 @@ def pizza(request):
         form = PizzaBuilderForm()
 
     return render(request, 'PizzeriaWebApp/pizza.html', {'form': form})
+
+def datos(request):
+    # Cargar los datos del archivo CSV
+    storage = CSVStorage('pizzas.csv')
+    pizzas = storage.leer_pizzas()
+
+    return render(request, 'PizzeriaWebApp/datos.html', {'pizzas': pizzas})

@@ -40,7 +40,6 @@ class PizzaBuilder(ABC):
 
 class Pizza:
     def __init__(self, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras):
-        self.numero_pedido = None
         self.masa = masa
         self.salsa = salsa
         self.ingredientes = ingredientes
@@ -48,19 +47,3 @@ class Pizza:
         self.presentacion = presentacion
         self.maridaje = maridaje
         self.extras = extras
-
-
-class PizzaDirector:
-    def __init__(self, builder: PizzaBuilder):
-        self.builder = builder
-
-    def build_pizza(self) -> Pizza:
-        self.builder.set_masa("Delgada")
-        self.builder.set_salsa("Tomate")
-        self.builder.set_ingredientes(["Queso"])
-        self.builder.set_tecnica("Horno tradicional")
-        self.builder.set_presentacion("Clásica")
-        self.builder.set_maridaje("Vino")
-        self.builder.set_extras(["Orégano", "Aceitunas"])
-
-        return self.builder.build()

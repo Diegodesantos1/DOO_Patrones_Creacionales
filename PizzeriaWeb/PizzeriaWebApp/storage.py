@@ -25,15 +25,14 @@ class CSVStorage:
     def leer_pizzas(self):
         pizzas = []
         try:
-            with open(self.file_path, mode='r', newline='') as file:
+            with open(self.file_path, mode='r', newline='', encoding="UTF-8") as file:
                 reader = csv.reader(file)
                 for row in reader:
                     # Procesa cada fila y crea instancias de Pizza
-                    numero_pedido, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras = row
+                    masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras = row
                     ingredientes = [ingrediente.strip() for ingrediente in ingredientes.split(', ')]
                     extras = [extra.strip() for extra in extras.split(', ')]
                     pizza = Pizza(
-                        int(numero_pedido),
                         masa,
                         salsa,
                         ingredientes,

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datos de las Pizzas</title>
+</head>
+
+<body>
+    <h1>Datos de las Pizzas</h1>
+
+    <table>
+        <tr>
+            <th>Número de Pedido</th>
+            <th>Masa</th>
+            <th>Salsa</th>
+            <th>Ingredientes</th>
+            <th>Técnica de Cocción</th>
+            <th>Presentación</th>
+            <th>Maridaje</th>
+            <th>Extras</th>
+        </tr>
+        {% for pizza in pizzas %}
+        <tr>
+            <td>{{ pizza.masa }}</td>
+            <td>{{ pizza.salsa }}</td>
+            <td>{{ pizza.ingredientes|join:", " }}</td>
+            <td>{{ pizza.tecnica }}</td>
+            <td>{{ pizza.presentacion }}</td>
+            <td>{{ pizza.maridaje }}</td>
+            <td>{{ pizza.extras|join:", " }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -7,6 +7,8 @@ class PizzaBuilderForm(forms.Form):
         ('Pan', 'Pan'),
         ('Fermentada', 'Fermentada'),
         ('Sin gluten', 'Sin gluten'),
+        ('Integral', 'Integral'),
+        ('Tradicional', 'Tradicional'),
     ]
     SALSA_CHOICES = [
         ('Tomate', 'Tomate'),
@@ -32,16 +34,23 @@ class PizzaBuilderForm(forms.Form):
         ('Chorizo', 'Chorizo'),
         ('Tocino', 'Tocino'),
         ('Jalapeños', 'Jalapeños'),
+        ('Hongos', 'Hongos'),
+        ('Espinacas', 'Espinacas'),
+        ('Anchoas', 'Anchoas'),
+        ('Salmón', 'Salmón'),
+        ('Atún', 'Atún'),
     ]
     TECNICA_CHOICES = [
         ('Horno tradicional', 'Horno tradicional'),
         ('Cocina a la leña', 'Cocina a la leña'),
         ('Cocina molecular', 'Cocina molecular'),
+        ('Asado', 'Asado'),
     ]
     PRESENTACION_CHOICES = [
         ('Clásica', 'Clásica'),
         ('Artística', 'Artística'),
         ('Personalizada', 'Personalizada'),
+        ('Calzone', 'Calzone'),
     ]
     MARIDAJE_CHOICES = [
         ('Vino', 'Vino'),
@@ -49,13 +58,16 @@ class PizzaBuilderForm(forms.Form):
         ('Coctel', 'Coctel'),
         ('Refresco', 'Refresco'),
         ('Agua', 'Agua'),
+        ('Café', 'Café'),
     ]
 
     EXTRAS_CHOICES = [
         ('Queso extra', 'Queso extra'),
         ('Salsa extra', 'Salsa extra'),
         ('Borde de queso', 'Borde de queso'),
+        ('Aceite de oliva', 'Aceite de oliva'),
     ]
+
 
     masa = forms.ChoiceField(choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
     salsa = forms.ChoiceField(choices=[('', 'Seleccione una salsa')] + SALSA_CHOICES)

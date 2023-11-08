@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from .forms import PizzaBuilderForm
 from .models import Pizza
 from .storage import CSVStorage

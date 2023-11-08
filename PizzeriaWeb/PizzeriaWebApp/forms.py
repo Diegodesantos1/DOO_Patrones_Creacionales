@@ -83,9 +83,9 @@ class PizzaBuilderForm(forms.Form):
         choices=[('', 'Seleccione un maridaje')] + MARIDAJE_CHOICES,
     )
     extras = forms.MultipleChoiceField(
-        choices=EXTRAS_CHOICES,
-        widget=forms.CheckboxSelectMultiple
-    )
+    choices=EXTRAS_CHOICES,
+    widget=forms.CheckboxSelectMultiple
+)
 
 class UsuarioBuilderForm(forms.Form):
     usuario = forms.CharField(max_length=100)

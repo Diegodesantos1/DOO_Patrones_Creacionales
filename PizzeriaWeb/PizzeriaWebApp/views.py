@@ -62,7 +62,7 @@ def pizza(request):
                 tecnica=tecnica,
                 presentacion=presentacion,
                 maridaje=maridaje,
-                extras=extras
+                extras=extras,
             )
 
             storage = CSVStorage('pizzas.csv')
@@ -74,6 +74,7 @@ def pizza(request):
         form = PizzaBuilderForm()
 
     return render(request, 'PizzeriaWebApp/pizza.html', {'form': form})
+
 
 
 def datos(request):

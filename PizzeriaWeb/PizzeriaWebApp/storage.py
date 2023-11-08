@@ -27,6 +27,8 @@ class CSVStorage:
         try:
             with open(self.file_path, mode='r', newline='', encoding="UTF-8") as file:
                 reader = csv.reader(file)
+                # Salta la primera fila (encabezados)
+                next(reader)
                 for row in reader:
                     # Procesa cada fila y crea instancias de Pizza
                     masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras = row

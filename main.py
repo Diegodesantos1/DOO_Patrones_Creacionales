@@ -11,18 +11,5 @@ if eleccion == 1:
 
 
 elif eleccion == 2:
-    eleccion2 = int(input("¿Qué ejercicio quieres ejecutar?\n1 --> Terminal\n2 --> Interfaz Gráfica\n3 --> Django\n"))
-
-    if eleccion2 == 1:
-        from Pizzeria.main import *
-        if __name__ == "__main__":
-            ejecutar_pizzeria()
-
-    elif eleccion2 == 2:
-        if __name__ == "__main__":
-            import Pizzeria.interfaz
-            Pizzeria.interfaz.main()
-
-    elif eleccion2 == 3:
-        print("Ejecutando servidor Django...")
-        os.system("python PizzeriaWeb/manage.py runserver")
+    print("Ejecutando servidor Django...")
+    os.system("python PizzeriaWeb/manage.py runserver")

@@ -131,3 +131,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevenir ataques MIME type sniffing.
 SECURE_BROWSER_XSS_FILTER = True  # Habilitar el filtro XSS en navegadores compatibles.
 SESSION_COOKIE_SECURE = True  # Usar cookies seguras para sesiones.
 CSRF_COOKIE_SECURE = True  # Usar cookies seguras para proteger contra CSRF.
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)

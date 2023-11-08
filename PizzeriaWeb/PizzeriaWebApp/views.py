@@ -99,12 +99,10 @@ def login(request):
         if form.is_valid():
             usuario = form.cleaned_data['usuario']
             contraseña = form.cleaned_data['contraseña']
-            print(usuario, contraseña)
 
             # Cargar los usuarios desde el archivo CSV
             storage = CSVStorage('usuarios.csv')
             usuarios = storage.leer_usuarios()
-            print(usuarios)
 
             for user in usuarios:
                 # Verificar si el nombre de usuario coincide

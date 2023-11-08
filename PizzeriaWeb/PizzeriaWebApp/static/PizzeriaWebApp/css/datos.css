@@ -30,11 +30,14 @@ table {
     align-items: center;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ccc;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: left;
 
@@ -63,4 +66,22 @@ tr:first-child {
 tr:hover {
     background-color: #e0e0e0;
     cursor: pointer;
+}
+
+.alimento {
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    z-index: 1;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.masa {
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    top: 40px;
+    left: 40px;
+    z-index: -1;
 }

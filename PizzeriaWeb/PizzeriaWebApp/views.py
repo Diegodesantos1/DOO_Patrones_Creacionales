@@ -14,6 +14,7 @@ def index(request):
 def menu(request):
     return render(request, "PizzeriaWebApp/menu.html")
 
+
 def registro(request):
     if request.method == 'POST':
         form = UsuarioBuilderForm(request.POST)
@@ -74,7 +75,6 @@ def pizza(request):
         form = PizzaBuilderForm()
 
     return render(request, 'PizzeriaWebApp/pizza.html', {'form': form})
-
 
 
 def datos(request):

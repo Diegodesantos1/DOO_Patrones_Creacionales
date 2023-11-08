@@ -5,6 +5,8 @@ from typing import List, Optional
 
 
 class PizzaBuilder(ABC):
+    @property
+
     @abstractmethod
     def set_masa(self, masa: str) -> None:
         pass

@@ -7,7 +7,6 @@
     <title>Datos de las Pizzas</title>
     <link href="{% static 'PizzeriaWebApp/css/datos.css' %}" rel="stylesheet">
     <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
 
@@ -48,6 +47,13 @@
             <td>{{ pizza.extras|join:", " }}</td>
         </tr>
     </table>
+    <div style="position: relative; left: 35%; top: 0;">
+        <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa"/>
+        {% for ingrediente in pizza.ingredientes %}
+            <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
+        {% endfor %}
+    </div>
+    
 </body>
 
 </html>

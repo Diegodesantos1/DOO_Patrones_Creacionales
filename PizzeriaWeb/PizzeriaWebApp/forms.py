@@ -9,6 +9,7 @@ class PizzaBuilderForm(forms.Form):
         ('Sin gluten', 'Sin gluten'),
         ('Integral', 'Integral'),
         ('Tradicional', 'Tradicional'),
+
     ]
     SALSA_CHOICES = [
         ('Tomate', 'Tomate'),
@@ -59,6 +60,7 @@ class PizzaBuilderForm(forms.Form):
         ('Refresco', 'Refresco'),
         ('Agua', 'Agua'),
         ('Café', 'Café'),
+        ('Té', 'Té')
     ]
 
     EXTRAS_CHOICES = [

@@ -66,13 +66,16 @@ class CSVStorage:
                 # Salta la primera fila (encabezados)
                 next(reader)
                 for row in reader:
-                    # Procesa cada fila y crea instancias de Usuario
-                    usuario, contraseña = row
-                    usuario = Usuario(
-                        usuario,
-                        contraseña,
-                    )
-                    usuarios.append(usuario)
+                    # Asegurarse de que haya suficientes valores en la fila
+                    if len(row) >= 2:
+                        usuario, contraseña = row
+                        # Procesa cada fila y crea instancias de Usuario
+                        usuario = Usuario(
+                            usuario,
+                            contraseña,
+                        )
+                        usuarios.append(usuario)
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar los usuarios.")
         return usuarios
+

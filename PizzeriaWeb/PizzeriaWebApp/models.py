@@ -33,9 +33,6 @@ class PizzaBuilder(ABC):
     def set_extras(self, extras: List[str]) -> None:
         pass
 
-    @abstractmethod
-    def build(self) -> 'Pizza':
-        pass
 
 
 class Pizza:
@@ -57,7 +54,6 @@ class UsuarioBuilder(ABC):
     @abstractmethod
     def set_contraseña(self, contraseña: str) -> None:
         pass
-
 
 class Usuario:
     def __init__(self, usuario, contraseña):

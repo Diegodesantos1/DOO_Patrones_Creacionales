@@ -2,12 +2,15 @@
 <html>
 
 <head>
+
     {% load static %}
+
     <meta charset="UTF-8">
+    <title>Datos de las Pizzas</title>
+    <link href="{% static 'PizzeriaWebApp/css/datos.css' %}" rel="stylesheet">
     <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
-    <!-- Agregar enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Crea tu pizza personalizada</title>
+
 </head>
 
 <body>
@@ -20,21 +23,22 @@
                 <li><a href="{% url 'pizza' %}">Pizza</a></li>
                 <li><a href="{% url 'datos' %}">Datos</a></li>
             </ul>
-            <div>
-                <p>Bienvenido {{ request.session.username }}</p>
-            </div>
         </nav>
     </header>
-    <div class="container">
-        <h2>Crea tu pizza personalizada</h2>
-        <form method="post" action="{% url 'index' %}">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Pizza</button>
-        </form>
-    </div>
+    <h1>Datos de los Usuarios</h1>
+
+    <table>
+        <tr>
+            <th>Usuario</th>
+            <th>Contraseña</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.usuario }}</td>
+            <td>{{ usuario.contraseña }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 
 </html>

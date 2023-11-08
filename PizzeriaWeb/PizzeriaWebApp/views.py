@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.hashers import make_password, check_password
+from django.contrib import messages
 from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm
 from .models import Pizza, Usuario
 from .storage import CSVStorage
@@ -15,11 +14,6 @@ def index(request):
 def menu(request):
     return render(request, "PizzeriaWebApp/menu.html")
 
-
-def pizza(request):
-    return render(request, "PizzeriaWebApp/pizza.html")
-
-
 def registro(request):
     if request.method == 'POST':
         form = UsuarioBuilderForm(request.POST)
@@ -32,19 +26,16 @@ def registro(request):
             if contraseña != confirmar_contraseña:
                 return render(request, 'PizzeriaWebApp/registro.html', {'form': form, 'error_message': 'Las contraseñas no coinciden'})
 
-            # Cifrar la contraseña con las funciones de Django
-            hashed_password = make_password(contraseña)
-
             usuario = Usuario(
                 usuario=usuario,
-                contraseña=hashed_password,
+                contraseña=contraseña,
             )
 
             # Almacenar el usuario cifrado
             storage = CSVStorage('usuarios.csv')
             storage.guardar_usuario(usuario)
 
-            return redirect('index')
+            return redirect('login')
 
     else:
         form = UsuarioBuilderForm()
@@ -93,6 +84,13 @@ def datos(request):
     return render(request, 'PizzeriaWebApp/datos.html', {'pizzas': pizzas})
 
 
+def datos_usuarios(request):
+    datos = CSVStorage('usuarios.csv')
+    usuarios = datos.leer_usuarios()
+
+    return render(request, 'PizzeriaWebApp/datos_usuarios.html', {'usuarios': usuarios})
+
+
 def login(request):
     if request.method == 'POST':
         form = LoginBuilderForm(request.POST)
@@ -100,27 +98,25 @@ def login(request):
             usuario = form.cleaned_data['usuario']
             contraseña = form.cleaned_data['contraseña']
 
-            # Cargar los usuarios desde el archivo CSV
+            # Verificar que el usuario exista
             storage = CSVStorage('usuarios.csv')
             usuarios = storage.leer_usuarios()
+            usuario_correcto = None
 
-            for user in usuarios:
-                # Verificar si el nombre de usuario coincide
-                if user.usuario == usuario:
-                    # Comprobar si la contraseña ingresada coincide con la contraseña almacenada
-                    if check_password(contraseña, user.contraseña):
-                        # Contraseña válida, iniciar sesión
-                        user = authenticate(
-                            request, username=usuario, password=contraseña)
-                        if user is not None:
-                            login(request, user)
-                            return redirect('index')
-                    else:
-                        # Contraseña incorrecta
-                        return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': 'Contraseña incorrecta'})
+            for usuario_actual in usuarios:
+                if usuario_actual.usuario == usuario and usuario_actual.contraseña == contraseña:
+                    usuario_correcto = usuario_actual.usuario
+                    break
 
-            # Usuario no encontrado
-            return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': 'Usuario no encontrado'})
+            if usuario_correcto:
+                # Almacena el nombre de usuario en la sesión
+                request.session['username'] = usuario_correcto
+                return redirect('index')
+
+            else:
+                messages.error(
+                    request, 'Nombre de usuario o contraseña incorrectos')
+                return render(request, 'PizzeriaWebApp/login.html', {'form': form})
 
     else:
         form = LoginBuilderForm()

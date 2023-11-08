@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     {% load static %}
 
@@ -22,7 +22,7 @@
     <div id="container">
         <h2>Las Mejores Pizzas</h2>
         <p>¡Ven y prueba nuestras deliciosas pizzas!</p>
-        <a href="{% url 'menu' %}">Ver Menú</a>
+        <button>Pedir Pizza</button>
     </div>
     <section>
         <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza">
@@ -33,11 +33,19 @@
         <img src="{% static 'PizzeriaWebApp/img/pizza6.jpg' %}" alt="Pizza">
         <img src="{% static 'PizzeriaWebApp/img/pizza7.jpg' %}" alt="Pizza">
         <img src="{% static 'PizzeriaWebApp/img/pizza8.jpg' %}" alt="Pizza">
+        <img src="{% static 'PizzeriaWebApp/img/pizza9.jpg' %}" alt="Pizza">
     </section>
     <footer>
         <p>&copy; 2023 Pizzeria - Todos los derechos reservados</p>
     </footer>
+    <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            window.location.href = "{% url 'pizza' %}";
+        });
+    </script>
 </body>
+
 </html>
 
 

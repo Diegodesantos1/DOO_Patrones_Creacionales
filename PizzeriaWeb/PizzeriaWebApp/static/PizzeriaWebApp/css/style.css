@@ -115,7 +115,7 @@ footer {
 
 /* Estilo para el formulario */
 form {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background: #f9f9f9;
@@ -152,4 +152,79 @@ input[type="submit"] {
 /* Cambia el color del botón cuando se pasa el ratón */
 input[type="submit"]:hover {
     background: #45a049;
+}
+
+#container {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: lightblue;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+#plantilla_menu {
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea un grid de 3 columnas */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+}
+
+.menu-item p {
+    margin: 10px 0;
+}
+
+.menu-item img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+
+.menu-item img:hover {
+    transform: scale(1.1);
 }

@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <h1>Menú</h1>
     <header>
         <h1>Pizzería Delizioso</h1>
         <nav>
@@ -20,19 +19,65 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Nuestro Menú</h2>
-        <div class="menu-item">
-            <h3>Pizza Margarita</h3>
-            <p>Tomate, mozzarella, albahaca.</p>
-            <p>$10.99</p>
+    <div id="plantilla_menu">
+        <h1>Nuestro Menú</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Pizza Margarita</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza Margarita">
+                <p>Tomate, mozzarella, albahaca.</p>
+                <p>10.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Barbacoa</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza2.jpg' %}" alt="Pizza Pepperoni">
+                <p>Tomate, mozzarella, pepperoni.</p>
+                <p>12.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza 4 Quesos</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza3.jpg' %}" alt="Pizza Barbacoa">
+                <p>Tomate, mozzarella, carne de res, cebolla.</p>
+                <p>14.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Carbonara</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza4.jpg' %}" alt="Pizza Carbonara">
+                <p>Tomate, mozzarella, panceta, huevo.</p>
+                <p>13.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Boloñesa</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza5.jpg' %}" alt="Pizza Barbacoa">
+                <p>Tomate, mozzarella, carne de res, cebolla.</p>
+                <p>14.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Hawaiana</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza9.jpg' %}" alt="Pizza Hawaiana">
+                <p>Tomate, mozzarella, jamón, piña.</p>
+                <p>13.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza 4 estaciones</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza7.jpg' %}" alt="Pizza Vegetariana">
+                <p>Tomate, mozzarella, champiñones, pimentón, cebolla.</p>
+                <p>12.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Funghi</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza8.jpg' %}" alt="Pizza Napolitana">
+                <p>Tomate, mozzarella, anchoas, aceitunas.</p>
+                <p>11.99€</p>
+            </div>
+            <div class="menu-item">
+                <h3>Pizza Diávola</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza6.jpg' %}" alt="Pizza Delizioso">
+                <p>Tomate, mozzarella, pepperoni, champiñones, pimentón, cebolla.</p>
+                <p>15.99€</p>
         </div>
-        <div class="menu-item">
-            <h3>Pizza Pepperoni</h3>
-            <p>Tomate, mozzarella, pepperoni.</p>
-            <p>$12.99</p>
-        </div>
-    </section>
+    </div>
+    
 </body>
 
 </html>

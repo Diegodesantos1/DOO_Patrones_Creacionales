@@ -54,6 +54,27 @@ class Media(Datos_Estadisticos):
 class Mediana(Datos_Estadisticos):
     def mostrar_datos(self) -> str:
         return "La mediana es: " + str(numpy.median(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+# Producto concreto A3
+
+
+class Moda(Datos_Estadisticos):
+    def mostrar_datos(self) -> str:
+        return "La moda es: " + str(numpy.mode(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+
+# Producto concreto A4
+
+
+class Desviacion(Datos_Estadisticos):
+    def mostrar_datos(self) -> str:
+        return "La desviacion es: " + str(numpy.std(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+
+# Producto concreto A5
+
+class Varianza(Datos_Estadisticos):
+    def mostrar_datos(self) -> str:
+        return "La varianza es: " + str(numpy.var(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+# Producto abstracto B
+
 
 class Datos_Graficos(ABC):
     @abstractmethod
@@ -99,3 +120,11 @@ def client_code(factory: FabricaCentral) -> None:
     print(f"{product_b.useful_function_b()}", end="")
 
 
+if __name__ == "__main__":
+    """
+    The client code can work with any concrete factory class.
+    """
+    print("Cliente: Probando la fábrica de datos estadísticos:")
+    client_code(FabricaDatosNumericos())
+    print("Cliente: Probando la fábrica de gráficos:")
+    client_code(FabricaGrafica())

@@ -122,3 +122,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Configuración de seguridad como nos pide el ejercicio
+
+SECURE_HSTS_SECONDS = 31536000  # Habilitar Strict-Transport-Security para prevenir ataques SSL/TLS.
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevenir ataques MIME type sniffing.
+SECURE_BROWSER_XSS_FILTER = True  # Habilitar el filtro XSS en navegadores compatibles.
+SESSION_COOKIE_SECURE = True  # Usar cookies seguras para sesiones.
+CSRF_COOKIE_SECURE = True  # Usar cookies seguras para proteger contra CSRF.

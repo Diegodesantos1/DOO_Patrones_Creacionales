@@ -6,11 +6,23 @@
     <meta charset="UTF-8">
     <title>Datos de las Pizzas</title>
     <link href="{% static 'PizzeriaWebApp/css/datos.css' %}" rel="stylesheet">
+    <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
 
 <body>
+    <header>
+        <h1>Pizzería Delizioso</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'menu' %}">Menú</a></li>
+                <li><a href="{% url 'pizza' %}">Pizza</a></li>
+                <li><a href="{% url 'datos' %}">Datos</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>Datos de las Pizzas</h1>
 
     <table>

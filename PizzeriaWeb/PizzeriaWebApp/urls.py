@@ -4,7 +4,7 @@ from PizzeriaWebApp import views
 
 urlpatterns = [
     path("index/", views.index, name="index"),
-    path("", views.index, name="index"),
+    path("", views.login, name="login"),
     path("menu/", views.menu, name="menu"),
     path("pizza/", views.pizza, name="pizza"),
     path("registro/", views.registro, name="registro"),

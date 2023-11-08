@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.hashers import make_password
-from .forms import PizzaBuilderForm, UsuarioBuilderForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import make_password, check_password
+from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm
 from .models import Pizza, Usuario
 from .storage import CSVStorage
 
@@ -29,9 +30,6 @@ def registro(request):
 
             # Verificar que las contraseñas coincidan
             if contraseña != confirmar_contraseña:
-                # Si las contraseñas no coinciden, puedes manejar el error aquí.
-                # Puedes mostrar un mensaje de error o redirigir de nuevo al formulario de registro.
-                # Por ejemplo:
                 return render(request, 'PizzeriaWebApp/registro.html', {'form': form, 'error_message': 'Las contraseñas no coinciden'})
 
             # Cifrar la contraseña con las funciones de Django
@@ -52,6 +50,7 @@ def registro(request):
         form = UsuarioBuilderForm()
 
     return render(request, 'PizzeriaWebApp/registro.html', {'form': form})
+
 
 def pizza(request):
     if request.method == 'POST':
@@ -92,3 +91,33 @@ def datos(request):
     pizzas = storage.leer_pizzas()
 
     return render(request, 'PizzeriaWebApp/datos.html', {'pizzas': pizzas})
+
+
+def login(request):
+    if request.method == 'POST':
+        form = LoginBuilderForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            # Verificar si el usuario y la contraseña existen en el CSV
+            storage = CSVStorage('usuarios.csv')
+            usuarios = storage.leer_usuarios()
+            for usuario in usuarios:
+                if usuario.usuario == username and check_password(password, usuario.contraseña):
+                    user = authenticate(
+                        request, username=username, password=usuario.contraseña)
+                    if user is not None:
+                        login(request, user)
+                        # Redirige a la página después del inicio de sesión
+                        return redirect('pagina_despues_del_login')
+                    else:
+                        # Mostrar un mensaje de error si la autenticación falla
+                        error_message = "Nombre de usuario o contraseña incorrecta."
+
+            error_message = "Nombre de usuario o contraseña incorrecta."
+    else:
+        form = LoginBuilderForm()
+        error_message = None
+
+    return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': error_message})

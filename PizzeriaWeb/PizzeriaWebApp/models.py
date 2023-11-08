@@ -63,3 +63,18 @@ class Usuario:
     def __init__(self, usuario, contraseña):
         self.usuario = usuario
         self.contraseña = contraseña
+
+class LoginBuilder(ABC):
+    @abstractmethod
+    def set_usuario(self, usuario: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_contraseña(self, contraseña: str) -> None:
+        pass
+
+
+class Login:
+    def __init__(self, usuario, contraseña):
+        self.usuario = usuario
+        self.contraseña = contraseña

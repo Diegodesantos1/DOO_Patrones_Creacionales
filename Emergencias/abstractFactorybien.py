@@ -47,13 +47,13 @@ class Datos_Estadisticos(ABC):
 
 class Media(Datos_Estadisticos):
     def mostrar_datos(self) -> str:
-        return "La media es: " + str(numpy.mean(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+        return "La media de PRECIO es: " + str(numpy.mean(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
 
 # Producto concreto A2
 
 class Mediana(Datos_Estadisticos):
     def mostrar_datos(self) -> str:
-        return "La mediana es: " + str(numpy.median(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+        return "La mediana de PRECIO es: " + str(numpy.median(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
 # Producto concreto A3
 
 

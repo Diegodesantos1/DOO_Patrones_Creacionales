@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .forms import PizzaForm
+from .forms import PizzaBuilderForm
 from .models import Pizza
 from .storage import CSVStorage
 
@@ -25,7 +25,7 @@ def registro(request):
 
 def pizza(request):
     if request.method == 'POST':
-        form = PizzaForm(request.POST)
+        form = PizzaBuilderForm(request.POST)  # Corrige el nombre del formulario aquí
         if form.is_valid():
             # Procesar los datos del formulario
             masa = form.cleaned_data['masa']
@@ -55,6 +55,6 @@ def pizza(request):
             return redirect('pizza')
 
     else:
-        form = PizzaForm()
+        form = PizzaBuilderForm()
 
     return render(request, 'PizzeriaWebApp/pizza.html', {'form': form})

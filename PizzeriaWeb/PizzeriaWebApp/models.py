@@ -1,13 +1,46 @@
 from django.db import models
 
-# Create your models here.
+from abc import ABC, abstractmethod
+from typing import List, Optional
+
+
+class PizzaBuilder(ABC):
+    @abstractmethod
+    def set_masa(self, masa: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_salsa(self, salsa: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_ingredientes(self, ingredientes: List[str]) -> None:
+        pass
+
+    @abstractmethod
+    def set_tecnica(self, tecnica: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_presentacion(self, presentacion: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_maridaje(self, maridaje: Optional[str]) -> None:
+        pass
+
+    @abstractmethod
+    def set_extras(self, extras: List[str]) -> None:
+        pass
+
+    @abstractmethod
+    def build(self) -> 'Pizza':
+        pass
 
 
 class Pizza:
-    next_order_number = 1
-
     def __init__(self, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras):
-        self.numero_pedido = Pizza.next_order_number
+        self.numero_pedido = None
         self.masa = masa
         self.salsa = salsa
         self.ingredientes = ingredientes
@@ -15,83 +48,53 @@ class Pizza:
         self.presentacion = presentacion
         self.maridaje = maridaje
         self.extras = extras
-        Pizza.next_order_number += 1
 
 
-class Masa(models.Model):
-    @classmethod
-    def masas_disponibles(cls):
-        return [
-            ("Delgada", "Delgada"),
-            ("Pan", "Pan"),
-            ("Fermentada", "Fermentada"),
-            ("Sin gluten", "Sin gluten")
+class PizzaDirector:
+    def __init__(self, builder: PizzaBuilder):
+        self.builder = builder
 
-        ]
+    def build_pizza(self) -> Pizza:
+        self.builder.set_masa("Delgada")
+        self.builder.set_salsa("Tomate")
+        self.builder.set_ingredientes(["Queso"])
+        self.builder.set_tecnica("Horno tradicional")
+        self.builder.set_presentacion("Clásica")
+        self.builder.set_maridaje("Vino")
+        self.builder.set_extras(["Orégano", "Aceitunas"])
 
+        return self.builder.build()
 
-class Salsa(models.Model):
-    @classmethod
-    def salsas_disponibles(cls):
-        return [
-            ("Tomate", "Tomate"),
-            ("Pesto", "Pesto"),
-            ("BBQ", "BBQ"),
-            ("Yogur", "Yogur"),
-            ("Carbonara", "Carbonara"),
-            ("Sin salsa", "Sin salsa"),
-        ]
-
-# Haz lo mismo para las otras clases (Ingredientes, Tecnica, Presentacion, Maridaje).
+# Ejemplo de uso
 
 
-class Tecnica(models.Model):
-    @classmethod
-    def tecnicas_disponibles(cls):
-        return [
-            ("Horno tradicional", "Horno tradicional"),
-            ("Cocina a la leña", "Cocina a la leña"),
-            ("Cocina molecular", "Cocina molecular"),
-        ]
+class PizzaChef(PizzaBuilder):
+    def __init__(self):
+        self.reset()
 
+    def reset(self):
+        self.pizza = Pizza("", "", [], "", "", None, [])
 
-class Presentacion(models.Model):
-    @classmethod
-    def presentaciones_disponibles(cls):
-        return [
-            ("Clásica", "Clásica"),
-            ("Artística", "Artística"),
-            ("Personalizada", "Personalizada"),
-        ]
+    def set_masa(self, masa: str):
+        self.pizza.masa = masa
 
+    def set_salsa(self, salsa: str):
+        self.pizza.salsa = salsa
 
-class Maridaje(models.Model):
-    @classmethod
-    def maridajes_disponibles(cls):
-        return [
-            ("Vino", "Vino"),
-            ("Cerveza", "Cerveza"),
-            ("Coctel", "Coctel"),
-        ]
+    def set_ingredientes(self, ingredientes: List[str]):
+        self.pizza.ingredientes = ingredientes
 
+    def set_tecnica(self, tecnica: str):
+        self.pizza.tecnica = tecnica
 
-class Ingredientes(models.Model):
-    @classmethod
-    def ingredientes_disponibles(cls):
-        return [
-            ("Jamón", "Jamón"),
-            ("Queso", "Queso"),
-            ("Champiñones", "Champiñones"),
-            ("Tomate", "Tomate"),
-            ("Pimiento", "Pimiento"),
-            ("Cebolla", "Cebolla"),
-            ("Piña", "Piña"),
-            ("Pepperoni", "Pepperoni"),
-            ("Salami", "Salami"),
-            ("Aceitunas", "Aceitunas"),
-            ("Pollo", "Pollo"),
-            ("Carne picada", "Carne picada"),
-            ("Chorizo", "Chorizo"),
-            ("Tocino", "Tocino"),
-            ("Jalapeños", "Jalapeños"),
-        ]
+    def set_presentacion(self, presentacion: str):
+        self.pizza.presentacion = presentacion
+
+    def set_maridaje(self, maridaje: Optional[str]):
+        self.pizza.maridaje = maridaje
+
+    def set_extras(self, extras: List[str]):
+        self.pizza.extras = extras
+
+    def build(self) -> Pizza:
+        return self.pizza

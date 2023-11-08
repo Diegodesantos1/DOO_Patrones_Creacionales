@@ -73,6 +73,7 @@ class Desviacion(Datos_Estadisticos):
 class Varianza(Datos_Estadisticos):
     def mostrar_datos(self) -> str:
         return "La varianza es: " + str(numpy.var(pd.read_csv('Emergencias/data/Emergencias_limpio.csv', sep=';', usecols=['PRECIO(€)'])))
+
 # Producto abstracto B
 
 

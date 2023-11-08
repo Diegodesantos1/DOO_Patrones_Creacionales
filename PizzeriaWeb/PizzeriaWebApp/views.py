@@ -97,27 +97,34 @@ def login(request):
     if request.method == 'POST':
         form = LoginBuilderForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            usuario = form.cleaned_data['usuario']
+            contraseña = form.cleaned_data['contraseña']
+            print(usuario, contraseña)
 
-            # Verificar si el usuario y la contraseña existen en el CSV
+            # Cargar los usuarios desde el archivo CSV
             storage = CSVStorage('usuarios.csv')
             usuarios = storage.leer_usuarios()
-            for usuario in usuarios:
-                if usuario.usuario == username and check_password(password, usuario.contraseña):
-                    user = authenticate(
-                        request, username=username, password=usuario.contraseña)
-                    if user is not None:
-                        login(request, user)
-                        # Redirige a la página después del inicio de sesión
-                        return redirect('pagina_despues_del_login')
-                    else:
-                        # Mostrar un mensaje de error si la autenticación falla
-                        error_message = "Nombre de usuario o contraseña incorrecta."
+            print(usuarios)
 
-            error_message = "Nombre de usuario o contraseña incorrecta."
+            for user in usuarios:
+                # Verificar si el nombre de usuario coincide
+                if user.usuario == usuario:
+                    # Comprobar si la contraseña ingresada coincide con la contraseña almacenada
+                    if check_password(contraseña, user.contraseña):
+                        # Contraseña válida, iniciar sesión
+                        user = authenticate(
+                            request, username=usuario, password=contraseña)
+                        if user is not None:
+                            login(request, user)
+                            return redirect('index')
+                    else:
+                        # Contraseña incorrecta
+                        return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': 'Contraseña incorrecta'})
+
+            # Usuario no encontrado
+            return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': 'Usuario no encontrado'})
+
     else:
         form = LoginBuilderForm()
-        error_message = None
 
-    return render(request, 'PizzeriaWebApp/login.html', {'form': form, 'error_message': error_message})
+    return render(request, 'PizzeriaWebApp/login.html', {'form': form})

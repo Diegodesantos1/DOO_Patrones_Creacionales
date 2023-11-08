@@ -92,5 +92,5 @@ class UsuarioBuilderForm(forms.Form):
     confirmar_contraseña = forms.CharField(widget=forms.PasswordInput, label='Confirmar Contraseña')
 
 class LoginBuilderForm(forms.Form):
-    username = forms.CharField(max_length=100, label="Nombre de usuario")
-    password = forms.CharField(widget=forms.PasswordInput, label="Contraseña")
+    usuario = forms.CharField(max_length=100, label="Nombre de usuario")
+    contraseña = forms.CharField(widget=forms.PasswordInput, label="Contraseña")

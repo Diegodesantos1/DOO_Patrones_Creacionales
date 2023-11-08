@@ -58,8 +58,6 @@ class CSVStorage:
                 usuario.contraseña,
             ])
 
-            file.write('\n')
-
     def leer_usuarios(self):
         usuarios = []
         try:

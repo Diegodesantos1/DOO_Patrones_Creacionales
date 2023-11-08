@@ -2,10 +2,13 @@ import os
 eleccion =int(input("¿Qué ejercicio quieres ejecutar?\n1 --> Emergencias\n2 --> Pizzeria\n"))
 
 if eleccion == 1:
-    from Emergencias.main import *
+    from Emergencias.abstractFactorybien import *
     if __name__ == "__main__":
-        print("Cliente: Probando la fábrica estadística:")
-        client_code(FactoryEstadisticas())
+        print("Cliente: Probando la fábrica de datos estadísticos:")
+        client_code(FabricaDatosNumericos())
+        print("\nCliente: Probando la fábrica de gráficos:")
+        client_code(FabricaGrafica())
+
 
 elif eleccion == 2:
     eleccion2 = int(input("¿Qué ejercicio quieres ejecutar?\n1 --> Terminal\n2 --> Interfaz Gráfica\n3 --> Django\n"))

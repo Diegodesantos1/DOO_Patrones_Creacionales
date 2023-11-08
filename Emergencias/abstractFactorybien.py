@@ -99,11 +99,3 @@ def client_code(factory: FabricaCentral) -> None:
     print(f"{product_b.useful_function_b()}", end="")
 
 
-if __name__ == "__main__":
-    """
-    The client code can work with any concrete factory class.
-    """
-    print("Cliente: Probando la fábrica de datos estadísticos:")
-    client_code(FabricaDatosNumericos())
-    print("Cliente: Probando la fábrica de gráficos:")
-    client_code(FabricaGrafica())

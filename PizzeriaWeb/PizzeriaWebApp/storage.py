@@ -1,6 +1,6 @@
 # storage.py
 
-from .models import Pizza
+from .models import Pizza, Usuario
 
 import csv
 
@@ -47,3 +47,29 @@ class CSVStorage:
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar las pizzas.")
         return pizzas
+
+    def registro(self,usuario):
+        with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                usuario.usuario,
+                usuario.contraseña,
+            ])
+    def leer_usuarios(self):
+        usuarios = []
+        try:
+            with open(self.file_path, mode='r', newline='', encoding="UTF-8") as file:
+                reader = csv.reader(file)
+                # Salta la primera fila (encabezados)
+                next(reader)
+                for row in reader:
+                    # Procesa cada fila y crea instancias de Usuario
+                    usuario, contraseña = row
+                    usuario = Usuario(
+                        usuario,
+                        contraseña,
+                    )
+                    usuarios.append(usuario)
+        except FileNotFoundError:
+            print("El archivo CSV no existe. Crea uno para almacenar los usuarios.")
+        return usuarios

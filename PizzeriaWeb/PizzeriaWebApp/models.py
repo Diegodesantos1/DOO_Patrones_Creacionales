@@ -47,3 +47,19 @@ class Pizza:
         self.presentacion = presentacion
         self.maridaje = maridaje
         self.extras = extras
+
+
+class UsuarioBuilder(ABC):
+    @abstractmethod
+    def set_usuario(self, usuario: str) -> None:
+        pass
+
+    @abstractmethod
+    def set_contraseña(self, contraseña: str) -> None:
+        pass
+
+
+class Usuario:
+    def __init__(self, usuario, contraseña):
+        self.usuario = usuario
+        self.contraseña = contraseña

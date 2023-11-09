@@ -95,11 +95,15 @@ Garantizar la flexibilidad del sistema para futuras adiciones o modificaciones, 
 
 Implementar medidas de seguridad para garantizar la integridad de los datos almacenados y la privacidad de las elecciones de los clientes.
 
+Primero nos encontramos el login en la web:
+
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/ffa7e371-a012-4d30-b588-868e24410778)
+
+Como no tenemos cuenta, nos vamos a registrar:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/6be4ea7c-0dfa-456e-a518-ac40de28fe21)
 
-Ahora iniciamos sesión con el nuevo usuario y contraseña:
+Ahora iniciamos sesión con el nuevo usuario y contraseña que hemos registrado:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56f04263-fe84-4869-9926-dd55d4bab9eb)
 
@@ -107,10 +111,9 @@ Y nos lleva a la web mostrando nuestro nombre de usuario:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/60f8c4a0-8497-42b2-bbe1-1053f6540d5f)
 
-Para el admin:
+Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)
-
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 

@@ -6,7 +6,6 @@ from typing import List, Optional
 
 class PizzaBuilder(ABC):
     @property
-
     @abstractmethod
     def set_masa(self, masa: str) -> None:
         pass
@@ -36,7 +35,6 @@ class PizzaBuilder(ABC):
         pass
 
 
-
 class Pizza:
     def __init__(self, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras):
         self.masa = masa
@@ -57,10 +55,12 @@ class UsuarioBuilder(ABC):
     def set_contraseña(self, contraseña: str) -> None:
         pass
 
+
 class Usuario:
     def __init__(self, usuario, contraseña):
         self.usuario = usuario
         self.contraseña = contraseña
+
 
 class LoginBuilder(ABC):
     @abstractmethod

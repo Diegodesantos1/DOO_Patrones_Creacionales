@@ -60,28 +60,35 @@ class PizzaBuilderForm(forms.Form):
         ('Aceite de oliva', 'Aceite de oliva'),
     ]
 
-
-    masa = forms.ChoiceField(choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
-    salsa = forms.ChoiceField(choices=[('', 'Seleccione una salsa')] + SALSA_CHOICES)
+    masa = forms.ChoiceField(
+        choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
+    salsa = forms.ChoiceField(
+        choices=[('', 'Seleccione una salsa')] + SALSA_CHOICES)
     ingredientes = forms.MultipleChoiceField(
         choices=INGREDIENTES_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
-    tecnica = forms.ChoiceField(choices=[('', 'Seleccione una técnica')] + TECNICA_CHOICES)
-    presentacion = forms.ChoiceField(choices=[('', 'Seleccione una presentación')] + PRESENTACION_CHOICES)
+    tecnica = forms.ChoiceField(
+        choices=[('', 'Seleccione una técnica')] + TECNICA_CHOICES)
+    presentacion = forms.ChoiceField(
+        choices=[('', 'Seleccione una presentación')] + PRESENTACION_CHOICES)
     maridaje = forms.ChoiceField(
         choices=[('', 'Seleccione un maridaje')] + MARIDAJE_CHOICES,
     )
     extras = forms.MultipleChoiceField(
-    choices=EXTRAS_CHOICES,
-    widget=forms.CheckboxSelectMultiple
-)
+        choices=EXTRAS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
 
 class UsuarioBuilderForm(forms.Form):
     usuario = forms.CharField(max_length=100)
-    contraseña = forms.CharField(widget=forms.PasswordInput,max_length=100)
-    confirmar_contraseña = forms.CharField(widget=forms.PasswordInput, label='Confirmar Contraseña')
+    contraseña = forms.CharField(widget=forms.PasswordInput, max_length=100)
+    confirmar_contraseña = forms.CharField(
+        widget=forms.PasswordInput, label='Confirmar Contraseña')
+
 
 class LoginBuilderForm(forms.Form):
     usuario = forms.CharField(max_length=100, label="Nombre de usuario")
-    contraseña = forms.CharField(widget=forms.PasswordInput, label="Contraseña")
+    contraseña = forms.CharField(
+        widget=forms.PasswordInput, label="Contraseña")

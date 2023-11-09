@@ -20,7 +20,8 @@ class CSVStorage:
                 pizza.tecnica,
                 pizza.presentacion,
                 pizza.maridaje,
-                ', '.join(pizza.extras)  # Guardar todas las opciones como una cadena
+                # Guardar todas las opciones como una cadena
+                ', '.join(pizza.extras)
             ])
 
     def leer_pizzas(self):

@@ -199,8 +199,10 @@ button:active {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Crea un grid de 3 columnas */
-    gap: 20px; /* Espacio entre los elementos */
+    grid-template-columns: repeat(3, 1fr);
+    /* Crea un grid de 3 columnas */
+    gap: 20px;
+    /* Espacio entre los elementos */
 }
 
 .menu-item {

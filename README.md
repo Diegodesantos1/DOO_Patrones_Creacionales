@@ -76,6 +76,8 @@ Desarrollar una interfaz de usuario amigable que guíe al cliente en el proceso 
 
 Incorporar un sistema de recomendaciones que sugiera ingredientes, técnicas y maridajes basados en las elecciones previas del cliente.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/3952a0d1-b80e-4daa-8f7b-9f7de4bfa965)
+
 
 Desarrollar un módulo que guarde cada pizza personalizada en un archivo CSV, almacenando cada detalle, desde los ingredientes hasta el maridaje recomendado.
 
@@ -89,20 +91,56 @@ Crear una funcionalidad que lea del archivo CSV y pueda reconstruir la pizza par
 
 Garantizar la flexibilidad del sistema para futuras adiciones o modificaciones, ya que la pizzería está en constante innovación.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/568c7700-8497-483e-a726-dc7d5b547fc1)
-
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/1dba4560-4c03-475b-9b83-2b9decae4910)
 
 Implementar medidas de seguridad para garantizar la integridad de los datos almacenados y la privacidad de las elecciones de los clientes.
 
+Primero nos encontramos el login en la web:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56bb5b3f-7a0c-4f39-a4af-d6425eecfca7)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/ffa7e371-a012-4d30-b588-868e24410778)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/116fb280-b6d0-47ce-bcfb-1cb7b9b0b0e6)
+Como no tenemos cuenta, nos vamos a registrar:
 
-Para el admin:
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/6be4ea7c-0dfa-456e-a518-ac40de28fe21)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/c1147205-d614-4687-a115-2e889e0d6f01)
+Ahora iniciamos sesión con el nuevo usuario y contraseña que hemos registrado:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56f04263-fe84-4869-9926-dd55d4bab9eb)
+
+Y nos lleva a la web mostrando nuestro nombre de usuario:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/60f8c4a0-8497-42b2-bbe1-1053f6540d5f)
+
+Para el admin hay un visualizador de todos los usuarios y contraseñas:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 
-*EL patrón builder...*
+*El patrón Builder se justifica en esta aplicación por las siguientes razones:*
+
+1. **Construcción Paso a Paso:** El sistema implica la creación de objetos complejos con múltiples configuraciones. El patrón Builder permite crear estos objetos paso a paso, facilitando un proceso de construcción controlado.
+
+2. **Separación de la Construcción y Representación:** El Builder separa la construcción del objeto de su representación final. Esto permite crear objetos con diferentes configuraciones sin afectar al cliente.
+
+3. **Facilita la Creación de Objetos Complejos:** Dado que las pizzas y usuarios tienen muchas características y opciones, el Builder simplifica la creación de objetos complejos. Formularios como `PizzaBuilderForm` y `UsuarioBuilderForm` recopilan información, que se utiliza para construir el objeto correspondiente.
+
+4. **Robustez y Adaptabilidad:** El sistema es robusto y adaptable a cambios futuros, ya que el Builder permite adaptar objetos a diferentes configuraciones sin modificar el código existente. Esto es crucial para una aplicación en constante evolución.
+
+5. **Claridad y Legibilidad del Código:** El Builder mejora la legibilidad del código al proporcionar una estructura lógica para la creación de objetos.
+
+## Ventajas del Patrón Builder
+
+El uso del patrón Builder ofrece ventajas frente a otros enfoques:
+
+- **Separación de Responsabilidades:** El Builder separa la construcción de objetos de su representación y estructura interna, evitando la complejidad en el código del cliente.
+
+- **Adaptabilidad:** Facilita cambios en la estructura y configuración de objetos sin afectar al cliente, lo que es útil en aplicaciones en constante evolución.
+
+- **Reutilización de Código:** Fomenta la reutilización del código de construcción, mejorando la eficiencia y reduciendo la duplicación de código.
+
+- **Mantenibilidad:** Facilita el mantenimiento del código al permitir cambios en el proceso de construcción en un solo lugar, evitando modificaciones extensas en todo el código.
+
+## Conclusión
+
+El patrón Builder es una elección adecuada para la aplicación de pizzería web, ya que aporta organización y flexibilidad a la construcción de objetos complejos. Permite adaptabilidad, robustez y mantenimiento sencillo del código, mejorando la claridad y legibilidad. En comparación con otros enfoques, el patrón Builder destaca por su separación de responsabilidades y capacidad de manejar cambios en la configuración de objetos sin afectar al cliente.

@@ -25,18 +25,21 @@ def registro(request):
 
             # Verificar que las contraseñas coincidan
             if contraseña != confirmar_contraseña:
-                return render(request, 'PizzeriaWebApp/registro.html', {'form': form, 'error_message': 'Las contraseñas no coinciden'})
+                messages.error(request, 'Las contraseñas no coinciden')
+            else:
+                usuario = Usuario(
+                    usuario=usuario,
+                    contraseña=contraseña,
+                )
 
-            usuario = Usuario(
-                usuario=usuario,
-                contraseña=contraseña,
-            )
+                # Almacenar el usuario cifrado
+                storage = CSVStorage('usuarios.csv')
+                storage.guardar_usuario(usuario)
 
-            # Almacenar el usuario cifrado
-            storage = CSVStorage('usuarios.csv')
-            storage.guardar_usuario(usuario)
+                messages.success(
+                    request, 'Registro exitoso. Ahora puedes iniciar sesión.')
 
-            return redirect('login')
+                return redirect('login')
 
     else:
         form = UsuarioBuilderForm()
@@ -136,7 +139,6 @@ def pedidos(request):
     return render(request, 'PizzeriaWebApp/pedidos.html', {'pizza': pizza})
 
 
-
 def recomendaciones(request):
     # Leer los datos de las pizzas desde el CSV
     storage = CSVStorage('pizzas.csv')
@@ -152,7 +154,8 @@ def recomendaciones(request):
                 ingredientes_populares[ingrediente] = 1
 
     # Encontrar los ingredientes más populares
-    ingredientes_recomendados = [ingrediente for ingrediente, count in sorted(ingredientes_populares.items(), key=lambda item: item[1], reverse=True)][:3]
+    ingredientes_recomendados = [ingrediente for ingrediente, count in sorted(
+        ingredientes_populares.items(), key=lambda item: item[1], reverse=True)][:3]
 
     # Generar recomendaciones de pizzas basadas en los ingredientes populares
     recomendaciones_pizzas = []

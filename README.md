@@ -17,8 +17,7 @@ Tu tarea es desarrollar un programa en Python que haga uso del patrón de diseñ
 Lectura de Datos: Acceda y lea el archivo CSV directamente desde el enlace proporcionado: Activaciones del SAMUR-Protección Civil.
 Modelado de Datos: Modela y estructura la información para su análisis.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/image
-
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen1.png)
 
 Abstract Factory: Diseña un "Abstract Factory" que permita crear diferentes tipos de análisis o representaciones de los datos. 
 

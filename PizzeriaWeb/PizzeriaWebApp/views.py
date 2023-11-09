@@ -42,6 +42,8 @@ def registro(request):
                 # Verificar que las contraseñas coincidan
                 if contraseña != confirmar_contraseña:
                     messages.error(request, 'Las contraseñas no coinciden')
+
+                    return redirect('registro')
                 else:
                     usuario = Usuario(
                         usuario=usuario,

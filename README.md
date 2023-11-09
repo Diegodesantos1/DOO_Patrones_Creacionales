@@ -91,19 +91,26 @@ Crear una funcionalidad que lea del archivo CSV y pueda reconstruir la pizza par
 
 Garantizar la flexibilidad del sistema para futuras adiciones o modificaciones, ya que la pizzería está en constante innovación.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/568c7700-8497-483e-a726-dc7d5b547fc1)
-
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/1dba4560-4c03-475b-9b83-2b9decae4910)
 
 Implementar medidas de seguridad para garantizar la integridad de los datos almacenados y la privacidad de las elecciones de los clientes.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/ffa7e371-a012-4d30-b588-868e24410778)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56bb5b3f-7a0c-4f39-a4af-d6425eecfca7)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/6be4ea7c-0dfa-456e-a518-ac40de28fe21)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/116fb280-b6d0-47ce-bcfb-1cb7b9b0b0e6)
+Ahora iniciamos sesión con el nuevo usuario y contraseña:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56f04263-fe84-4869-9926-dd55d4bab9eb)
+
+Y nos lleva a la web mostrando nuestro nombre de usuario:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/60f8c4a0-8497-42b2-bbe1-1053f6540d5f)
 
 Para el admin:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/c1147205-d614-4687-a115-2e889e0d6f01)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)
+
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 

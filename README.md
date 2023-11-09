@@ -119,6 +119,10 @@ También se gestiona la creación de usuarios y contraseñas con mensajes de ale
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/edf7fb7c-bef1-41f3-9532-9d45813fa6f5)
 
+Y si ya hemos creado el usuario:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e366b283-0f95-4a72-8321-55bb7b8c4b67)
+
 Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)

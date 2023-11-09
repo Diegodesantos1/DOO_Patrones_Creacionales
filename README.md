@@ -65,17 +65,14 @@ Extras y finalizaciones: Desde bordes especiales hasta acabados con ingredientes
 
 Diseñar un sistema que permita a los clientes construir su pizza paso a paso utilizando el patrón Builder.
 
-
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/f1758382-2015-4fa4-a858-e205cdf085bd)
 
 Asegurar que cada elección sea validada para ser compatible con las selecciones previas del cliente.
 Desarrollar una interfaz de usuario amigable que guíe al cliente en el proceso de creación, ofreciendo información relevante sobre cada elección y facilitando la toma de decisiones.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/fdb7746a-03d6-4236-b2d5-3937bab21dd5)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/25a64ff0-5801-4bac-9e15-c8de6da4819f)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/7968b5a0-9c42-405f-9765-6d48174a6dfa)
-
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/dedf8f3d-22cc-4808-9501-4917b023b6dd)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/ea72bc07-06c0-402b-82db-d42c5c3008eb)
 
 Incorporar un sistema de recomendaciones que sugiera ingredientes, técnicas y maridajes basados en las elecciones previas del cliente.
 
@@ -87,6 +84,8 @@ Desarrollar un módulo que guarde cada pizza personalizada en un archivo CSV, al
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/407fea3f-1002-4310-ab96-f592ebd15313)
 
 Crear una funcionalidad que lea del archivo CSV y pueda reconstruir la pizza para su visualización, edición o reorden.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e03ed533-6a57-42b6-9ee6-2609ec27c981)
 
 Garantizar la flexibilidad del sistema para futuras adiciones o modificaciones, ya que la pizzería está en constante innovación.
 

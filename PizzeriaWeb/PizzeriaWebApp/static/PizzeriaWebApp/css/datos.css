@@ -120,3 +120,23 @@ tr:hover {
     margin-top: 10px;
     font-size: 14px;
   }
+
+
+#recomendaciones {
+    margin-left: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#recomendaciones li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+#recomendaciones li span {
+    font-weight: bold;
+    color: #FF5733; 
+}

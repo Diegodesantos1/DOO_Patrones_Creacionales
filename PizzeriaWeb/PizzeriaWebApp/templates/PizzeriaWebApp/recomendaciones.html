@@ -1,13 +1,16 @@
+<!-- recomendaciones.html -->
+
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     {% load static %}
     <meta charset="UTF-8">
+    <title>Datos de las Pizzas</title>
+    <link href="{% static 'PizzeriaWebApp/css/datos.css' %}" rel="stylesheet">
     <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
-    <!-- Agregar enlace a Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Crea tu pizza personalizada</title>
+
 </head>
 
 <body>
@@ -25,15 +28,13 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <h2>Crea tu pizza personalizada</h2>
-        <form method="post" action="{% url 'pizza' %}">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Pizza</button>
-        </form>
+    <div id="container">
+        <h1>Recomendaciones de Pizzas</h1>
+        <ul id="recomendaciones">
+            {% for pizza in recomendaciones %}
+            <li id="recomendaciones">{{ pizza.masa }}, {{ pizza.salsa }}, {{ pizza.ingredientes|join:", " }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 

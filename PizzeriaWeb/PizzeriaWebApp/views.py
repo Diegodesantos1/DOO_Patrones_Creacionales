@@ -134,3 +134,32 @@ def pedidos(request):
     pizza = pizzas[-1]
 
     return render(request, 'PizzeriaWebApp/pedidos.html', {'pizza': pizza})
+
+
+
+def recomendaciones(request):
+    # Leer los datos de las pizzas desde el CSV
+    storage = CSVStorage('pizzas.csv')
+    pizzas = storage.leer_pizzas()
+
+    # Procesar las pizzas y calcular ingredientes populares
+    ingredientes_populares = {}
+    for pizza in pizzas:
+        for ingrediente in pizza.ingredientes:
+            if ingrediente in ingredientes_populares:
+                ingredientes_populares[ingrediente] += 1
+            else:
+                ingredientes_populares[ingrediente] = 1
+
+    # Encontrar los ingredientes más populares
+    ingredientes_recomendados = [ingrediente for ingrediente, count in sorted(ingredientes_populares.items(), key=lambda item: item[1], reverse=True)][:3]
+
+    # Generar recomendaciones de pizzas basadas en los ingredientes populares
+    recomendaciones_pizzas = []
+    for pizza in pizzas:
+        for ingrediente in pizza.ingredientes:
+            if ingrediente in ingredientes_recomendados:
+                recomendaciones_pizzas.append(pizza)
+                break  # solo una vez por pizza
+
+    return render(request, 'PizzeriaWebApp/recomendaciones.html', {'recomendaciones': recomendaciones_pizzas})

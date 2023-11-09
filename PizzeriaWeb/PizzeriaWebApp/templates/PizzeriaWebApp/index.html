@@ -14,7 +14,7 @@
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'menu' %}">Recomendaciones</a></li>
+                <li><a href="{% url 'menu' %}">Menú</a></li>
                 <li><a href="{% url 'pizza' %}">Pizza</a></li>
                 <li><a href="{% url 'datos' %}">Datos</a></li>
             </ul>
@@ -26,7 +26,9 @@
     <div id="container">
         <h2>Las Mejores Pizzas</h2>
         <p>¡Ven y prueba nuestras deliciosas pizzas!</p>
-        <button>Pedir Pizza</button>
+        <button id="pizza">Pedir Pizza</button>
+        <p>¿No sabes qué pizza pedir?</p>
+        <button id="recomendaciones">Recomendaciones</button>
     </div>
     <section>
         <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza">
@@ -43,9 +45,13 @@
         <p>&copy; 2023 Pizzeria - Todos los derechos reservados</p>
     </footer>
     <script>
-        const button = document.querySelector('button');
+        const button = document.querySelector('#pizza');
+        const button2 = document.querySelector('#recomendaciones');
         button.addEventListener('click', () => {
             window.location.href = "{% url 'pizza' %}";
+        });
+        button2.addEventListener('click', () => {
+            window.location.href = "{% url 'recomendaciones' %}";
         });
     </script>
 </body>

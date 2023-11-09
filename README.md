@@ -101,35 +101,35 @@ Implementar medidas de seguridad para garantizar la integridad de los datos alma
 
 Primero nos encontramos el login en la web:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/ffa7e371-a012-4d30-b588-868e24410778)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen15.png)
 
 Como no tenemos cuenta, nos vamos a registrar:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/6be4ea7c-0dfa-456e-a518-ac40de28fe21)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen16.png)
 
 Ahora iniciamos sesión con el nuevo usuario y contraseña que hemos registrado:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/56f04263-fe84-4869-9926-dd55d4bab9eb)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen17.png)
 
 Y nos lleva a la web mostrando nuestro nombre de usuario:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/60f8c4a0-8497-42b2-bbe1-1053f6540d5f)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen18.png)
 
 También se gestiona la creación de usuarios y contraseñas con mensajes de alerta:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/2e832607-689c-456d-bad8-3a0c8d8fd07d)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen19.png)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/4aafa77d-4ab4-4b6e-8424-2a6cec1656cd)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen20.png)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/edf7fb7c-bef1-41f3-9532-9d45813fa6f5)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen21.png)
 
 Y si ya hemos creado el usuario:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e366b283-0f95-4a72-8321-55bb7b8c4b67)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen22.png)
 
 Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen23.png)
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 

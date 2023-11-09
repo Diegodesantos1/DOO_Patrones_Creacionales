@@ -23,21 +23,37 @@ def registro(request):
             contraseña = form.cleaned_data['contraseña']
             confirmar_contraseña = form.cleaned_data['confirmar_contraseña']
 
-            # Verificar que las contraseñas coincidan
-            if contraseña != confirmar_contraseña:
-                messages.error(request, 'Las contraseñas no coinciden')
+            # Verificar que el usuario no exista
+            storage = CSVStorage('usuarios.csv')
+            lista_usuarios = storage.leer_usuarios()
+            usuario_existe = False
+
+            for usuario_actual in lista_usuarios:
+                if usuario_actual.usuario == usuario:
+                    usuario_existe = True
+                    break
+
+            if usuario_existe == True:
+                messages.error(
+                    request, 'El nombre de usuario ya existe, por favor elige otro.')
+
             else:
-                usuario = Usuario(
-                    usuario=usuario,
-                    contraseña=contraseña,
-                )
 
-                # Almacenar el usuario cifrado
-                storage = CSVStorage('usuarios.csv')
-                storage.guardar_usuario(usuario)
+                # Verificar que las contraseñas coincidan
+                if contraseña != confirmar_contraseña:
+                    messages.error(request, 'Las contraseñas no coinciden')
+                else:
+                    usuario = Usuario(
+                        usuario=usuario,
+                        contraseña=contraseña,
+                    )
 
-                messages.success(
-                    request, 'Registro exitoso. Ahora puedes iniciar sesión.')
+                    # Almacenar el usuario cifrado
+                    storage = CSVStorage('usuarios.csv')
+                    storage.guardar_usuario(usuario)
+
+                    messages.success(
+                        request, 'Registro exitoso. Ahora puedes iniciar sesión.')
 
                 return redirect('login')
 

@@ -20,15 +20,20 @@ Modelado de Datos: Modela y estructura la información para su análisis.
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/image
 
 
-Abstract Factory: Diseña un "Abstract Factory" que permita crear diferentes tipos de análisis o representaciones de los datos. Por ejemplo:
+Abstract Factory: Diseña un "Abstract Factory" que permita crear diferentes tipos de análisis o representaciones de los datos. 
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen2.png)
+
+Por ejemplo:
+
 Cada fábrica debe tener al menos dos productos concretos (e.g., histograma de activaciones por tipo de emergencia, gráfico de barras de activaciones por mes).
 Una fábrica que genere análisis estadísticos (media, moda, mediana).
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen1.png)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen5.png)
 
 Una fábrica que produzca visualizaciones gráficas (histogramas, gráficos de barras).
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/f9ccf586-8026-4f63-9dde-5b473b3eac2b)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen6.png)
 
 
 Análisis y Representación: Utiliza las fábricas creadas para generar distintos análisis y representaciones de los datos. Muestra la media de activaciones por día, y un histograma de las activaciones

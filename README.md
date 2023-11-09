@@ -17,14 +17,14 @@ Tu tarea es desarrollar un programa en Python que haga uso del patrón de diseñ
 Lectura de Datos: Acceda y lea el archivo CSV directamente desde el enlace proporcionado: Activaciones del SAMUR-Protección Civil.
 Modelado de Datos: Modela y estructura la información para su análisis.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/558ded3c-702a-4e70-889c-2c09b851176b)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/image
 
 
 Abstract Factory: Diseña un "Abstract Factory" que permita crear diferentes tipos de análisis o representaciones de los datos. Por ejemplo:
 Cada fábrica debe tener al menos dos productos concretos (e.g., histograma de activaciones por tipo de emergencia, gráfico de barras de activaciones por mes).
 Una fábrica que genere análisis estadísticos (media, moda, mediana).
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/73e0650d-cde0-4759-84c8-f0ec923689a4)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen1.png)
 
 Una fábrica que produzca visualizaciones gráficas (histogramas, gráficos de barras).
 
@@ -34,9 +34,9 @@ Una fábrica que produzca visualizaciones gráficas (histogramas, gráficos de b
 Análisis y Representación: Utiliza las fábricas creadas para generar distintos análisis y representaciones de los datos. Muestra la media de activaciones por día, y un histograma de las activaciones
 
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/265a259d-bc9b-43c7-953c-aebf1b03942c)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen3.png)
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/d53d9ca2-26b6-450c-835e-0851d7e8b28c)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen4.png)
 
 
 ***

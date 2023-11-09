@@ -76,6 +76,8 @@ Desarrollar una interfaz de usuario amigable que guíe al cliente en el proceso 
 
 Incorporar un sistema de recomendaciones que sugiera ingredientes, técnicas y maridajes basados en las elecciones previas del cliente.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/3952a0d1-b80e-4daa-8f7b-9f7de4bfa965)
+
 
 Desarrollar un módulo que guarde cada pizza personalizada en un archivo CSV, almacenando cada detalle, desde los ingredientes hasta el maridaje recomendado.
 

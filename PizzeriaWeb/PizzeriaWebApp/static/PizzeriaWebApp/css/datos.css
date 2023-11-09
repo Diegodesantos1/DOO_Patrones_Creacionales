@@ -73,8 +73,8 @@ tr:hover {
     height: 300px;
     width: 500px;
     z-index: 1;
-    margin-left: 40px;
     margin-top: 40px;
+    margin-left: 40px;
 }
 
 .masa {
@@ -83,5 +83,14 @@ tr:hover {
     width: 500px;
     top: 40px;
     left: 40px;
+    z-index: -1;
+}
+
+.bebida {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    margin-top: 40px;
+    margin-left: 40px;
     z-index: -1;
 }

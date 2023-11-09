@@ -47,13 +47,17 @@
             <td>{{ pizza.extras|join:", " }}</td>
         </tr>
     </table>
-    <div style="position: relative; left: 35%; top: 0;">
-        <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa"/>
+    <div style="position: relative; left: 20%; top: 0;">
+        <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa" />
         {% for ingrediente in pizza.ingredientes %}
-            <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
+        <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
         {% endfor %}
     </div>
-    
+
+    <div style="position: relative; left: 50%; top: 0;">
+
+        <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ pizza.maridaje }}.png" class="bebida" />
+
 </body>
 
 </html>

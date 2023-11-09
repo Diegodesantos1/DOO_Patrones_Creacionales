@@ -46,7 +46,7 @@ class PizzaBuilderForm(forms.Form):
     MARIDAJE_CHOICES = [
         ('Vino', 'Vino'),
         ('Cerveza', 'Cerveza'),
-        ('Coctel', 'Coctel'),
+        ('Cóctel', 'Cóctel'),
         ('Refresco', 'Refresco'),
         ('Agua', 'Agua'),
         ('Café', 'Café'),

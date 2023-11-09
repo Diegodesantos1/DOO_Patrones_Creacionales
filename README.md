@@ -111,6 +111,18 @@ Y nos lleva a la web mostrando nuestro nombre de usuario:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/60f8c4a0-8497-42b2-bbe1-1053f6540d5f)
 
+También se gestiona la creación de usuarios y contraseñas con mensajes de alerta:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/2e832607-689c-456d-bad8-3a0c8d8fd07d)
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/4aafa77d-4ab4-4b6e-8424-2a6cec1656cd)
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/edf7fb7c-bef1-41f3-9532-9d45813fa6f5)
+
+Y si ya hemos creado el usuario:
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e366b283-0f95-4a72-8321-55bb7b8c4b67)
+
 Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/9f45f7a6-383a-4cd3-a936-f834ffbadd1c)

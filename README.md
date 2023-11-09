@@ -117,4 +117,30 @@ Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 
-*EL patrón builder...*
+*El patrón Builder se justifica en esta aplicación por las siguientes razones:*
+
+1. **Construcción Paso a Paso:** El sistema implica la creación de objetos complejos con múltiples configuraciones. El patrón Builder permite crear estos objetos paso a paso, facilitando un proceso de construcción controlado.
+
+2. **Separación de la Construcción y Representación:** El Builder separa la construcción del objeto de su representación final. Esto permite crear objetos con diferentes configuraciones sin afectar al cliente.
+
+3. **Facilita la Creación de Objetos Complejos:** Dado que las pizzas y usuarios tienen muchas características y opciones, el Builder simplifica la creación de objetos complejos. Formularios como `PizzaBuilderForm` y `UsuarioBuilderForm` recopilan información, que se utiliza para construir el objeto correspondiente.
+
+4. **Robustez y Adaptabilidad:** El sistema es robusto y adaptable a cambios futuros, ya que el Builder permite adaptar objetos a diferentes configuraciones sin modificar el código existente. Esto es crucial para una aplicación en constante evolución.
+
+5. **Claridad y Legibilidad del Código:** El Builder mejora la legibilidad del código al proporcionar una estructura lógica para la creación de objetos.
+
+## Ventajas del Patrón Builder
+
+El uso del patrón Builder ofrece ventajas frente a otros enfoques:
+
+- **Separación de Responsabilidades:** El Builder separa la construcción de objetos de su representación y estructura interna, evitando la complejidad en el código del cliente.
+
+- **Adaptabilidad:** Facilita cambios en la estructura y configuración de objetos sin afectar al cliente, lo que es útil en aplicaciones en constante evolución.
+
+- **Reutilización de Código:** Fomenta la reutilización del código de construcción, mejorando la eficiencia y reduciendo la duplicación de código.
+
+- **Mantenibilidad:** Facilita el mantenimiento del código al permitir cambios en el proceso de construcción en un solo lugar, evitando modificaciones extensas en todo el código.
+
+## Conclusión
+
+El patrón Builder es una elección adecuada para la aplicación de pizzería web, ya que aporta organización y flexibilidad a la construcción de objetos complejos. Permite adaptabilidad, robustez y mantenimiento sencillo del código, mejorando la claridad y legibilidad. En comparación con otros enfoques, el patrón Builder destaca por su separación de responsabilidades y capacidad de manejar cambios en la configuración de objetos sin afectar al cliente.

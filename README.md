@@ -87,7 +87,7 @@ Desarrollar un módulo que guarde cada pizza personalizada en un archivo CSV, al
 
 Crear una funcionalidad que lea del archivo CSV y pueda reconstruir la pizza para su visualización, edición o reorden.
 
-![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e03ed533-6a57-42b6-9ee6-2609ec27c981)
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/assets/91721855/e409e791-7ae0-4235-93af-7284e5545a3b)
 
 Garantizar la flexibilidad del sistema para futuras adiciones o modificaciones, ya que la pizzería está en constante innovación.
 

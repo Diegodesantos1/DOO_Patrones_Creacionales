@@ -47,30 +47,51 @@
             <td>{{ pizza.extras|join:", " }}</td>
         </tr>
     </table>
-    <div style="position: relative; left: 30%; top: 0;">
-        <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa" />
-        {% for ingrediente in pizza.ingredientes %}
-        <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
-        {% endfor %}
-    </div>
-
-    <div style="position: relative; left: 60%; top: 0;">
-
-        <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ pizza.maridaje }}.png" class="bebida" />
-
-    </div>
-    <div class="ticket">
-        <div class="header">
-            Pizzería Delizioso
+    <div id="grid">
+        <div style="position: relative">
+            <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa" />
+            {% for ingrediente in pizza.ingredientes %}
+            <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
+            {% endfor %}
         </div>
-        <div class="content">
-            Pedido: Pizza personalizada
+
+        <div>
+
+            <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ pizza.maridaje }}.png" class="bebida" />
+
         </div>
-        <div class="content">
-            Total: 12.99€
-        </div>
-        <div class="footer">
-            Gracias por tu pedido.
+        <div class="ticket">
+            <div class="header">
+                Pizzería Delizioso
+            </div>
+            <div class="content">
+                <strong>Masa:</strong> {{ pizza.masa }}
+            </div>
+            <div class="content">
+                <strong>Salsa:</strong> {{ pizza.salsa }}
+            </div>
+            <div class="content">
+                <strong>Ingredientes:</strong> {{ pizza.ingredientes|join:", " }}
+            </div>
+            <div class="content">
+                <strong>Técnica de Cocción:</strong> {{ pizza.tecnica }}
+            </div>
+            <div class="content">
+                <strong>Presentación:</strong> {{ pizza.presentacion }}
+            </div>
+            <div class="content">
+                <strong>Maridaje:</strong> {{ pizza.maridaje }}
+            </div>
+            <div class="content">
+                <strong>Extras:</strong> {{ pizza.extras|join:", " }}
+            </div>
+            <div class="content">
+                <strong>Precio:</strong>12.99€
+            </div>
+            
+            <div class="footer">
+                Gracias por tu pedido.
+            </div>
         </div>
     </div>
 </body>

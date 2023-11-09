@@ -88,7 +88,7 @@ tr:hover {
 
 .bebida {
     position: absolute;
-    height: 500px;
+    height: 400px;
     width: 500px;
     margin-top: 40px;
     margin-left: 40px;
@@ -96,8 +96,8 @@ tr:hover {
 }
 
 .ticket {
-    margin-top: 200px;
-    margin-left: 250px;
+    margin-top: 40px;
+    margin-left: 60px;
     width: 300px;
     padding: 10px;
     border: 1px solid #000;
@@ -139,4 +139,13 @@ tr:hover {
 #recomendaciones li span {
     font-weight: bold;
     color: #FF5733; 
+}
+
+#grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }

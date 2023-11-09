@@ -22,3 +22,8 @@ Integral,BBQ,"Jamón, Queso",Asado,Personalizada,Cerveza,"Salsa extra, Borde de 
 Fermentada,BBQ,"Jamón, Queso, Champiñones, Tomate",Asado,Personalizada,Cerveza,"Salsa extra, Borde de queso, Aceite de oliva"
 Pan,Pesto,"Jamón, Champiñones, Pimiento, Pepperoni, Aceitunas",Horno tradicional,Artística,Vino,"Queso extra, Salsa extra, Borde de queso"
 Fermentada,Pesto,"Jamón, Queso, Champiñones, Aceitunas",Cocina molecular,Artística,Refresco,"Queso extra, Salsa extra, Borde de queso, Aceite de oliva"
+Fermentada,Sin salsa,"Queso, Champiñones, Tomate, Pimiento",Asado,Artística,Refresco,"Queso extra, Salsa extra"
+Pan,Pesto,"Jamón, Queso, Champiñones, Tomate, Pimiento, Pepperoni, Albahaca, Aceitunas, Carne Picada, Cebolla",Cocina a la leña,Calzone,Cerveza,"Salsa extra, Borde de queso"
+Pan,BBQ,"Tomate, Pimiento, Carne Picada, Cebolla",Cocina molecular,Artística,Cerveza,"Salsa extra, Borde de queso"
+Sin gluten,Pesto,"Champiñones, Tomate, Albahaca, Aceitunas, Carne Picada",Cocina a la leña,Calzone,Vino,"Queso extra, Salsa extra"
+Fermentada,BBQ,"Jamón, Queso, Champiñones, Tomate, Pimiento, Pepperoni, Albahaca, Aceitunas, Carne Picada, Cebolla",Asado,Clásica,Café,"Queso extra, Salsa extra"

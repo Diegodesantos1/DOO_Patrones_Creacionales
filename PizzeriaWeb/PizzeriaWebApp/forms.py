@@ -25,6 +25,11 @@ class PizzaBuilderForm(forms.Form):
         ('Champiñones', 'Champiñones'),
         ('Tomate', 'Tomate'),
         ('Pimiento', 'Pimiento'),
+        ('Pepperoni', 'Pepperoni'),
+        ('Albahaca', 'Albahaca'),
+        ('Aceitunas', 'Aceitunas'),
+        ('Carne Picada', 'Carne Picada'),
+        ('Cebolla', 'Cebolla'),
     ]
     TECNICA_CHOICES = [
         ('Horno tradicional', 'Horno tradicional'),

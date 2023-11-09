@@ -14,9 +14,14 @@
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Iniciar_Sesion">
-        <a href="{% url 'registro' %}">Registrarse</a>
+        <button type="submit" value="Iniciar_Sesion">Iniciar Sesión</button>
+        <button id="Registrarse">Registrarse</button>
     </form>
+    <script>
+        document.getElementById("Registrarse").onclick = function () {
+            location.href = "{% url 'registro' %}";
+        };
+    </script>
 </body>
 
 </html>

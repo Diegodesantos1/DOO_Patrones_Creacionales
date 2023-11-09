@@ -26,7 +26,7 @@
         </nav>
     </header>
     <h2>Pedidos</h2>
-    <p style="text-align: center;">En esta sección se mostrarán los pedidos realizados por los usuarios</p>
+    <p style="text-align: center;">En esta sección se mostrará el último pedido realizados por el usuario</p>
     <table>
         <tr>
             <th>Masa</th>
@@ -47,17 +47,32 @@
             <td>{{ pizza.extras|join:", " }}</td>
         </tr>
     </table>
-    <div style="position: relative; left: 20%; top: 0;">
+    <div style="position: relative; left: 30%; top: 0;">
         <img src="{% static 'PizzeriaWebApp/img/ingredientes/Masa.png' %}" class="masa" />
         {% for ingrediente in pizza.ingredientes %}
         <img src="{% static 'PizzeriaWebApp/img/ingredientes/' %}{{ ingrediente }}.png" class="alimento" />
         {% endfor %}
     </div>
 
-    <div style="position: relative; left: 50%; top: 0;">
+    <div style="position: relative; left: 60%; top: 0;">
 
         <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ pizza.maridaje }}.png" class="bebida" />
 
+    </div>
+    <div class="ticket">
+        <div class="header">
+            Pizzería Delizioso
+        </div>
+        <div class="content">
+            Pedido: Pizza personalizada
+        </div>
+        <div class="content">
+            Total: 12.99€
+        </div>
+        <div class="footer">
+            Gracias por tu pedido.
+        </div>
+    </div>
 </body>
 
 </html>

@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm
 from .models import Pizza, Usuario
 from .storage import CSVStorage
+from .price import Precios
 
 # Create your views here.
 
@@ -76,6 +77,7 @@ def pizza(request):
             presentacion = form.cleaned_data['presentacion']
             maridaje = form.cleaned_data['maridaje']
             extras = form.cleaned_data['extras']
+            tamaño = form.cleaned_data['tamaño']
 
             pizza = Pizza(
                 masa=masa,
@@ -85,8 +87,14 @@ def pizza(request):
                 presentacion=presentacion,
                 maridaje=maridaje,
                 extras=extras,
+                tamaño=tamaño,
             )
 
+            # Calcular el precio
+            precio_calculado = Precios('pizzas.csv').calcular_precio(pizza)
+            pizza.precio = precio_calculado
+
+            # Guardar la pizza
             storage = CSVStorage('pizzas.csv')
             storage.guardar_pizza(pizza)
 

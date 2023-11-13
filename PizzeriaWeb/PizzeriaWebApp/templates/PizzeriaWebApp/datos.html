@@ -37,6 +37,7 @@
             <th>Presentación</th>
             <th>Maridaje</th>
             <th>Extras</th>
+            <th>Tamaño</th>
         </tr>
         {% for pizza in pizzas %}
         <tr>
@@ -47,6 +48,7 @@
             <td>{{ pizza.presentacion }}</td>
             <td>{{ pizza.maridaje }}</td>
             <td>{{ pizza.extras|join:", " }}</td>
+            <td>{{ pizza.tamaño }}</td>
         </tr>
         {% endfor %}
     </table>

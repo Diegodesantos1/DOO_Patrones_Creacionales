@@ -34,9 +34,13 @@ class PizzaBuilder(ABC):
     def set_extras(self, extras: List[str]) -> None:
         pass
 
+    @abstractmethod
+    def set_tamaño(self, tamaño: str) -> None:
+        pass
+
 
 class Pizza:
-    def __init__(self, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras):
+    def __init__(self, masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras, tamaño):
         self.masa = masa
         self.salsa = salsa
         self.ingredientes = ingredientes
@@ -44,6 +48,7 @@ class Pizza:
         self.presentacion = presentacion
         self.maridaje = maridaje
         self.extras = extras
+        self.tamaño = tamaño
 
 
 class UsuarioBuilder(ABC):

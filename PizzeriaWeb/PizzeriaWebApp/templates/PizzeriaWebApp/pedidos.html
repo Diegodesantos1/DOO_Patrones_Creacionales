@@ -37,6 +37,7 @@
             <th>Presentación</th>
             <th>Maridaje</th>
             <th>Extras</th>
+            <th>Tamaño</th>
         </tr>
         <tr>
             <td>{{ pizza.masa }}</td>
@@ -46,6 +47,7 @@
             <td>{{ pizza.presentacion }}</td>
             <td>{{ pizza.maridaje }}</td>
             <td>{{ pizza.extras|join:", " }}</td>
+            <td>{{ pizza.tamaño }}</td>
         </tr>
     </table>
     <div id="grid">
@@ -87,7 +89,7 @@
                 <strong>Extras:</strong> {{ pizza.extras|join:", " }}
             </div>
             <div class="content">
-                <strong>Precio:</strong>12.99€
+                <strong>Precio:</strong> {{ pizza.precio }} €
             </div>
 
             <div class="footer">

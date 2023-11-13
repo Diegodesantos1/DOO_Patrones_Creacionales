@@ -60,6 +60,13 @@ class PizzaBuilderForm(forms.Form):
         ('Aceite de oliva', 'Aceite de oliva'),
     ]
 
+    TAMAÑOS_CHOICES = [
+        ('Pequeña', 'Pequeña'),
+        ('Mediana', 'Mediana'),
+        ('Grande', 'Grande'),
+        ('Familiar', 'Familiar'),
+    ]
+
     masa = forms.ChoiceField(
         choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
     salsa = forms.ChoiceField(
@@ -80,6 +87,9 @@ class PizzaBuilderForm(forms.Form):
         widget=forms.CheckboxSelectMultiple
     )
 
+    tamaño = forms.ChoiceField(
+        choices=[('', 'Seleccione un tamaño')] + TAMAÑOS_CHOICES,
+    )
 
 class UsuarioBuilderForm(forms.Form):
     usuario = forms.CharField(max_length=100)

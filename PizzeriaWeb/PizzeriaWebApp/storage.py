@@ -1,8 +1,10 @@
+# storage.py:
+
 # storage.py
 
-from .models import Pizza, Usuario
-
 import csv
+from .models import Pizza, Usuario
+from .price import Precios
 
 
 class CSVStorage:
@@ -20,8 +22,9 @@ class CSVStorage:
                 pizza.tecnica,
                 pizza.presentacion,
                 pizza.maridaje,
-                # Guardar todas las opciones como una cadena
-                ', '.join(pizza.extras)
+                ', '.join(pizza.extras),
+                pizza.tamaño,
+                Precios('pizzas.csv').calcular_precio(pizza),
             ])
 
     def leer_pizzas(self):
@@ -33,10 +36,11 @@ class CSVStorage:
                 next(reader)
                 for row in reader:
                     # Procesa cada fila y crea instancias de Pizza
-                    masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras = row
+                    masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras, tamaño, precio = row
                     ingredientes = [ingrediente.strip()
                                     for ingrediente in ingredientes.split(', ')]
                     extras = [extra.strip() for extra in extras.split(', ')]
+                    # Create a Pizza instance with the correct order of attributes
                     pizza = Pizza(
                         masa,
                         salsa,
@@ -44,12 +48,22 @@ class CSVStorage:
                         tecnica,
                         presentacion,
                         maridaje,
-                        extras
+                        extras,
+                        tamaño,
                     )
+                    # Append the calculated precio to the pizza instance
+                    pizza.precio = precio
                     pizzas.append(pizza)
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar las pizzas.")
         return pizzas
+
+    def crear_precio(self, precio):
+        with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                precio.precio,
+            ])
 
     def guardar_usuario(self, usuario):
         with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:

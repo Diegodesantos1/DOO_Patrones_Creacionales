@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm
-from .models import Pizza, Usuario
+from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeForm
+from .models import Pizza, Usuario, MenuIndividual, MenuDoble, MenuTriple, MenuFamiliar
 from .storage import CSVStorage
 from .price import Precios
 
@@ -14,6 +14,22 @@ def index(request):
 
 def menu(request):
     return render(request, "PizzeriaWebApp/menu.html")
+
+
+def menuinfantil(request):
+    return render(request, "PizzeriaWebApp/menuinfantil.html")
+
+
+def menudoble(request):
+    return render(request, "PizzeriaWebApp/menudoble.html")
+
+
+def menutriple(request):
+    return render(request, "PizzeriaWebApp/menutriple.html")
+
+
+def menufamiliar(request):
+    return render(request, "PizzeriaWebApp/menufamiliar.html")
 
 
 def registro(request):

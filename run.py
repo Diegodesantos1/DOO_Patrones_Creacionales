@@ -16,7 +16,7 @@ elif eleccion == 2:
     print("Ejecutando servidor Django...")
     os.system("python PizzeriaWeb/manage.py runserver")
 
-elif eleccion ==3:
+"""elif eleccion ==3:
     from GestionDocumentalSAMUR.tests import *
     if __name__ == '__main__':
-        unittest.main()
+        unittest.main()"""

@@ -3,7 +3,7 @@
 # storage.py
 
 import csv
-from .models import Pizza, Usuario
+from .models import Pizza, Usuario, Menu
 from .price import Precios
 
 
@@ -93,3 +93,30 @@ class CSVStorage:
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar los usuarios.")
         return usuarios
+    
+    def guardar_menu(self, menu):
+        with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                menu.menu,
+            ])
+
+    def leer_menus(self):
+        menus = []
+        try:
+            with open(self.file_path, mode='r', newline='', encoding="UTF-8") as file:
+                reader = csv.reader(file)
+                # Salta la primera fila (encabezados)
+                next(reader)
+                for row in reader:
+                    # Asegurarse de que haya suficientes valores en la fila
+                    if len(row) >= 1:
+                        menu = row
+                        # Procesa cada fila y crea instancias de Usuario
+                        menu = Menu(
+                            menu,
+                        )
+                        menus.append(menu)
+        except FileNotFoundError:
+            print("El archivo CSV no existe. Crea uno para almacenar los menus.")
+        return menus

@@ -13,4 +13,8 @@ urlpatterns = [
     path("datos_usuarios/", views.datos_usuarios, name="datos_usuarios"),
     path("pedidos/", views.pedidos, name="pedidos"),
     path("recomendaciones/", views.recomendaciones, name="recomendaciones"),
+    path("menuinfantil/", views.menuinfantil, name="menuinfantil"),
+    path("menudoble/", views.menudoble, name="menudoble"),
+    path("menutriple/", views.menutriple, name="menutriple"),
+    path("menufamiliar/", views.menufamiliar, name="menufamiliar"),
 ]

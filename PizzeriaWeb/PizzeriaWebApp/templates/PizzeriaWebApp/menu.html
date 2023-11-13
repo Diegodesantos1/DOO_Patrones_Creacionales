@@ -5,6 +5,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Menú - Pizzería Delizioso</title>
 </head>
 
@@ -27,63 +28,66 @@
         <h1>Nuestro Menú</h1>
         <div class="menu-grid">
             <div class="menu-item">
-                <h3>Pizza Margarita</h3>
+                <h3>Menú Individual</h3>
                 <img src="{% static 'PizzeriaWebApp/img/pizza1.jpg' %}" alt="Pizza Margarita">
-                <p>Tomate, mozzarella, albahaca.</p>
-                <p>10.99€</p>
+                <button id="btnIndividual">Añadir al carrito</button>
+
             </div>
             <div class="menu-item">
-                <h3>Pizza Barbacoa</h3>
+                <h3>Menú Doble</h3>
                 <img src="{% static 'PizzeriaWebApp/img/pizza2.jpg' %}" alt="Pizza Pepperoni">
-                <p>Tomate, mozzarella, pepperoni.</p>
-                <p>12.99€</p>
+                <button id="btnDoble">Añadir al carrito</button>
+
             </div>
             <div class="menu-item">
-                <h3>Pizza 4 Quesos</h3>
+                <h3>Menú triple</h3>
                 <img src="{% static 'PizzeriaWebApp/img/pizza3.jpg' %}" alt="Pizza Barbacoa">
-                <p>Tomate, mozzarella, carne de res, cebolla.</p>
-                <p>14.99€</p>
+                <button id="btnTriple">Añadir al carrito</button>
+
             </div>
             <div class="menu-item">
-                <h3>Pizza Carbonara</h3>
+                <h3>Menú familiar</h3>
                 <img src="{% static 'PizzeriaWebApp/img/pizza4.jpg' %}" alt="Pizza Carbonara">
-                <p>Tomate, mozzarella, panceta, huevo.</p>
-                <p>13.99€</p>
+                <button id="btnFamiliar">Añadir al carrito</button>
             </div>
             <div class="menu-item">
-                <h3>Pizza Boloñesa</h3>
-                <img src="{% static 'PizzeriaWebApp/img/pizza5.jpg' %}" alt="Pizza Barbacoa">
-                <p>Tomate, mozzarella, carne de res, cebolla.</p>
-                <p>14.99€</p>
-            </div>
-            <div class="menu-item">
-                <h3>Pizza Hawaiana</h3>
-                <img src="{% static 'PizzeriaWebApp/img/pizza9.jpg' %}" alt="Pizza Hawaiana">
-                <p>Tomate, mozzarella, jamón, piña.</p>
-                <p>13.99€</p>
-            </div>
-            <div class="menu-item">
-                <h3>Pizza 4 estaciones</h3>
-                <img src="{% static 'PizzeriaWebApp/img/pizza7.jpg' %}" alt="Pizza Vegetariana">
-                <p>Tomate, mozzarella, champiñones, pimentón, cebolla.</p>
-                <p>12.99€</p>
-            </div>
-            <div class="menu-item">
-                <h3>Pizza Funghi</h3>
-                <img src="{% static 'PizzeriaWebApp/img/pizza8.jpg' %}" alt="Pizza Napolitana">
-                <p>Tomate, mozzarella, anchoas, aceitunas.</p>
-                <p>11.99€</p>
-            </div>
-            <div class="menu-item">
-                <h3>Pizza Diávola</h3>
-                <img src="{% static 'PizzeriaWebApp/img/pizza6.jpg' %}" alt="Pizza Delizioso">
-                <p>Tomate, mozzarella, pepperoni, champiñones, pimentón, cebolla.</p>
-                <p>15.99€</p>
+                <h3>Menú infantil</h3>
+                <img src="{% static 'PizzeriaWebApp/img/pizza4.jpg' %}" alt="Pizza Carbonara">
+                <button id="btnInfantil">Añadir al carrito</button>
             </div>
         </div>
-        <footer>
-            <p>&copy; 2023 Pizzeria - Todos los derechos reservados</p>
-        </footer>
+    </div>
+    <footer>
+        <p>&copy; 2023 Pizzeria - Todos los derechos reservados</p>
+    </footer>
+    <script>
+        let btnIndividual = document.getElementById("btnIndividual");
+        let btnDoble = document.getElementById("btnDoble");
+        let btnTriple = document.getElementById("btnTriple");
+        let btnFamiliar = document.getElementById("btnFamiliar");
+        let btnInfantil = document.getElementById("btnInfantil");
+
+        btnIndividual.onclick = function() {
+            location.href = "{% url 'pizza' %}";
+        };
+
+        btnDoble.onclick = function() {
+            location.href = "{% url 'menudoble' %}";
+        };
+
+        btnTriple.onclick = function() {
+            location.href = "{% url 'menutriple' %}";
+        };
+
+        btnFamiliar.onclick = function() {
+            location.href = "{% url 'menufamiliar' %}";
+        };
+
+        btnInfantil.onclick = function() {
+            location.href = "{% url 'menuinfantil' %}";
+        };
+
+    </script>
 </body>
 
 </html>

@@ -49,10 +49,16 @@
     </table>
     <div id="grid_menu">
         <div>
+            <img src="{% static 'PizzeriaWebApp/img/entrantes/' %}{{ menu.entrante }}.jpg" class="img_menu" />
+        </div>
+        <div>
             <img src="{% static 'PizzeriaWebApp/img/' %}{{ menu.pizza }}.jpg" class="foto_pizza"/>
         </div>
         <div>
             <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ menu.bebida }}.png" class="img_menu" />
+        </div>
+        <div>
+            <img src="{% static 'PizzeriaWebApp/img/postres/' %}{{ menu.postre }}.jpg" class="img_menu" />
         </div>
         <div class="ticket">
             <div class="header">

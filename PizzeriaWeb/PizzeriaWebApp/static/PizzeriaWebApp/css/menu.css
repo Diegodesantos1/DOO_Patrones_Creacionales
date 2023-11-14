@@ -1,8 +1,10 @@
 #grid_menu {
     margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 10px;
     /* Ajusta el espacio entre las columnas según tus preferencias */
 }
 
@@ -15,7 +17,7 @@
 .img_menu {
     max-width: 100%;
     /* Ajusta el tamaño máximo de las imágenes según tus preferencias */
-    height: auto;
+    height: 300px;
     /* Mantiene la proporción de aspecto de las imágenes */
 }
 

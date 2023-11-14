@@ -108,9 +108,8 @@ class LoginBuilderForm(forms.Form):
 class MenuCompositeForm(forms.Form):
     ENTRANTE_CHOICES = [
         ('Ensalada', 'Ensalada'),
-        ('Sopa', 'Sopa'),
         ('Pan', 'Pan'),
-        ('Patatas', 'Patatas'),
+        ('Patatas fritas', 'Patatas fritas'),
         ('Croquetas', 'Croquetas'),
         ('Empanadillas', 'Empanadillas'),
     ]

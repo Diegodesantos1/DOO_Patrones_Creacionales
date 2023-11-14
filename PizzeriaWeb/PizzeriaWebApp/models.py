@@ -180,11 +180,12 @@ class MenuIndividual(MenuComposite):
 
 class MenuInfantil(MenuComposite):
 
-    def __init__(self, entrante, pizza, bebida, postre):
+    def __init__(self, entrante, pizza, bebida, postre, descuento):
         self.entrante = entrante
         self.pizza = pizza
         self.bebida = bebida
         self.postre = postre
+        self.descuento = descuento
 
     def to_dict(self) -> dict:
         return {
@@ -194,4 +195,5 @@ class MenuInfantil(MenuComposite):
             "pizza": self.pizza,
             "bebida": self.bebida,
             "postre": self.postre,
+            "descuento": self.descuento,
         }

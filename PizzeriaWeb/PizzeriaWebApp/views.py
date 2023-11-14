@@ -4,6 +4,7 @@ from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuC
 from .models import Pizza, Usuario, MenuInfantil, Bebida, Postre, Entrante, Pizza_Menu, ComponenteMenu
 from .storage import CSVStorage
 from .price import Precios
+from decimal import Decimal
 
 # Create your views here.
 
@@ -36,22 +37,39 @@ def menuinfantil(request):
             pizza = form.cleaned_data['pizza']
             bebida = form.cleaned_data['bebida']
             postre = form.cleaned_data['postre']
+            descuento = form.cleaned_data['descuento']
+
+            # Define un diccionario para mapear descuentos a porcentajes
+            descuento_porcentajes = {
+                '5% de descuento': 0.05,
+                '10% de descuento': 0.10,
+                '15% de descuento': 0.15,
+            }
+
+            # Calcula el precio base del menú infantil
+            precio_base = 7.50
+
+            # Calcula el porcentaje de descuento
+            porcentaje_descuento = descuento_porcentajes[descuento]
+
+            # Calcula el precio con descuento
+            precio_descuento = precio_base - \
+                (precio_base * porcentaje_descuento)
 
             menu_infantil = MenuInfantil(
                 entrante=entrante,
                 pizza=pizza,
                 bebida=bebida,
                 postre=postre,
+                descuento=descuento,
             )
 
-            menu_infantil.precio = 7.50
+            menu_infantil.precio = precio_descuento
             menu_infantil.nombre = "Menu Infantil"
             storage = CSVStorage('menus.csv')
             storage.guardar_menu(menu_infantil)
-            redirect('menu_pedidos')
 
             return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_infantil})
-
     else:
         form = MenuCompositeForm()
 

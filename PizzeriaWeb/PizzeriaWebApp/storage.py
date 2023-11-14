@@ -106,6 +106,7 @@ class CSVStorage:
                 menu_data.get("pizza", ""),
                 menu_data.get("bebida", ""),
                 menu_data.get("postre", ""),
+                menu_data.get("descuento", "")
             ])
 
     def leer_menus(self):

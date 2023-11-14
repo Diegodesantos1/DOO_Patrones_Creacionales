@@ -106,42 +106,24 @@ class LoginBuilderForm(forms.Form):
 
 
 class MenuCompositeForm(forms.Form):
-    MENU_CHOICES = [
-        ('Menú Individual', 'Menú Individual'),
-        ('Menú Doble', 'Menú Doble'),
-        ('Menú Triple', 'Menú Triple'),
-        ('Menú familiar', 'Menú familiar'),
-        ('Menú infantil', 'Menú infantil'),
-    ]
-    MASA_CHOICES = [
-        ('Delgada', 'Delgada'),
+    ENTRANTE_CHOICES = [
+        ('Ensalada', 'Ensalada'),
+        ('Sopa', 'Sopa'),
         ('Pan', 'Pan'),
-        ('Fermentada', 'Fermentada'),
-        ('Sin gluten', 'Sin gluten'),
-        ('Integral', 'Integral'),
-        ('Tradicional', 'Tradicional'),
-
+        ('Patatas', 'Patatas'),
+        ('Croquetas', 'Croquetas'),
+        ('Empanadillas', 'Empanadillas'),
     ]
-
-    SALSA_CHOICES = [
-        ('Tomate', 'Tomate'),
-        ('Pesto', 'Pesto'),
-        ('BBQ', 'BBQ'),
-        ('Yogur', 'Yogur'),
+    PIZZAS_CHOICES = [
+        ('Barbacoa', 'Barbacoa'),
         ('Carbonara', 'Carbonara'),
-        ('Sin salsa', 'Sin salsa'),
-    ]
-    INGREDIENTES_CHOICES = [
-        ('Jamón', 'Jamón'),
-        ('Queso', 'Queso'),
-        ('Champiñones', 'Champiñones'),
-        ('Tomate', 'Tomate'),
-        ('Pimiento', 'Pimiento'),
-        ('Pepperoni', 'Pepperoni'),
-        ('Albahaca', 'Albahaca'),
-        ('Aceitunas', 'Aceitunas'),
-        ('Carne Picada', 'Carne Picada'),
-        ('Cebolla', 'Cebolla'),
+        ('Cuatro quesos', 'Cuatro quesos'),
+        ('Cuatro estaciones', 'Cuatro estaciones'),
+        ('Diávola', 'Diávola'),
+        ('Hawaiana', 'Hawaiana'),
+        ('Margarita', 'Margarita'),
+        ('Funghi', 'Funghi'),
+        ('Vegetariana', 'Vegetariana'),
     ]
     BEBIDAS_CHOICES = [
         ('Vino', 'Vino'),
@@ -153,19 +135,6 @@ class MenuCompositeForm(forms.Form):
         ('Té', 'Té')
     ]
 
-    EXTRAS_CHOICES = [
-        ('Queso extra', 'Queso extra'),
-        ('Salsa extra', 'Salsa extra'),
-        ('Borde de queso', 'Borde de queso'),
-        ('Aceite de oliva', 'Aceite de oliva'),
-    ]
-
-    TAMAÑOS_CHOICES = [
-        ('Pequeña', 'Pequeña'),
-        ('Mediana', 'Mediana'),
-        ('Grande', 'Grande'),
-    ]
-
     POSTRES_CHOICES = [
         ('Tarta de queso', 'Tarta de queso'),
         ('Tarta de chocolate', 'Tarta de chocolate'),
@@ -174,26 +143,12 @@ class MenuCompositeForm(forms.Form):
         ('Fruta', 'Fruta'),
         ('Yogur', 'Yogur'),
     ]
-    menu = forms.ChoiceField(
-        choices=[('', 'Seleccione un menú')] + MENU_CHOICES)
-    masa = forms.ChoiceField(
-        choices=[('', 'Seleccione una masa')] + MASA_CHOICES)
-    salsa = forms.ChoiceField(
-        choices=[('', 'Seleccione una salsa')] + SALSA_CHOICES)
-    ingredientes = forms.MultipleChoiceField(
-        choices=INGREDIENTES_CHOICES,
-        widget=forms.CheckboxSelectMultiple
-    )
-    bebidas = forms.ChoiceField(
+    entrante = forms.ChoiceField(
+        choices=[('', 'Seleccione un entrante')] + ENTRANTE_CHOICES)
+    pizza = forms.ChoiceField(
+        choices=[('', 'Seleccione una pizza')] + PIZZAS_CHOICES)
+    bebida = forms.ChoiceField(
         choices=[('', 'Seleccione una bebida')] + BEBIDAS_CHOICES)
 
-    postres = forms.ChoiceField(
+    postre = forms.ChoiceField(
         choices=[('', 'Seleccione un postre')] + POSTRES_CHOICES)
-    extras = forms.MultipleChoiceField(
-        choices=EXTRAS_CHOICES,
-        widget=forms.CheckboxSelectMultiple
-    )
-
-    tamaño = forms.ChoiceField(
-        choices=[('', 'Seleccione un tamaño')] + TAMAÑOS_CHOICES,
-    )

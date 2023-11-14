@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Pedidos Menús</title>
+    <link href="{% static 'PizzeriaWebApp/css/menu.css' %}" rel="stylesheet">
+    <link href="{% static 'PizzeriaWebApp/css/style.css' %}" rel="stylesheet">
+    <!-- Agregar enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Pedidos del Menú</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'menu' %}">Menú</a></li>
+                <li><a href="{% url 'pizza' %}">Pizza</a></li>
+                <li><a href="{% url 'datos' %}">Datos</a></li>
+            </ul>
+            <div>
+                <p>Bienvenido {{ request.session.username }}</p>
+            </div>
+        </nav>
+    </header>
+    <h2>Pedidos</h2>
+    <p style="text-align: center;">En esta sección se mostrará el último pedido realizado por el usuario</p>
+    <table>
+        <tr>
+            <th>Menu</th>
+            <th>Entrante</th>
+            <th>Pizza</th>
+            <th>Bebida</th>
+            <th>Postre</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td>{{ menu.nombre }}</td>
+            <td>{{ menu.entrante }}</td>
+            <td>{{ menu.pizza }}</td>
+            <td>{{ menu.bebida }}</td>
+            <td>{{ menu.postre }}</td>
+            <td>{{ menu.precio }}</td>
+        </tr>
+    </table>
+    <div id="grid_menu">
+        <div>
+            <img src="{% static 'PizzeriaWebApp/img/' %}{{ menu.pizza }}.jpg" class="foto_pizza"/>
+        </div>
+        <div>
+            <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ menu.bebida }}.png" class="img_menu" />
+        </div>
+        <div class="ticket">
+            <div class="header">
+                Pizzería Delizioso
+            </div>
+            <div class="content">
+                <strong>Menú:</strong> {{ menu.nombre }}
+            </div>
+            <div class="content">
+                <strong>Entrante:</strong> {{ menu.entrante }}
+            </div>
+            <div class="content">
+                <strong>Pizza:</strong> {{ menu.pizza }}
+            </div>
+            <div class="content">
+                <strong>Bebida:</strong> {{ menu.bebida }}
+            </div>
+            <div class="content">
+                <strong>Postre:</strong> {{ menu.postre }}
+            </div>
+            <div class="content">
+                <strong>Precio:</strong> {{ menu.precio }} €
+            </div>
+
+            <div class="footer">
+                Gracias por tu pedido.
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Pizzeria - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

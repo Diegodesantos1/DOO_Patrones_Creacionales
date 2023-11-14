@@ -1,10 +1,8 @@
 # storage.py:
-
-# storage.py
-
 import csv
-from .models import Pizza, Usuario, Menu
+from .models import Pizza, Usuario, MenuComposite
 from .price import Precios
+from decimal import Decimal
 
 
 class CSVStorage:
@@ -35,25 +33,27 @@ class CSVStorage:
                 # Salta la primera fila (encabezados)
                 next(reader)
                 for row in reader:
-                    # Procesa cada fila y crea instancias de Pizza
-                    masa, salsa, ingredientes, tecnica, presentacion, maridaje, extras, tamaño, precio = row
-                    ingredientes = [ingrediente.strip()
-                                    for ingrediente in ingredientes.split(', ')]
-                    extras = [extra.strip() for extra in extras.split(', ')]
-                    # Create a Pizza instance with the correct order of attributes
-                    pizza = Pizza(
-                        masa,
-                        salsa,
-                        ingredientes,
-                        tecnica,
-                        presentacion,
-                        maridaje,
-                        extras,
-                        tamaño,
-                    )
-                    # Append the calculated precio to the pizza instance
-                    pizza.precio = precio
-                    pizzas.append(pizza)
+                    # Asegurarse de que haya suficientes valores en la fila
+                    if len(row) == 9:
+                        masa, salsa, ingredientes_str, tecnica, presentacion, maridaje, extras, tamaño, precio = row
+                        # Convierte la lista de ingredientes y extras a listas
+                        ingredientes = ingredientes_str.split(', ')
+                        extras = extras.split(', ')
+                        # Convierte el precio a decimal
+                        precio_decimal = Decimal(precio)
+                        # Procesa cada fila y crea instancias de Pizza
+                        pizza = Pizza(
+                            masa,
+                            salsa,
+                            ingredientes,
+                            tecnica,
+                            presentacion,
+                            maridaje,
+                            extras,
+                            tamaño,
+                        )
+                        pizza.precio = precio_decimal
+                        pizzas.append(pizza)
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar las pizzas.")
         return pizzas
@@ -93,12 +93,19 @@ class CSVStorage:
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar los usuarios.")
         return usuarios
-    
+
     def guardar_menu(self, menu):
         with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
             writer = csv.writer(file)
+            menu_data = menu.to_dict()
+            # Escribe los datos del menú en el archivo CSV
             writer.writerow([
-                menu.menu,
+                menu_data.get("nombre", ""),
+                menu_data.get("precio", ""),
+                menu_data.get("entrante", ""),
+                menu_data.get("pizza", ""),
+                menu_data.get("bebida", ""),
+                menu_data.get("postre", ""),
             ])
 
     def leer_menus(self):
@@ -110,13 +117,20 @@ class CSVStorage:
                 next(reader)
                 for row in reader:
                     # Asegurarse de que haya suficientes valores en la fila
-                    if len(row) >= 1:
-                        menu = row
-                        # Procesa cada fila y crea instancias de Usuario
-                        menu = Menu(
-                            menu,
+                    if len(row) >= 6:
+                        nombre, precio, entrante, pizza, bebida, postre = row
+                        # Convertir precio a decimal
+                        precio_decimal = Decimal(precio)
+                        # Procesa cada fila y crea instancias de MenuComposite
+                        menu = MenuComposite(
+                            nombre=nombre,
+                            precio=precio_decimal,
+                            entrante=entrante,
+                            pizza=pizza,
+                            bebida=bebida,
+                            postre=postre,
                         )
                         menus.append(menu)
         except FileNotFoundError:
-            print("El archivo CSV no existe. Crea uno para almacenar los menus.")
+            print("El archivo CSV no existe. Crea uno para almacenar los menús.")
         return menus

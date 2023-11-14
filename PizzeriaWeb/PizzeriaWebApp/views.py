@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeForm
-from .models import Pizza, Usuario, MenuIndividual, MenuDoble, MenuTriple, MenuFamiliar
+from .models import Pizza, Usuario, MenuInfantil, Bebida, Postre, Entrante, Pizza_Menu, ComponenteMenu
 from .storage import CSVStorage
 from .price import Precios
 
@@ -16,8 +16,46 @@ def menu(request):
     return render(request, "PizzeriaWebApp/menu.html")
 
 
+def menu_pedidos(request):
+    storage = CSVStorage('menus.csv')
+    menus = storage.leer_menus()
+
+    # Asegúrate de que haya al menos un menú en la lista
+    if menus:
+        menu = menus[-1]
+        return render(request, "PizzeriaWebApp/menu_pedidos.html", {'menu': menu})
+    else:
+        return render(request, "PizzeriaWebApp/menu_pedidos.html", {'menu': None})
+
+
 def menuinfantil(request):
-    return render(request, "PizzeriaWebApp/menuinfantil.html")
+    if request.method == 'POST':
+        form = MenuCompositeForm(request.POST)
+        if form.is_valid():
+            entrante = form.cleaned_data['entrante']
+            pizza = form.cleaned_data['pizza']
+            bebida = form.cleaned_data['bebida']
+            postre = form.cleaned_data['postre']
+
+            menu_infantil = MenuInfantil(
+                entrante=entrante,
+                pizza=pizza,
+                bebida=bebida,
+                postre=postre,
+            )
+
+            menu_infantil.precio = 7.50
+            menu_infantil.nombre = "Menu Infantil"
+            storage = CSVStorage('menus.csv')
+            storage.guardar_menu(menu_infantil)
+            redirect('menu_pedidos')
+
+            return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_infantil})
+
+    else:
+        form = MenuCompositeForm()
+
+    return render(request, 'PizzeriaWebApp/menuinfantil.html', {'form': form})
 
 
 def menudoble(request):

@@ -17,4 +17,5 @@ urlpatterns = [
     path("menudoble/", views.menudoble, name="menudoble"),
     path("menutriple/", views.menutriple, name="menutriple"),
     path("menufamiliar/", views.menufamiliar, name="menufamiliar"),
+    path("menu_pedidos/", views.menu_pedidos, name="menu_pedidos"),
 ]

@@ -1,3 +1,5 @@
 ﻿Masa,Salsa,Ingredientes,Estilo,Presentación,Maridaje,Extras,Tamaño,Precio
 Fermentada,BBQ,"Jamón, Champiñones, Tomate, Albahaca, Aceitunas",Asado,Clásica,Agua,"Queso extra, Salsa extra, Borde de queso",Mediana,14.25
-Sin gluten,BBQ,"Jamón, Queso, Champiñones, Tomate, Pimiento, Pepperoni, Albahaca, Aceitunas, Carne Picada, Cebolla",Asado,Clásica,Té,"Queso extra, Salsa extra, Borde de queso, Aceite de oliva",Familiar,20.5
+Sin gluten,BBQ,"Jamón, Queso, Champiñones, Tomate, Pimiento, Pepperoni, Albahaca, Aceitunas, Carne Picada, Cebolla",Asado,Clásica,Té,"Queso extra, Salsa extra, Borde de queso, Aceite de oliva",Familiar,20.5Integral,Pesto,"Champiñones, Albahaca, Carne Picada",Cocina molecular,Artística,Cóctel,"Queso extra, Salsa extra",Grande,11.25
+Integral,Pesto,"Champiñones, Albahaca, Carne Picada",Cocina molecular,Artística,Cóctel,"Queso extra, Salsa extra",Grande,11.25
+Integral,Yogur,"Champiñones, Pepperoni, Albahaca",Asado,Artística,Cóctel,"Queso extra, Salsa extra",Familiar,12.25

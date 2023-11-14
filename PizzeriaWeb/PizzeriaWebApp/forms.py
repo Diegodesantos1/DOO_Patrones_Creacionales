@@ -112,6 +112,7 @@ class MenuCompositeForm(forms.Form):
         ('Patatas fritas', 'Patatas fritas'),
         ('Croquetas', 'Croquetas'),
         ('Empanadillas', 'Empanadillas'),
+        ('Nuggets', 'Nuggets'),
     ]
     PIZZAS_CHOICES = [
         ('Barbacoa', 'Barbacoa'),
@@ -143,7 +144,7 @@ class MenuCompositeForm(forms.Form):
         ('Yogur', 'Yogur'),
     ]
 
-    DESCUENTOS_CHOICES=[
+    DESCUENTOS_CHOICES = [
         ('5% de descuento', '5% de descuento'),
         ('10% de descuento', '10% de descuento'),
         ('15% de descuento', '15% de descuento'),
@@ -157,6 +158,6 @@ class MenuCompositeForm(forms.Form):
 
     postre = forms.ChoiceField(
         choices=[('', 'Seleccione un postre')] + POSTRES_CHOICES)
-    
+
     descuento = forms.ChoiceField(
         choices=[('', 'Seleccione un descuento')] + DESCUENTOS_CHOICES)

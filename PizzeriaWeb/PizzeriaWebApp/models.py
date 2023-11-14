@@ -176,6 +176,16 @@ class MenuIndividual(MenuComposite):
         self.bebida = bebida
         self.postre = postre
 
+    def to_dict(self) -> dict:
+        return {
+            "nombre": "Individual",
+            "precio": 7.50,
+            "entrante": self.entrante,
+            "pizza": self.pizza,
+            "bebida": self.bebida,
+            "postre": self.postre,
+            "descuento": self.descuento,
+        }
 
 
 class MenuInfantil(MenuComposite):

@@ -64,7 +64,6 @@ def menuinfantil(request):
             menu_infantil.nombre = "Menu Infantil"
             storage = CSVStorage('menus.csv')
             storage.guardar_menu(menu_infantil)
-            print(menu_infantil.to_dict())
 
             return render(request, 'PizzeriaWebApp/menu_pedidos_simple.html', {'menu': menu_infantil})
     else:

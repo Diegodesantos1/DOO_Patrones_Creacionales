@@ -8,12 +8,16 @@ from decimal import Decimal
 class CSVStorage:
     def __init__(self, file_path):
         self.file_path = file_path
+        self.pizza_id = self.obtener_ultimo_id(file_path)
 
     def guardar_pizza(self, pizza):
-        # Abre el archivo en modo 'a' (append) para agregar la pizza
+        self.pizza_id += 1
+        pizza_id = self.pizza_id
+
         with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
             writer = csv.writer(file)
             writer.writerow([
+                pizza_id,  # Se asigna el ID único
                 pizza.masa,
                 pizza.salsa,
                 ', '.join(pizza.ingredientes),
@@ -25,6 +29,21 @@ class CSVStorage:
                 Precios('pizzas.csv').calcular_precio(pizza),
             ])
 
+    @classmethod
+    def obtener_ultimo_id(cls, file_path):  # Añade file_path como parámetro
+        try:
+            with open(file_path, mode='r', newline='', encoding="utf-8-sig") as file:
+                reader = csv.reader(file)
+                next(reader)
+                # Lee el archivo y busca el último ID
+                ultimo_id = 0
+                for row in reader:
+                    if len(row) > 0:
+                        ultimo_id = max(ultimo_id, int(row[0]))
+                return ultimo_id
+        except FileNotFoundError:
+            return 0  # Si el archivo no existe, comienza con ID = 0
+
     def leer_pizzas(self):
         pizzas = []
         try:
@@ -34,8 +53,8 @@ class CSVStorage:
                 next(reader)
                 for row in reader:
                     # Asegurarse de que haya suficientes valores en la fila
-                    if len(row) == 9:
-                        masa, salsa, ingredientes_str, tecnica, presentacion, maridaje, extras, tamaño, precio = row
+                    if len(row) == 10:
+                        id, masa, salsa, ingredientes_str, tecnica, presentacion, maridaje, extras, tamaño, precio = row
                         # Convierte la lista de ingredientes y extras a listas
                         ingredientes = ingredientes_str.split(', ')
                         extras = extras.split(', ')
@@ -52,6 +71,7 @@ class CSVStorage:
                             extras,
                             tamaño,
                         )
+                        pizza.id = id
                         pizza.precio = precio_decimal
                         pizzas.append(pizza)
         except FileNotFoundError:

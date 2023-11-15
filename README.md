@@ -133,10 +133,6 @@ Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y COMPOSITE y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 
-## Informe y Justificación
-
-En el desarrollo de este proyecto, se han empleado patrones de diseño para mejorar la estructura y modularidad del código. Se detalla la aplicación específica de dos patrones: el Patrón Composite y el Patrón Builder.
-
 ### Claridad en las decisiones de diseño
 
 Las decisiones de diseño se enfocaron en mejorar la flexibilidad y escalabilidad del sistema de menús y pizzas:
@@ -145,11 +141,21 @@ Las decisiones de diseño se enfocaron en mejorar la flexibilidad y escalabilida
 
 - **Patrón Builder:** Su implementación facilitó la creación de objetos complejos como las pizzas. Separó los pasos de construcción de una pizza de su representación, lo que permitió la construcción de diferentes tipos de pizzas usando un mismo proceso.
 
-### Explicación detallada de la aplicación de los patrones de diseño
-
 #### Patrón Composite:
 
 La clase `MenuComposite` representó tanto los elementos individuales como los menús completos. Esto permitió la composición de menús a partir de otros menús o elementos individuales, brindando una estructura jerárquica flexible.
+
+*El patrón Composite se justifica en esta aplicación por las siguientes razones:*
+
+1. **Jerarquía de Componentes:** El uso del patrón Composite permitió tratar tanto elementos individuales (entrantes, bebidas, etc.) como composiciones completas (menús) de manera uniforme. Esta uniformidad simplificó la interacción y manipulación de estos elementos, ya que todos cumplen con la misma interfaz.
+
+2. **Composición Flexible:** Facilitó la creación de estructuras jerárquicas donde los elementos individuales y los menús completos se pueden tratar de manera similar. Esto permitió construir menús complejos a partir de otros menús o elementos individuales, otorgando una gran flexibilidad en la creación y gestión de las opciones disponibles.
+
+3. **Simplicidad en la Interacción:** Al tratar todos los elementos como un componente uniforme, el patrón Composite simplificó las operaciones como agregar, eliminar o modificar elementos en cualquier nivel de la jerarquía, sin tener que distinguir entre un elemento individual y un conjunto de elementos.
+
+4. **Facilita la Escalabilidad:** Al permitir la composición de menús a partir de elementos más simples, el patrón Composite ofrece una estructura escalable que puede adaptarse a futuras expansiones de menús o adiciones de nuevos elementos sin modificar en gran medida la lógica existente.
+
+5. **Centralización de la Lógica:** Proporciona un punto centralizado para operaciones comunes en los elementos y menús, lo que simplifica el mantenimiento y la modificación del código.
 
 #### Patrón Builder:
 

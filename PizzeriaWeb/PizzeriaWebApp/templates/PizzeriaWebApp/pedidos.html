@@ -30,6 +30,7 @@
     <p style="text-align: center;">En esta sección se mostrará el último pedido realizados por el usuario</p>
     <table>
         <tr>
+            <th>ID</th>
             <th>Masa</th>
             <th>Salsa</th>
             <th>Ingredientes</th>
@@ -40,6 +41,7 @@
             <th>Tamaño</th>
         </tr>
         <tr>
+            <td>{{ pizza.id }}</td>
             <td>{{ pizza.masa }}</td>
             <td>{{ pizza.salsa }}</td>
             <td>{{ pizza.ingredientes|join:", " }}</td>

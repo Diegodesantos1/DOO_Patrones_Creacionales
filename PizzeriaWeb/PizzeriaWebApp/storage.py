@@ -1,6 +1,6 @@
 # storage.py:
 import csv
-from .models import Pizza, Usuario, MenuComposite
+from .models import Pizza, Usuario, MenuComposite, MenuDoble
 from .price import Precios
 from decimal import Decimal
 
@@ -9,6 +9,7 @@ class CSVStorage:
     def __init__(self, file_path):
         self.file_path = file_path
         self.pizza_id = self.obtener_ultimo_id(file_path)
+        self.menu_id = self.obtener_ultimo_id(file_path)
 
     def guardar_pizza(self, pizza):
         self.pizza_id += 1
@@ -115,11 +116,27 @@ class CSVStorage:
         return usuarios
 
     def guardar_menu(self, menu):
+        self.menu_id += 1  # Incrementar el ID del menú
+        menu.id = self.menu_id  # Asignar el ID al menú
+
         with open(self.file_path, mode='a', newline='', encoding="UTF-8") as file:
             writer = csv.writer(file)
             menu_data = menu.to_dict()
-            # Escribe los datos del menú en el archivo CSV
+
+            # Verificar si es un menú doble para combinar las selecciones
+            if isinstance(menu, MenuDoble):
+                menu_data["entrante"] = self.combinar_selecciones(
+                    menu_data, "entrante", "entrante2")
+                menu_data["pizza"] = self.combinar_selecciones(
+                    menu_data, "pizza", "pizza2")
+                menu_data["bebida"] = self.combinar_selecciones(
+                    menu_data, "bebida", "bebida2")
+                menu_data["postre"] = self.combinar_selecciones(
+                    menu_data, "postre", "postre2")
+
+            # Escribe los datos del menú en el archivo CSV con el nuevo ID
             writer.writerow([
+                menu.id,
                 menu_data.get("nombre", ""),
                 menu_data.get("precio", ""),
                 menu_data.get("entrante", ""),
@@ -128,6 +145,17 @@ class CSVStorage:
                 menu_data.get("postre", ""),
                 menu_data.get("descuento", "")
             ])
+
+    def combinar_selecciones(self, menu_data, field1, field2):
+        # Función para combinar selecciones de menú doble
+        selection1 = menu_data.get(field1, "")
+        selection2 = menu_data.get(field2, "")
+
+        # Verifica y combina las selecciones si están presentes
+        if selection1 and selection2:
+            return f"{selection1}, {selection2}"
+        else:
+            return selection1 if selection1 else selection2
 
     def leer_menus(self):
         menus = []
@@ -138,20 +166,37 @@ class CSVStorage:
                 next(reader)
                 for row in reader:
                     # Asegurarse de que haya suficientes valores en la fila
-                    if len(row) >= 6:
-                        nombre, precio, entrante, pizza, bebida, postre = row
-                        # Convertir precio a decimal
-                        precio_decimal = Decimal(precio)
-                        # Procesa cada fila y crea instancias de MenuComposite
-                        menu = MenuComposite(
-                            nombre=nombre,
-                            precio=precio_decimal,
-                            entrante=entrante,
-                            pizza=pizza,
-                            bebida=bebida,
-                            postre=postre,
-                        )
-                        menus.append(menu)
+                    if len(row) >= 8:
+                        id, nombre, precio, entrante, pizza, bebida, postre, descuento = row
+                        if nombre == "Doble":
+                            entrante = entrante.split(', ')
+                            pizza = pizza.split(', ')
+                            bebida = bebida.split(', ')
+                            postre = postre.split(', ')
+
+                            menu = MenuComposite(
+                                nombre,
+                                precio,
+                                entrante,
+                                pizza,
+                                bebida,
+                                postre,
+                                descuento,
+                            )
+                            menu.id = id
+                            menus.append(menu)
+                        else:
+                            menu = MenuComposite(
+                                nombre,
+                                precio,
+                                entrante,
+                                pizza,
+                                bebida,
+                                postre,
+                                descuento,
+                            )
+                            menu.id = id
+                            menus.append(menu)
         except FileNotFoundError:
             print("El archivo CSV no existe. Crea uno para almacenar los menús.")
         return menus

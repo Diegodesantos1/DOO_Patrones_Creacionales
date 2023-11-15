@@ -1,12 +1,56 @@
-Tipo,Precio,Entrante,Pizza,Bebida,Postre,Descuento
-Infantil,7.5,Croquetas,Barbacoa,Cerveza,Helado,15% de descuento
-Infantil,7.5,Pan,Diávola,Agua,Tarta de queso,5% de descuento
-Infantil,7.5,Croquetas,Cuatro quesos,Café,Helado,15% de descuento
-Infantil,7.5,Patatas fritas,Diávola,Refresco,Helado,15% de descuento
-Infantil,7.5,Patatas fritas,Diávola,Refresco,Helado,15% de descuento
-Infantil,7.5,Patatas fritas,Diávola,Refresco,Helado,15% de descuento
-Infantil,7.5,Patatas fritas,Diávola,Refresco,Helado,15% de descuento
-Infantil,7.5,Croquetas,Cuatro quesos,Cóctel,Tarta de queso,15% de descuento
-Infantil,7.5,Croquetas,Cuatro quesos,Cóctel,Tarta de queso,15% de descuento
-Infantil,7.5,Empanadillas,Carbonara,Cerveza,Helado,5% de descuento
-Infantil,7.5,Ensalada,Diávola,Agua,Tarta de queso,15% de descuento
+ID,Tipo,Precio,Entrante,Pizza,Bebida,Postre,Descuento
+1,Infantil,7.5,Croquetas,Cuatro estaciones,Cerveza,Tarta de queso,15% de descuento
+2,Infantil,7.5,Pan,Hawaiana,Vino,Flan,5% de descuento
+3,Infantil,6.5,Pan,Cuatro quesos,Agua,Flan,10% de descuento
+4,Infantil,6.5,Croquetas,Cuatro estaciones,Zumo,Flan,15% de descuento
+5,Infantil,6.5,Croquetas,Diávola,Refresco,Tarta de queso,10% de descuento
+6,Individual,7.5,Nuggets,Cuatro quesos,Refresco,Fruta,10% de descuento
+7,Individual,7.5,Ensalada,Diávola,Cóctel,Flan,10% de descuento
+8,Infantil,6.5,Empanadillas,Diávola,Zumo,Fruta,10% de descuento
+9,Individual,7.5,Pan,Cuatro estaciones,Agua,Helado,10% de descuento
+10,Individual,7.5,Croquetas,Margarita,Cerveza,Fruta,5% de descuento
+11,Doble,13.5,Croquetas,Carbonara,Café,Helado,10% de descuento
+12,Doble,13.5,"Croquetas, Patatas fritas","Carbonara, Margarita","Café, Cóctel","Helado, Fruta",10% de descuento
+13,Doble,13.5,"Croquetas, Patatas fritas","Carbonara, Margarita","Café, Cóctel","Helado, Fruta",10% de descuento
+14,Doble,13.5,"Croquetas, Patatas fritas","Carbonara, Margarita","Café, Cóctel","Helado, Fruta",10% de descuento
+15,Doble,13.5,"Croquetas, Patatas fritas","Carbonara, Margarita","Café, Cóctel","Helado, Fruta",10% de descuento
+16,Doble,13.5,"Croquetas, Patatas fritas","Carbonara, Margarita","Café, Cóctel","Helado, Fruta",10% de descuento
+17,Individual,7.5,Empanadillas,Cuatro quesos,Refresco,Helado,15% de descuento
+18,Individual,7.5,Empanadillas,Cuatro quesos,Vino,Helado,15% de descuento
+19,Individual,7.5,Empanadillas,Cuatro quesos,Vino,Helado,15% de descuento
+20,Infantil,6.5,Croquetas,Carbonara,Zumo,Tarta de chocolate,10% de descuento
+31,Individual,7.5,Patatas fritas,Cuatro estaciones,Refresco,Flan,5% de descuento
+32,Individual,7.5,Patatas fritas,Cuatro estaciones,Refresco,Flan,5% de descuento
+41,Doble,13.5,"Croquetas, Croquetas","Cuatro estaciones, Cuatro quesos","Refresco, Refresco","Flan, Helado",10% de descuento
+42,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+43,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+44,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+45,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+46,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+47,Doble,13.5,"['Ensalada', 'Pan']","['Hawaiana', 'Funghi']","['Refresco', 'Café']","['Tarta de queso', 'Tarta de chocolate']",10% de descuento
+48,Individual,7.5,Patatas fritas,Cuatro estaciones,Té,Flan,5% de descuento
+49,Individual,7.5,Patatas fritas,Cuatro estaciones,Té,Flan,5% de descuento
+50,Individual,7.5,Patatas fritas,Cuatro estaciones,Té,Flan,5% de descuento
+51,Doble,13.5,"['Empanadillas', 'Nuggets']","['Cuatro quesos', 'Diávola']","['Café', 'Té']","['Helado', 'Fruta']",5% de descuento
+52,Doble,13.5,"['Empanadillas', 'Nuggets']","['Cuatro quesos', 'Diávola']","['Café', 'Té']","['Helado', 'Fruta']",5% de descuento
+53,Infantil,6.5,Empanadillas,Cuatro quesos,Agua,Flan,10% de descuento
+54,Infantil,6.5,Empanadillas,Cuatro quesos,Agua,Flan,10% de descuento
+55,Doble,13.5,"['Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos']","['Agua', 'Café']","['Tarta de chocolate', 'Flan']",5% de descuento
+56,Doble,13.5,"['Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos']","['Agua', 'Café']","['Tarta de chocolate', 'Flan']",5% de descuento
+57,Doble,13.5,"['Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos']","['Agua', 'Café']","['Tarta de chocolate', 'Flan']",5% de descuento
+58,Doble,13.5,"['Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos']","['Agua', 'Café']","['Tarta de chocolate', 'Flan']",5% de descuento
+59,Infantil,6.5,Empanadillas,Carbonara,Zumo,Tarta de chocolate,10% de descuento
+60,Infantil,6.5,Empanadillas,Carbonara,Zumo,Tarta de chocolate,10% de descuento
+61,Infantil,6.5,Empanadillas,Carbonara,Zumo,Tarta de chocolate,10% de descuento
+62,Infantil,6.5,Empanadillas,Cuatro quesos,Agua,Flan,5% de descuento
+63,Infantil,6.5,Nuggets,Cuatro quesos,Zumo,Helado,15% de descuento
+64,Infantil,6.5,Croquetas,Cuatro quesos,Zumo,Flan,10% de descuento
+65,Infantil,6.5,Croquetas,Cuatro quesos,Zumo,Flan,10% de descuento
+66,Infantil,6.5,Croquetas,Cuatro quesos,Zumo,Flan,10% de descuento
+67,Infantil,6.5,Croquetas,Cuatro quesos,Zumo,Flan,10% de descuento
+68,Doble,13.5,"['Ensalada', 'Pan']","['Carbonara', 'Cuatro quesos']","['Cerveza', 'Cóctel']","['Helado', 'Fruta']",15% de descuento
+69,Doble,13.5,"['Ensalada', 'Pan']","['Carbonara', 'Cuatro quesos']","['Cerveza', 'Cóctel']","['Helado', 'Fruta']",15% de descuento
+70,Individual,7.5,Patatas fritas,Carbonara,Cóctel,Helado,10% de descuento
+71,Individual,7.5,Patatas fritas,Carbonara,Cóctel,Helado,10% de descuento
+72,Doble,13.5,"['Ensalada', 'Pan']","['Barbacoa', 'Carbonara']","['Cerveza', 'Cóctel']","['Flan', 'Helado']",5% de descuento
+73,Doble,13.5,"['Ensalada', 'Pan']","['Barbacoa', 'Carbonara']","['Cerveza', 'Cóctel']","['Flan', 'Helado']",5% de descuento

@@ -42,49 +42,25 @@
         <tr>
             <td>{{ menu.id }}</td>
             <td>{{ menu.nombre }}</td>
-            <td>{{ menu.entrante|join:", " }}</td>
-            <td>{{ menu.pizza|join:", " }}</td>
-            <td>{{ menu.bebida|join:", " }}</td>
-            <td>{{ menu.postre|join:", " }}</td>
+            <td>{{ menu.entrante }}</td>
+            <td>{{ menu.pizza }}</td>
+            <td>{{ menu.bebida }}</td>
+            <td>{{ menu.postre }}</td>
             <td>{{ menu.precio }}</td>
         </tr>
     </table>
     <div id="grid_menu">
         <div>
-            {% if menu.entrante|length > 1 %}
-                {% for item in menu.entrante %}
-                    <img src="{% static 'PizzeriaWebApp/img/entrantes/' %}{{ item }}.png" class="img_menu" />
-                {% endfor %}
-            {% else %}
-                <img src="{% static 'PizzeriaWebApp/img/entrantes/' %}{{ menu.entrante }}.png" class="img_menu" />
-            {% endif %}
+            <img src="{% static 'PizzeriaWebApp/img/entrantes/' %}{{ menu.entrante }}.png" class="img_menu" />
         </div>
         <div>
-            {% if menu.pizza|length > 1 %}
-                {% for item in menu.pizza %}
-                    <img src="{% static 'PizzeriaWebApp/img/' %}{{ item }}.jpg" class="img_menu" />
-                {% endfor %}
-            {% else %}
-                <img src="{% static 'PizzeriaWebApp/img/' %}{{ menu.pizza }}.jpg" class="img_menu" />
-            {% endif %}
+            <img src="{% static 'PizzeriaWebApp/img/' %}{{ menu.pizza }}.jpg" class="img_menu" />
         </div>
         <div>
-            {% if menu.bebida|length > 1 %}
-                {% for item in menu.bebida %}
-                    <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ item }}.png" class="img_menu" />
-                {% endfor %}
-            {% else %}
-                <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ menu.bebida }}.p" class="img_menu" />
-            {% endif %}
+            <img src="{% static 'PizzeriaWebApp/img/maridaje/' %}{{ menu.bebida }}.png" class="img_menu" />
         </div>
         <div>
-            {% if menu.postre|length > 1 %}
-                {% for item in menu.postre %}
-                    <img src="{% static 'PizzeriaWebApp/img/postres/' %}{{ item }}.png" class="img_menu" />
-                {% endfor %}
-            {% else %}
-                <img src="{% static 'PizzeriaWebApp/img/postres/' %}{{ menu.postre }}.png" class="img_menu" />
-            {% endif %}
+            <img src="{% static 'PizzeriaWebApp/img/postres/' %}{{ menu.postre }}.png" class="img_menu" />
         </div>
         <div class="ticket">
             <div class="header">
@@ -94,16 +70,16 @@
                 <strong>Menú:</strong> {{ menu.nombre }}
             </div>
             <div class="content">
-                <strong>Entrante:</strong> {{ menu.entrante|join:", " }}
+                <strong>Entrante:</strong> {{ menu.entrante }}
             </div>
             <div class="content">
-                <strong>Pizzas:</strong> {{ menu.pizza|join:", " }}
+                <strong>Pizzas:</strong> {{ menu.pizza }}
             </div>
             <div class="content">
-                <strong>Bebida:</strong> {{ menu.bebida|join:", " }}
+                <strong>Bebida:</strong> {{ menu.bebida }}
             </div>
             <div class="content">
-                <strong>Postre:</strong> {{ menu.postre|join:", " }}
+                <strong>Postre:</strong> {{ menu.postre }}
             </div>
             <div class="content">
                 <strong>Precio:</strong> {{ menu.precio }} €

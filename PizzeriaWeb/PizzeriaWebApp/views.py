@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeForm
-from .models import Pizza, Usuario, MenuInfantil, Bebida, Postre, Entrante, Pizza_Menu, ComponenteMenu
+from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeIndividualForm, MenuCompositeInfantilForm, MenuCompositeDobleForm
+from .models import Pizza, Usuario, MenuInfantil, MenuIndividual, MenuDoble
 from .storage import CSVStorage
 from .price import Precios
 from decimal import Decimal
@@ -21,17 +21,13 @@ def menu_pedidos(request):
     storage = CSVStorage('menus.csv')
     menus = storage.leer_menus()
 
-    # Asegúrate de que haya al menos un menú en la lista
-    if menus:
-        menu = menus[-1]
-        return render(request, "PizzeriaWebApp/menu_pedidos.html", {'menu': menu})
-    else:
-        return render(request, "PizzeriaWebApp/menu_pedidos.html", {'menu': None})
+    menu = menus[-1]
+    return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu})
 
 
 def menuinfantil(request):
     if request.method == 'POST':
-        form = MenuCompositeForm(request.POST)
+        form = MenuCompositeInfantilForm(request.POST)
         if form.is_valid():
             entrante = form.cleaned_data['entrante']
             pizza = form.cleaned_data['pizza']
@@ -47,7 +43,7 @@ def menuinfantil(request):
             }
 
             # Calcula el precio base del menú infantil
-            precio_base = 7.50
+            precio_base = 6.50
 
             # Calcula el porcentaje de descuento
             porcentaje_descuento = descuento_porcentajes[descuento]
@@ -68,16 +64,106 @@ def menuinfantil(request):
             menu_infantil.nombre = "Menu Infantil"
             storage = CSVStorage('menus.csv')
             storage.guardar_menu(menu_infantil)
+            print(menu_infantil.to_dict())
 
-            return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_infantil})
+            return render(request, 'PizzeriaWebApp/menu_pedidos_simple.html', {'menu': menu_infantil})
     else:
-        form = MenuCompositeForm()
+        form = MenuCompositeInfantilForm()
 
     return render(request, 'PizzeriaWebApp/menuinfantil.html', {'form': form})
 
 
+def menuindividual(request):
+    if request.method == 'POST':
+        form = MenuCompositeIndividualForm(request.POST)
+        if form.is_valid():
+            entrante = form.cleaned_data['entrante']
+            pizza = form.cleaned_data['pizza']
+            bebida = form.cleaned_data['bebida']
+            postre = form.cleaned_data['postre']
+            descuento = form.cleaned_data['descuento']
+
+            # Define un diccionario para mapear descuentos a porcentajes
+            descuento_porcentajes = {
+                '5% de descuento': 0.05,
+                '10% de descuento': 0.10,
+                '15% de descuento': 0.15,
+            }
+
+            # Calcula el precio base del menú inidividual
+            precio_base = 7.50
+
+            # Calcula el porcentaje de descuento
+            porcentaje_descuento = descuento_porcentajes[descuento]
+
+            # Calcula el precio con descuento
+            precio_descuento = precio_base - \
+                (precio_base * porcentaje_descuento)
+
+            menu_individual = MenuIndividual(
+                entrante=entrante,
+                pizza=pizza,
+                bebida=bebida,
+                postre=postre,
+                descuento=descuento,
+            )
+
+            menu_individual.precio = precio_descuento
+            menu_individual.nombre = "Menu individual"
+            storage = CSVStorage('menus.csv')
+            storage.guardar_menu(menu_individual)
+
+            return render(request, 'PizzeriaWebApp/menu_pedidos_simple.html', {'menu': menu_individual})
+    else:
+        form = MenuCompositeIndividualForm()
+
+    return render(request, 'PizzeriaWebApp/menuindividual.html', {'form': form})
+
+
 def menudoble(request):
-    return render(request, "PizzeriaWebApp/menudoble.html")
+    if request.method == 'POST':
+        form = MenuCompositeDobleForm(request.POST)
+        if form.is_valid():
+            entrante = form.cleaned_data['entrantes']
+            pizza = form.cleaned_data['pizzas']
+            bebida = form.cleaned_data['bebidas']
+            postre = form.cleaned_data['postres']
+            descuento = form.cleaned_data['descuento']
+
+            # Define un diccionario para mapear descuentos a porcentajes
+            descuento_porcentajes = {
+                '5% de descuento': 0.05,
+                '10% de descuento': 0.10,
+                '15% de descuento': 0.15,
+            }
+
+            # Calcula el precio base del menú doble
+            precio_base = 14.50
+
+            # Calcula el porcentaje de descuento
+            porcentaje_descuento = descuento_porcentajes[descuento]
+
+            # Calcula el precio con descuento
+            precio_descuento = precio_base - \
+                (precio_base * porcentaje_descuento)
+
+            menu_doble = MenuDoble(
+                entrante=entrante,
+                pizza=pizza,
+                bebida=bebida,
+                postre=postre,
+                descuento=descuento,
+            )
+
+            menu_doble.precio = precio_descuento
+            menu_doble.nombre = "Menu Doble"
+            storage = CSVStorage('menus.csv')
+            storage.guardar_menu(menu_doble)
+            return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_doble})
+    else:
+        form = MenuCompositeDobleForm()
+
+    return render(request, 'PizzeriaWebApp/menudoble.html', {'form': form})
 
 
 def menutriple(request):

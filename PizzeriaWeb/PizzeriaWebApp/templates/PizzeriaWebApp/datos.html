@@ -30,6 +30,7 @@
 
     <table>
         <tr>
+            <th>ID</th>
             <th>Masa</th>
             <th>Salsa</th>
             <th>Ingredientes</th>
@@ -41,6 +42,7 @@
         </tr>
         {% for pizza in pizzas %}
         <tr>
+            <td>{{ pizza.id }}</td>
             <td>{{ pizza.masa }}</td>
             <td>{{ pizza.salsa }}</td>
             <td>{{ pizza.ingredientes|join:", " }}</td>

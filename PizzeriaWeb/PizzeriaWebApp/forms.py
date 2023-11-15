@@ -304,3 +304,173 @@ class MenuCompositeDobleForm(forms.Form):
         ):
             raise forms.ValidationError(
                 "Debe seleccionar 2 opciones en cada campo.")
+
+
+class MenuCompositeTripleForm(forms.Form):
+    ENTRANTES_CHOICES = [
+        ('Ensalada', 'Ensalada'),
+        ('Pan', 'Pan'),
+        ('Patatas fritas', 'Patatas fritas'),
+        ('Croquetas', 'Croquetas'),
+        ('Empanadillas', 'Empanadillas'),
+        ('Nuggets', 'Nuggets'),
+    ]
+    PIZZAS_CHOICES = [
+        ('Barbacoa', 'Barbacoa'),
+        ('Carbonara', 'Carbonara'),
+        ('Cuatro quesos', 'Cuatro quesos'),
+        ('Cuatro estaciones', 'Cuatro estaciones'),
+        ('Diávola', 'Diávola'),
+        ('Hawaiana', 'Hawaiana'),
+        ('Margarita', 'Margarita'),
+        ('Funghi', 'Funghi'),
+        ('Vegetariana', 'Vegetariana'),
+    ]
+    BEBIDAS_CHOICES = [
+        ('Vino', 'Vino'),
+        ('Cerveza', 'Cerveza'),
+        ('Cóctel', 'Cóctel'),
+        ('Refresco', 'Refresco'),
+        ('Agua', 'Agua'),
+        ('Café', 'Café'),
+        ('Té', 'Té')
+    ]
+
+    POSTRES_CHOICES = [
+        ('Tarta de queso', 'Tarta de queso'),
+        ('Tarta de chocolate', 'Tarta de chocolate'),
+        ('Flan', 'Flan'),
+        ('Helado', 'Helado'),
+        ('Fruta', 'Fruta'),
+        ('Yogur', 'Yogur'),
+    ]
+
+    DESCUENTOS_CHOICES = [
+        ('5% de descuento', '5% de descuento'),
+        ('10% de descuento', '10% de descuento'),
+        ('15% de descuento', '15% de descuento'),
+    ]
+    entrantes = forms.MultipleChoiceField(
+        choices=ENTRANTES_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    pizzas = forms.MultipleChoiceField(
+        choices=PIZZAS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    bebidas = forms.MultipleChoiceField(
+        choices=BEBIDAS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    postres = forms.MultipleChoiceField(
+        choices=POSTRES_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    descuento = forms.ChoiceField(
+        choices=[('', 'Seleccione un descuento')] + DESCUENTOS_CHOICES
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        entrantes = cleaned_data.get('entrantes')
+        pizzas = cleaned_data.get('pizzas')
+        bebidas = cleaned_data.get('bebidas')
+        postres = cleaned_data.get('postres')
+
+        if (
+            len(entrantes) != 3 or
+            len(pizzas) != 3 or
+            len(bebidas) != 3 or
+            len(postres) != 3
+        ):
+            raise forms.ValidationError(
+                "Debe seleccionar exactamente 3 opciones en cada campo.")
+
+
+class MenuCompositeFamiliarForm(forms.Form):
+    ENTRANTES_CHOICES = [
+        ('Ensalada', 'Ensalada'),
+        ('Pan', 'Pan'),
+        ('Patatas fritas', 'Patatas fritas'),
+        ('Croquetas', 'Croquetas'),
+        ('Empanadillas', 'Empanadillas'),
+        ('Nuggets', 'Nuggets'),
+    ]
+    PIZZAS_CHOICES = [
+        ('Barbacoa', 'Barbacoa'),
+        ('Carbonara', 'Carbonara'),
+        ('Cuatro quesos', 'Cuatro quesos'),
+        ('Cuatro estaciones', 'Cuatro estaciones'),
+        ('Diávola', 'Diávola'),
+        ('Hawaiana', 'Hawaiana'),
+        ('Margarita', 'Margarita'),
+        ('Funghi', 'Funghi'),
+        ('Vegetariana', 'Vegetariana'),
+    ]
+    BEBIDAS_CHOICES = [
+        ('Vino', 'Vino'),
+        ('Cerveza', 'Cerveza'),
+        ('Cóctel', 'Cóctel'),
+        ('Refresco', 'Refresco'),
+        ('Agua', 'Agua'),
+        ('Café', 'Café'),
+        ('Té', 'Té')
+    ]
+
+    POSTRES_CHOICES = [
+        ('Tarta de queso', 'Tarta de queso'),
+        ('Tarta de chocolate', 'Tarta de chocolate'),
+        ('Flan', 'Flan'),
+        ('Helado', 'Helado'),
+        ('Fruta', 'Fruta'),
+        ('Yogur', 'Yogur'),
+    ]
+
+    DESCUENTOS_CHOICES = [
+        ('5% de descuento', '5% de descuento'),
+        ('10% de descuento', '10% de descuento'),
+        ('15% de descuento', '15% de descuento'),
+    ]
+    entrantes = forms.MultipleChoiceField(
+        choices=ENTRANTES_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    pizzas = forms.MultipleChoiceField(
+        choices=PIZZAS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    bebidas = forms.MultipleChoiceField(
+        choices=BEBIDAS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    postres = forms.MultipleChoiceField(
+        choices=POSTRES_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    descuento = forms.ChoiceField(
+        choices=[('', 'Seleccione un descuento')] + DESCUENTOS_CHOICES
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        entrantes = cleaned_data.get('entrantes')
+        pizzas = cleaned_data.get('pizzas')
+        bebidas = cleaned_data.get('bebidas')
+        postres = cleaned_data.get('postres')
+
+        if (
+            len(entrantes) != 4 or
+            len(pizzas) != 4 or
+            len(bebidas) != 4 or
+            len(postres) != 4
+        ):
+            raise forms.ValidationError(
+                "Debe seleccionar exactamente 4 opciones en cada campo.")

@@ -229,3 +229,45 @@ class MenuDoble(MenuComposite):
             "postre": self.postre,
             "descuento": self.descuento,
         }
+
+
+class MenuTriple(MenuComposite):
+
+    def __init__(self, entrante, pizza, bebida, postre, descuento):
+        self.entrante = entrante
+        self.pizza = pizza
+        self.bebida = bebida
+        self.postre = postre
+        self.descuento = descuento
+
+    def to_dict(self) -> dict:
+        return {
+            "nombre": "Triple",
+            "precio": 19.50,
+            "entrante": self.entrante,
+            "pizza": self.pizza,
+            "bebida": self.bebida,
+            "postre": self.postre,
+            "descuento": self.descuento,
+        }
+
+
+class MenuFamiliar(MenuComposite):
+
+    def __init__(self, entrante, pizza, bebida, postre, descuento):
+        self.entrante = entrante
+        self.pizza = pizza
+        self.bebida = bebida
+        self.postre = postre
+        self.descuento = descuento
+
+    def to_dict(self) -> dict:
+        return {
+            "nombre": "Familiar",
+            "precio": 24.50,
+            "entrante": self.entrante,
+            "pizza": self.pizza,
+            "bebida": self.bebida,
+            "postre": self.postre,
+            "descuento": self.descuento,
+        }

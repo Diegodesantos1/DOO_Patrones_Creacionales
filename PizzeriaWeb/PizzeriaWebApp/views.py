@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeIndividualForm, MenuCompositeInfantilForm, MenuCompositeDobleForm
-from .models import Pizza, Usuario, MenuInfantil, MenuIndividual, MenuDoble
+from .forms import PizzaBuilderForm, UsuarioBuilderForm, LoginBuilderForm, MenuCompositeIndividualForm, MenuCompositeInfantilForm, MenuCompositeDobleForm, MenuCompositeTripleForm, MenuCompositeFamiliarForm
+from .models import MenuFamiliar, Pizza, Usuario, MenuInfantil, MenuIndividual, MenuDoble, MenuTriple, MenuFamiliar
 from .storage import CSVStorage
 from .price import Precios
 from decimal import Decimal
@@ -167,11 +167,95 @@ def menudoble(request):
 
 
 def menutriple(request):
-    return render(request, "PizzeriaWebApp/menutriple.html")
+    if request.method == 'POST':
+        form = MenuCompositeTripleForm(request.POST)
+        if form.is_valid():
+            entrante = form.cleaned_data['entrantes']
+            pizza = form.cleaned_data['pizzas']
+            bebida = form.cleaned_data['bebidas']
+            postre = form.cleaned_data['postres']
+            descuento = form.cleaned_data['descuento']
+
+            # Define un diccionario para mapear descuentos a porcentajes
+            descuento_porcentajes = {
+                '5% de descuento': 0.05,
+                '10% de descuento': 0.10,
+                '15% de descuento': 0.15,
+            }
+
+            # Calcula el precio base del menú doble
+            precio_base = 19.50
+
+            # Calcula el porcentaje de descuento
+            porcentaje_descuento = descuento_porcentajes[descuento]
+
+            # Calcula el precio con descuento
+            precio_descuento = precio_base - \
+                (precio_base * porcentaje_descuento)
+
+            menu_triple = MenuTriple(
+                entrante=entrante,
+                pizza=pizza,
+                bebida=bebida,
+                postre=postre,
+                descuento=descuento,
+            )
+
+            menu_triple.precio = precio_descuento
+            menu_triple.nombre = "Menu Triple"
+            storage = CSVStorage('menus.csv')
+            storage.guardar_menu(menu_triple)
+            return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_triple})
+    else:
+        form = MenuCompositeDobleForm()
+
+    return render(request, 'PizzeriaWebApp/menutriple.html', {'form': form})
 
 
 def menufamiliar(request):
-    return render(request, "PizzeriaWebApp/menufamiliar.html")
+    if request.method == 'POST':
+        form = MenuCompositeFamiliarForm(request.POST)
+        if form.is_valid():
+            entrante = form.cleaned_data['entrantes']
+            pizza = form.cleaned_data['pizzas']
+            bebida = form.cleaned_data['bebidas']
+            postre = form.cleaned_data['postres']
+            descuento = form.cleaned_data['descuento']
+
+            # Define un diccionario para mapear descuentos a porcentajes
+            descuento_porcentajes = {
+                '5% de descuento': 0.05,
+                '10% de descuento': 0.10,
+                '15% de descuento': 0.15,
+            }
+
+            # Calcula el precio base del menú doble
+            precio_base = 24.50
+
+            # Calcula el porcentaje de descuento
+            porcentaje_descuento = descuento_porcentajes[descuento]
+
+            # Calcula el precio con descuento
+            precio_descuento = precio_base - \
+                (precio_base * porcentaje_descuento)
+
+            menu_familiar = MenuFamiliar(
+                entrante=entrante,
+                pizza=pizza,
+                bebida=bebida,
+                postre=postre,
+                descuento=descuento,
+            )
+
+            menu_familiar.precio = precio_descuento
+            menu_familiar.nombre = "Menu Familiar"
+            storage = CSVStorage('menus.csv')
+            storage.guardar_menu(menu_familiar)
+            return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_familiar})
+    else:
+        form = MenuCompositeFamiliarForm()
+
+    return render(request, 'PizzeriaWebApp/menufamiliar.html', {'form': form})
 
 
 def registro(request):

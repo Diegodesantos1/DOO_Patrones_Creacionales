@@ -131,32 +131,56 @@ Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen23.png)
 
-Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
+Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y COMPOSITE y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
+
+### Claridad en las decisiones de diseño
+
+Las decisiones de diseño se enfocaron en mejorar la flexibilidad y escalabilidad del sistema de menús y pizzas:
+
+- **Patrón Composite:** Este patrón fue esencial para crear jerarquías de menús. Facilitó el tratamiento uniforme de elementos individuales (entrantes, pizzas, bebidas, postres) y menús completos, permitiendo una composición flexible de los mismos.
+
+- **Patrón Builder:** Su implementación facilitó la creación de objetos complejos como las pizzas. Separó los pasos de construcción de una pizza de su representación, lo que permitió la construcción de diferentes tipos de pizzas usando un mismo proceso.
+
+#### Patrón Composite:
+
+La clase `MenuComposite` representó tanto los elementos individuales como los menús completos. Esto permitió la composición de menús a partir de otros menús o elementos individuales, brindando una estructura jerárquica flexible.
+
+*El patrón Composite se justifica en esta aplicación por las siguientes razones:*
+
+1. **Jerarquía de Componentes:** El uso del patrón Composite permitió tratar tanto elementos individuales (entrantes, bebidas, etc.) como composiciones completas (menús) de manera uniforme. Esta uniformidad simplificó la interacción y manipulación de estos elementos, ya que todos cumplen con la misma interfaz.
+
+2. **Composición Flexible:** Facilitó la creación de estructuras jerárquicas donde los elementos individuales y los menús completos se pueden tratar de manera similar. Esto permitió construir menús complejos a partir de otros menús o elementos individuales, otorgando una gran flexibilidad en la creación y gestión de las opciones disponibles.
+
+3. **Simplicidad en la Interacción:** Al tratar todos los elementos como un componente uniforme, el patrón Composite simplificó las operaciones como agregar, eliminar o modificar elementos en cualquier nivel de la jerarquía, sin tener que distinguir entre un elemento individual y un conjunto de elementos.
+
+4. **Facilita la Escalabilidad:** Al permitir la composición de menús a partir de elementos más simples, el patrón Composite ofrece una estructura escalable que puede adaptarse a futuras expansiones de menús o adiciones de nuevos elementos sin modificar en gran medida la lógica existente.
+
+5. **Centralización de la Lógica:** Proporciona un punto centralizado para operaciones comunes en los elementos y menús, lo que simplifica el mantenimiento y la modificación del código.
+
+#### Patrón Builder:
+
+La clase `PizzaBuilder` fue responsable de construir objetos `Pizza` paso a paso. Sus métodos, como `set_ingredients`, `set_size`, entre otros, posibilitaron la configuración de propiedades de la pizza antes de su creación final, permitiendo la creación de diferentes variantes manteniendo un proceso claro y separado.
 
 *El patrón Builder se justifica en esta aplicación por las siguientes razones:*
 
-1. **Construcción Paso a Paso:** El sistema implica la creación de objetos complejos con múltiples configuraciones. El patrón Builder permite crear estos objetos paso a paso, facilitando un proceso de construcción controlado.
+1. **Construcción Paso a Paso:** Facilitó la creación de objetos complejos con múltiples configuraciones. Esto permitió un proceso de construcción controlado y modular.
 
-2. **Separación de la Construcción y Representación:** El Builder separa la construcción del objeto de su representación final. Esto permite crear objetos con diferentes configuraciones sin afectar al cliente.
+2. **Separación de la Construcción y Representación:** Permite la creación de objetos con diferentes configuraciones sin afectar la lógica del cliente. 
 
-3. **Facilita la Creación de Objetos Complejos:** Dado que las pizzas y usuarios tienen muchas características y opciones, el Builder simplifica la creación de objetos complejos. Formularios como `PizzaBuilderForm` y `UsuarioBuilderForm` recopilan información, que se utiliza para construir el objeto correspondiente.
+3. **Facilita la Creación de Objetos Complejos:** Simplifica la creación de objetos complejos, como pizzas y usuarios, recopilando información para construir el objeto correspondiente.
 
-4. **Robustez y Adaptabilidad:** El sistema es robusto y adaptable a cambios futuros, ya que el Builder permite adaptar objetos a diferentes configuraciones sin modificar el código existente. Esto es crucial para una aplicación en constante evolución.
+4. **Robustez y Adaptabilidad:** Permite la adaptación de objetos a diferentes configuraciones sin modificar el código existente, garantizando la robustez y adaptabilidad del sistema ante cambios futuros.
 
-5. **Claridad y Legibilidad del Código:** El Builder mejora la legibilidad del código al proporcionar una estructura lógica para la creación de objetos.
+5. **Claridad y Legibilidad del Código:** Mejora la legibilidad al proporcionar una estructura lógica para la creación de objetos, manteniendo un código más claro y fácil de entender.
 
-## Ventajas del Patrón Builder
+## Ventajas del Patrón Builder y Composite
 
-El uso del patrón Builder ofrece ventajas frente a otros enfoques:
+Ambos patrones ofrecen ventajas significativas:
 
-- **Separación de Responsabilidades:** El Builder separa la construcción de objetos de su representación y estructura interna, evitando la complejidad en el código del cliente.
+- **Composite - Estructura Jerárquica:** Permite la composición de elementos individuales en estructuras complejas, lo que brinda flexibilidad y simplicidad en la manipulación de menús y elementos.
 
-- **Adaptabilidad:** Facilita cambios en la estructura y configuración de objetos sin afectar al cliente, lo que es útil en aplicaciones en constante evolución.
-
-- **Reutilización de Código:** Fomenta la reutilización del código de construcción, mejorando la eficiencia y reduciendo la duplicación de código.
-
-- **Mantenibilidad:** Facilita el mantenimiento del código al permitir cambios en el proceso de construcción en un solo lugar, evitando modificaciones extensas en todo el código.
+- **Builder - Modularidad y Adaptabilidad:** Proporciona un proceso modular y claro para la construcción de objetos complejos, permitiendo cambios y adaptaciones sin afectar otras partes del sistema.
 
 ## Conclusión
 
-El patrón Builder es una elección adecuada para la aplicación de pizzería web, ya que aporta organización y flexibilidad a la construcción de objetos complejos. Permite adaptabilidad, robustez y mantenimiento sencillo del código, mejorando la claridad y legibilidad. En comparación con otros enfoques, el patrón Builder destaca por su separación de responsabilidades y capacidad de manejar cambios en la configuración de objetos sin afectar al cliente.
+El uso conjunto de los patrones Builder y Composite ha sido crucial en la aplicación de pizzería web. La combinación de ambos ha permitido una organización estructurada, flexibilidad en la construcción de objetos complejos y adaptabilidad a cambios futuros. Estos patrones ofrecen una solución robusta, separando responsabilidades y simplificando la construcción y manipulación de elementos y menús, destacando frente a otros enfoques por su capacidad de manejar cambios de manera efectiva y estructurada.

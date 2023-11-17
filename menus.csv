@@ -74,3 +74,6 @@ ID,Tipo,Precio,Entrante,Pizza,Bebida,Postre,Descuento
 91,Doble,13.5,"['Ensalada', 'Nuggets']","['Cuatro quesos', 'Cuatro estaciones']","['Vino', 'Cerveza']","['Flan', 'Helado']",15% de descuento
 92,Triple,19.5,"['Pan', 'Patatas fritas', 'Croquetas']","['Carbonara', 'Cuatro quesos', 'Cuatro estaciones']","['Vino', 'Cerveza', 'Cóctel']","['Tarta de queso', 'Tarta de chocolate', 'Flan']",10% de descuento
 93,Familiar,24.5,"['Ensalada', 'Pan', 'Croquetas', 'Empanadillas']","['Diávola', 'Hawaiana', 'Funghi', 'Vegetariana']","['Vino', 'Cóctel', 'Agua', 'Té']","['Tarta de chocolate', 'Flan', 'Helado', 'Fruta']",10% de descuento
+94,Familiar,24.5,"['Ensalada', 'Pan', 'Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos', 'Diávola', 'Hawaiana']","['Cerveza', 'Cóctel', 'Refresco', 'Agua']","['Tarta de queso', 'Tarta de chocolate', 'Flan', 'Helado']",5% de descuento
+95,Infantil,6.5,Croquetas,Diávola,Zumo,Helado,10% de descuento
+96,Familiar,24.5,"['Pan', 'Patatas fritas', 'Croquetas', 'Empanadillas']","['Diávola', 'Hawaiana', 'Margarita', 'Funghi']","['Cóctel', 'Refresco', 'Agua', 'Café']","['Tarta de chocolate', 'Flan', 'Helado', 'Fruta']",10% de descuento

@@ -1,0 +1,80 @@
+{
+    "SAMUR_2023": {
+        "videos": [
+            "rescateSAMUR.mp4",
+            "entrenamientoSAMUR.mp4"
+        ],
+        "informes": [
+            "protocoloSAMUR.txt",
+            "equipoSAMUR.txt"
+        ],
+        "fotos": [
+            "equipoSAMUR.jpg",
+            "ambulanciaSAMUR.jpg"
+        ],
+        "SAMUR_COVID": {
+            "2020": {
+                "videos": [
+                    "simulacroSAMUR.mp4",
+                    "primerosAuxiliosSAMUR.mp4"
+                ],
+                "2021": {
+                    "informes": [
+                        "atencionSAMUR.txt",
+                        "emergenciaSAMUR.txt"
+                    ],
+                    "2022": {
+                        "fotos_SAMUR": [
+                            "equipoMedicoSAMUR.jpg",
+                            "paramedicoSAMUR.jpg"
+                        ]
+                    }
+                }
+            },
+            "Equipo": {
+                "fotos_equipo": [
+                    "equipoMedicoSAMUR.jpg",
+                    "paramedicoSAMUR.jpg"
+                ],
+                "videos_equipo": {
+                    "pruebas": [
+                        "evacuacionSAMUR.mp4",
+                        "triajeSAMUR.mp4"
+                    ],
+                    "textos_SAMUR": [
+                        "historiaSAMUR.txt",
+                        "funcionamientoSAMUR.txt"
+                    ],
+                    "informacion": {
+                        "videos_SAMUR": [
+                            "formacionSAMUR.mp4",
+                            "planificacionSAMUR.mp4"
+                        ],
+                        "manuales_tecnicos": [
+                            "manualesSAMUR.txt",
+                            "procedimientosSAMUR.txt"
+                        ]
+                    }
+                }
+            },
+            "ultimos_rescates": {
+                "videos_SAMUR": [
+                    "manejoMaterialSAMUR.mp4",
+                    "atencionDomiciliariaSAMUR.mp4"
+                ],
+                "rescates_importantes": {
+                    "relatos": [
+                        "protocoloEmergenciasSAMUR.txt",
+                        "evaluacionVictimasSAMUR.txt"
+                    ],
+                    "participantes": {
+                        "fotos": [
+                            "ambulancia2SAMUR.jpg",
+                            "equipopruebaSAMUR.jpg"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

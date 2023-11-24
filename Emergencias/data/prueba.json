@@ -18,25 +18,21 @@
             "tama\u00f1o": "20 KB"
         },
         {
-            "nombre": "Receta",
-            "tipo": "imagen",
-            "tama\u00f1o": "20 KB"
-        },
-        {
-            "nombre": "Vainas",
+            "nombre": "Papel",
             "tipo": "carpeta",
             "contenido": [
                 {
-                    "nombre": "Imagen",
-                    "tipo": "cuidado",
-                    "tama\u00f1o": "20 MB"
+                    "nombre": "Prueba",
+                    "tipo": "carpeta",
+                    "contenido": [
+                        {
+                            "nombre": "Hola",
+                            "tipo": "documento",
+                            "tama\u00f1o": "20 KB"
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            "nombre": "Papel",
-            "tipo": "carpeta",
-            "contenido": []
         }
     ]
 }

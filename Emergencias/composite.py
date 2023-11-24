@@ -33,7 +33,7 @@ class Documento(ArchivoSAMUR):
     def obtener_tamaño(self):
         return self.tamaño
 
-    def to_json(self):
+    def to_dict(self):
         return {
             'nombre': self.nombre,
             'tipo': self.tipo,
@@ -46,14 +46,17 @@ class Carpeta(ArchivoSAMUR):
         self.nombre = nombre
         self.contenido = []
 
-    def agregar_documento(self, documento):
-        self.contenido.append(documento)
-
-    def eliminar_documento(self, documento):
-        self.contenido.remove(documento)
+    def agregar_carpeta(self, carpeta):
+        self.contenido.append(carpeta)
 
     def obtener_nombre(self):
         return self.nombre
+
+    def obtener_carpeta(self, nombre):
+        for elemento in self.contenido:
+            if isinstance(elemento, Carpeta) and elemento.obtener_nombre() == nombre:
+                return elemento
+        return None
 
     def obtener_tamaño(self):
         total_tamaño = 0
@@ -66,6 +69,24 @@ class Carpeta(ArchivoSAMUR):
             if isinstance(documento, Documento) and documento.obtener_nombre() == nombre:
                 return documento
         return None
+
+    def obtener_carpeta(self, nombre):
+        if self.nombre == nombre:
+            return self
+
+        for elemento in self.contenido:
+            if isinstance(elemento, Carpeta):
+                carpeta_encontrada = elemento.obtener_carpeta(nombre)
+                if carpeta_encontrada:
+                    return carpeta_encontrada
+        return None
+
+    def to_dict(self):
+        return {
+            'nombre': self.nombre,
+            'tipo': 'carpeta',
+            'contenido': [contenido.to_dict() for contenido in self.contenido]
+        }
 
 
 class Enlace(ArchivoSAMUR):
@@ -80,4 +101,9 @@ class Enlace(ArchivoSAMUR):
     def obtener_url(self):
         return self.url
 
-# Resto del código con funciones reemplazadas por las clases Documento, Carpeta y Enlace
+    def to_dict(self):
+        return {
+            'nombre': self.nombre,
+            'tipo': self.tipo,
+            'url': self.url
+        }

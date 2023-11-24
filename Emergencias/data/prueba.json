@@ -3,14 +3,19 @@
     "tipo": "carpeta",
     "contenido": [
         {
-            "nombre": "Mis documentos",
+            "nombre": "Papel",
             "tipo": "documento",
-            "tama\u00f1o": "20 KB"
+            "tama\u00f1o": "4000 KB"
         },
         {
-            "nombre": "Mis documentos",
+            "nombre": "hola",
             "tipo": "documento",
-            "tama\u00f1o": "200 KB"
+            "tama\u00f1o": "12 KB"
+        },
+        {
+            "nombre": "Prueba",
+            "tipo": "carpeta",
+            "contenido": []
         }
     ]
 }

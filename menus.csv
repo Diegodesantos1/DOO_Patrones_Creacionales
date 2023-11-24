@@ -77,3 +77,12 @@ ID,Tipo,Precio,Entrante,Pizza,Bebida,Postre,Descuento
 94,Familiar,24.5,"['Ensalada', 'Pan', 'Croquetas', 'Empanadillas']","['Carbonara', 'Cuatro quesos', 'Diávola', 'Hawaiana']","['Cerveza', 'Cóctel', 'Refresco', 'Agua']","['Tarta de queso', 'Tarta de chocolate', 'Flan', 'Helado']",5% de descuento
 95,Infantil,6.5,Croquetas,Diávola,Zumo,Helado,10% de descuento
 96,Familiar,24.5,"['Pan', 'Patatas fritas', 'Croquetas', 'Empanadillas']","['Diávola', 'Hawaiana', 'Margarita', 'Funghi']","['Cóctel', 'Refresco', 'Agua', 'Café']","['Tarta de chocolate', 'Flan', 'Helado', 'Fruta']",10% de descuento
+97,Doble,13.5,"['Patatas fritas', 'Croquetas', 'Empanadillas']","['Barbacoa', 'Carbonara', 'Cuatro quesos']","['Vino', 'Cerveza', 'Cóctel']","['Tarta de chocolate', 'Flan']",5% de descuento
+98,Doble,13.5,"['Pan', 'Patatas fritas']","['Margarita', 'Funghi']","['Cerveza', 'Cóctel']","['Tarta de queso', 'Tarta de chocolate']",5% de descuento
+99,Individual,7.5,Croquetas,Cuatro quesos,Refresco,Helado,5% de descuento100,Doble,13.5,"Pan,Pan","Hawaiana,Diávola","Refresco,Refresco","Flan,Tarta de chocolate",5% de descuento
+100,Doble,13.5,"['Pan', 'Pan']","['Hawaiana', 'Diávola']","['Refresco', 'Refresco']","['Flan', 'Tarta de chocolate']",5% de descuento
+101,Doble,13.5,"['Pan', 'Pan']","['Hawaiana', 'Diávola']","['Refresco', 'Refresco']","['Flan', 'Tarta de chocolate']",5% de descuento
+102,Familiar,24.5,"['Ensalada', 'Pan', 'Patatas fritas', 'Croquetas']","['Cuatro quesos', 'Hawaiana', 'Margarita', 'Funghi']","['Vino', 'Agua', 'Café', 'Té']","['Tarta de queso', 'Tarta de chocolate', 'Flan', 'Helado']",15% de descuento
+103,Doble,13.5,"['Empanadillas', 'Empanadillas']","['Diávola', 'Diávola']","['Agua', 'Agua']","['Tarta de queso', 'Tarta de chocolate']",5% de descuento
+104,Familiar,24.5,"['Ensalada', 'Pan', 'Patatas fritas', 'Empanadillas']","['Cuatro quesos', 'Cuatro estaciones', 'Diávola', 'Vegetariana']","['Cóctel', 'Refresco', 'Té', 'Té']","['Tarta de chocolate', 'Flan', 'Helado', 'Yogur']",15% de descuento
+105,Triple,19.5,"['Ensalada', 'Patatas fritas', 'Empanadillas']","['Funghi', 'Funghi', 'Funghi']","['Cóctel', 'Café', 'Café']","['Tarta de chocolate', 'Flan', 'Fruta']",10% de descuento

@@ -206,7 +206,7 @@ def menutriple(request):
             storage.guardar_menu(menu_triple)
             return render(request, 'PizzeriaWebApp/menu_pedidos.html', {'menu': menu_triple})
     else:
-        form = MenuCompositeDobleForm()
+        form = MenuCompositeTripleForm()
 
     return render(request, 'PizzeriaWebApp/menutriple.html', {'form': form})
 

@@ -1,0 +1,255 @@
+{
+    "Documentos": [
+        {
+            "nombre": "SAMUR_2023",
+            "tipo": "carpeta",
+            "contenido": [
+                {
+                    "nombre": "videos",
+                    "tipo": "carpeta",
+                    "contenido": [
+                        {
+                            "nombre": "rescateSAMUR.mp4",
+                            "tipo": "video",
+                            "tamaño": "x MB"
+                        },
+                        {
+                            "nombre": "entrenamientoSAMUR.mp4",
+                            "tipo": "video",
+                            "tamaño": "x MB"
+                        }
+                    ]
+                },
+                {
+                    "nombre": "informes",
+                    "tipo": "carpeta",
+                    "contenido": [
+                        {
+                            "nombre": "protocoloSAMUR.txt",
+                            "tipo": "texto",
+                            "tamaño": "x KB"
+                        },
+                        {
+                            "nombre": "equipoSAMUR.txt",
+                            "tipo": "texto",
+                            "tamaño": "x KB"
+                        }
+                    ]
+                },
+                {
+                    "nombre": "fotos",
+                    "tipo": "carpeta",
+                    "contenido": [
+                        {
+                            "nombre": "equipoSAMUR.jpg",
+                            "tipo": "imagen",
+                            "tamaño": "x KB"
+                        },
+                        {
+                            "nombre": "ambulanciaSAMUR.jpg",
+                            "tipo": "imagen",
+                            "tamaño": "x KB"
+                        }
+                    ]
+                },
+                {
+                    "nombre": "SAMUR_COVID",
+                    "tipo": "carpeta",
+                    "contenido": {
+                        "2020": {
+                            "nombre": "2020",
+                            "tipo": "carpeta",
+                            "contenido": {
+                                "videos": [
+                                    {
+                                        "nombre": "simulacroSAMUR.mp4",
+                                        "tipo": "video",
+                                        "tamaño": "x MB"
+                                    },
+                                    {
+                                        "nombre": "primerosAuxiliosSAMUR.mp4",
+                                        "tipo": "video",
+                                        "tamaño": "x MB"
+                                    }
+                                ]
+                            }
+                        },
+                        "2021": {
+                            "nombre": "2021",
+                            "tipo": "carpeta",
+                            "contenido": {
+                                "informes": [
+                                    {
+                                        "nombre": "atencionSAMUR.txt",
+                                        "tipo": "texto",
+                                        "tamaño": "x KB"
+                                    },
+                                    {
+                                        "nombre": "emergenciaSAMUR.txt",
+                                        "tipo": "texto",
+                                        "tamaño": "x KB"
+                                    }
+                                ]
+                            }
+                        },
+                        "2022": {
+                            "nombre": "2022",
+                            "tipo": "carpeta",
+                            "contenido": {
+                                "fotos_SAMUR": [
+                                    {
+                                        "nombre": "equipoMedicoSAMUR.jpg",
+                                        "tipo": "imagen",
+                                        "tamaño": "x KB"
+                                    },
+                                    {
+                                        "nombre": "paramedicoSAMUR.jpg",
+                                        "tipo": "imagen",
+                                        "tamaño": "x KB"
+                                    }
+                                ]
+                            }
+                        },
+                        "Equipo": {
+                            "nombre": "Equipo",
+                            "tipo": "carpeta",
+                            "contenido": {
+                                "fotos_equipo": [
+                                    {
+                                        "nombre": "equipoMedicoSAMUR.jpg",
+                                        "tipo": "imagen",
+                                        "tamaño": "x KB"
+                                    },
+                                    {
+                                        "nombre": "paramedicoSAMUR.jpg",
+                                        "tipo": "imagen",
+                                        "tamaño": "x KB"
+                                    }
+                                ],
+                                "videos_equipo": {
+                                    "nombre": "videos_equipo",
+                                    "tipo": "carpeta",
+                                    "contenido": {
+                                        "pruebas": [
+                                            {
+                                                "nombre": "evacuacionSAMUR.mp4",
+                                                "tipo": "video",
+                                                "tamaño": "x MB"
+                                            },
+                                            {
+                                                "nombre": "triajeSAMUR.mp4",
+                                                "tipo": "video",
+                                                "tamaño": "x MB"
+                                            }
+                                        ],
+                                        "textos_SAMUR": [
+                                            {
+                                                "nombre": "historiaSAMUR.txt",
+                                                "tipo": "texto",
+                                                "tamaño": "x KB"
+                                            },
+                                            {
+                                                "nombre": "funcionamientoSAMUR.txt",
+                                                "tipo": "texto",
+                                                "tamaño": "x KB"
+                                            }
+                                        ],
+                                        "informacion": {
+                                            "nombre": "informacion",
+                                            "tipo": "carpeta",
+                                            "contenido": {
+                                                "videos_SAMUR": [
+                                                    {
+                                                        "nombre": "formacionSAMUR.mp4",
+                                                        "tipo": "video",
+                                                        "tamaño": "x MB"
+                                                    },
+                                                    {
+                                                        "nombre": "planificacionSAMUR.mp4",
+                                                        "tipo": "video",
+                                                        "tamaño": "x MB"
+                                                    }
+                                                ],
+                                                "manuales_tecnicos": [
+                                                    {
+                                                        "nombre": "manualesSAMUR.txt",
+                                                        "tipo": "texto",
+                                                        "tamaño": "x KB"
+                                                    },
+                                                    {
+                                                        "nombre": "procedimientosSAMUR.txt",
+                                                        "tipo": "texto",
+                                                        "tamaño": "x KB"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "ultimos_rescates": {
+                            "nombre": "ultimos_rescates",
+                            "tipo": "carpeta",
+                            "contenido": {
+                                "videos_SAMUR": [
+                                    {
+                                        "nombre": "manejoMaterialSAMUR.mp4",
+                                        "tipo": "video",
+                                        "tamaño": "x MB"
+                                    },
+                                    {
+                                        "nombre": "atencionDomiciliariaSAMUR.mp4",
+                                        "tipo": "video",
+                                        "tamaño": "x MB"
+                                    }
+                                ],
+                                "rescates_importantes": {
+                                    "nombre": "rescates_importantes",
+                                    "tipo": "carpeta",
+                                    "contenido": {
+                                        "relatos": [
+                                            {
+                                                "nombre": "protocoloEmergenciasSAMUR.txt",
+                                                "tipo": "texto",
+                                                "tamaño": "x KB"
+                                            },
+                                            {
+                                                "nombre": "evaluacionVictimasSAMUR.txt",
+                                                "tipo": "texto",
+                                                "tamaño": "x KB"
+                                            }
+                                        ],
+                                        "participantes": {
+                                            "nombre": "participantes",
+                                            "tipo": "carpeta",
+                                            "contenido": {
+                                                "fotos": [
+                                                    {
+                                                        "nombre": "ambulancia2SAMUR.jpg",
+                                                        "tipo": "imagen",
+                                                        "tamaño": "x KB"
+                                                    },
+                                                    {
+                                                        "nombre": "equipopruebaSAMUR.jpg",
+                                                        "tipo": "imagen",
+                                                        "tamaño": "x KB"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "web": {
+                            "nombre": "web",
+                            "tipo": "enlace",
+                            "ruta": "https://www.madrid.es/portales/munimadrid/es/Inicio/Emergencias-y-seguridad/SAMUR-Proteccion-Civil?vgnextfmt=default&vgnextoid=c88fcdb1bfffa010VgnVCM100000d90ca8c0RCRD&vgnextchannel=f9cd31d3b28fe410VgnVCM1000000b205a0aRCRD"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

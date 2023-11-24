@@ -1,0 +1,21 @@
+{
+    "Documentos": [
+        {
+            "nombre": "Mis documentos",
+            "tipo": "carpeta",
+            "contenido": []
+        }
+    ],
+    "contenido": [
+        {
+            "nombre": "Mis documentos",
+            "tipo": "documento",
+            "tama\u00f1o": "20 KB"
+        },
+        {
+            "nombre": "Mis documentos",
+            "tipo": "documento",
+            "tama\u00f1o": "200 KB"
+        }
+    ]
+}

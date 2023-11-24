@@ -1,11 +1,6 @@
 {
-    "Documentos": [
-        {
-            "nombre": "Mis documentos",
-            "tipo": "carpeta",
-            "contenido": []
-        }
-    ],
+    "nombre": "Documentos",
+    "tipo": "carpeta",
     "contenido": [
         {
             "nombre": "Mis documentos",

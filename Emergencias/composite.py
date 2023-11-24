@@ -42,9 +42,13 @@ class Documento(ArchivoSAMUR):
 
 
 class Carpeta(ArchivoSAMUR):
-    def __init__(self, nombre):
+    def __init__(self, nombre, carpeta_padre=None):
         self.nombre = nombre
         self.contenido = []
+        self.carpeta_padre = carpeta_padre
+
+    def agregar_documento(self, documento):
+        self.contenido.append(documento)
 
     def agregar_carpeta(self, carpeta):
         self.contenido.append(carpeta)

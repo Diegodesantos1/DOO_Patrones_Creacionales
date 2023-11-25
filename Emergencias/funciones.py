@@ -29,12 +29,12 @@ def cargar_estructura_desde_json(ruta):
             if item['tipo'] == 'documento':
                 contenido.append(
                     Documento(item['nombre'], item['tipo'], item['tamaño']))
-            # Puedes manejar otros tipos de archivos aquí si los tienes definidos
-
-        carpeta = Carpeta(nombre)
-        carpeta.contenido = contenido
-        return carpeta
-    return None
+            elif item['tipo'] == 'carpeta':
+                contenido.append(
+                    Carpeta(item['nombre'], item['contenido']))
+        return Carpeta(nombre, contenido)
+    else:
+        return None
 
 
 estructura = cargar_estructura_desde_json(ruta_json)
@@ -56,7 +56,6 @@ def seleccionar_carpeta_por_ruta(carpeta_actual, ruta):
     carpetas = ruta.split('/')
     carpeta_temp = carpeta_actual
 
-    # Verificar si la primera carpeta de la ruta coincide con la carpeta actual
     if carpetas[0] != carpeta_temp.obtener_nombre():
         print(f"No se encontró la carpeta '{
               carpetas[0]}' como carpeta actual.")
@@ -78,46 +77,7 @@ def seleccionar_carpeta_por_ruta(carpeta_actual, ruta):
     return carpeta_temp
 
 
-def seleccionar_carpeta_por_ruta(carpeta_actual, ruta):
-    carpetas = ruta.split('/')
-
-    if carpetas[0] != carpeta_actual.obtener_nombre():
-        print(f"No se encontró la carpeta '{
-              carpetas[0]}' como carpeta actual.")
-        return None
-
-    carpeta_temp = carpeta_actual
-
-    for nombre in carpetas[1:]:
-        if nombre == '..':
-            # Regresar a la carpeta anterior (si es posible)
-            if carpeta_temp == carpeta_actual:
-                print("Ya se encuentra en la carpeta raíz.")
-                return carpeta_actual
-            else:
-                carpeta_temp = carpeta_temp.carpeta_padre
-                continue
-
-        encontrado = False
-        for contenido in carpeta_temp.contenido:
-            if isinstance(contenido, Carpeta) and contenido.obtener_nombre() == nombre:
-                carpeta_temp = contenido
-                encontrado = True
-                break
-
-        if not encontrado:
-            print(f"No se encontró la carpeta '{
-                  nombre}' en la ruta proporcionada.")
-            return None
-
-    return carpeta_temp
-
-
 ruta_json = 'Emergencias/data/prueba.json'
-estructura = Carpeta('Documentos')
-
-# Aquí debes cargar tu estructura inicial desde el JSON
-
 
 def mostrar_menu():
     print("1. Mostrar JSON")

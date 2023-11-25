@@ -42,9 +42,9 @@ class Documento(ArchivoSAMUR):
 
 
 class Carpeta(ArchivoSAMUR):
-    def __init__(self, nombre, carpeta_padre=None):
+    def __init__(self, nombre, contenido=[], carpeta_padre=None):
         self.nombre = nombre
-        self.contenido = []
+        self.contenido = contenido
         self.carpeta_padre = carpeta_padre
 
     def agregar_documento(self, documento):
@@ -55,12 +55,6 @@ class Carpeta(ArchivoSAMUR):
 
     def obtener_nombre(self):
         return self.nombre
-
-    def obtener_carpeta(self, nombre):
-        for elemento in self.contenido:
-            if isinstance(elemento, Carpeta) and elemento.obtener_nombre() == nombre:
-                return elemento
-        return None
 
     def obtener_tamaño(self):
         total_tamaño = 0

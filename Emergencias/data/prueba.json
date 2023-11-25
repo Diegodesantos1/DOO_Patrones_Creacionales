@@ -18,21 +18,14 @@
             "tama\u00f1o": "20 KB"
         },
         {
-            "nombre": "Papel",
+            "nombre": "musca",
+            "tipo": "documento",
+            "tama\u00f1o": "30 Kb"
+        },
+        {
+            "nombre": "fafafafa",
             "tipo": "carpeta",
-            "contenido": [
-                {
-                    "nombre": "Prueba",
-                    "tipo": "carpeta",
-                    "contenido": [
-                        {
-                            "nombre": "Hola",
-                            "tipo": "documento",
-                            "tama\u00f1o": "20 KB"
-                        }
-                    ]
-                }
-            ]
+            "contenido": []
         }
     ]
 }

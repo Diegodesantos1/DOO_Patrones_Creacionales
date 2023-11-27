@@ -19,7 +19,7 @@ def cargar_json(ruta):
 ruta_json = 'Emergencias/data/prueba.json'
 
 
-def cargar_estructura_desde_json(ruta):
+def cargar_datos_json(ruta):
     datos_json = cargar_json(ruta)
     if datos_json:
         nombre = datos_json['nombre']
@@ -37,7 +37,7 @@ def cargar_estructura_desde_json(ruta):
         return None
 
 
-estructura = cargar_estructura_desde_json(ruta_json)
+estructura = cargar_datos_json(ruta_json)
 
 
 def guardar_json(nombre_archivo, estructura):
@@ -46,7 +46,7 @@ def guardar_json(nombre_archivo, estructura):
         json.dump(estructura_serializable, archivo_salida, indent=4)
 
 
-def mostrar_contenido_json(ruta):
+def mostrar_json(ruta):
     datos_json = cargar_json(ruta)
     if datos_json:
         print(json.dumps(datos_json, indent=4, ensure_ascii=False))
@@ -95,7 +95,7 @@ def main():
         opcion = int(input("Ingrese una opción: "))
 
         if opcion == 1:
-            mostrar_contenido_json(ruta_json)
+            mostrar_json(ruta_json)
         elif opcion == 2:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -110,7 +110,6 @@ def main():
                 guardar_json(ruta_json, estructura)
         elif opcion == 3:
             nombre = input("Ingrese el nombre de la carpeta a agregar: ")
-            # Asignar la carpeta actual como carpeta padre
             nueva_carpeta = Carpeta(nombre, carpeta_actual)
             carpeta_actual.agregar_carpeta(nueva_carpeta)
             guardar_json(ruta_json, estructura)
@@ -123,5 +122,5 @@ def main():
 
 
 if __name__ == '__main__':
-    estructura = cargar_estructura_desde_json(ruta_json)
+    estructura = cargar_datos_json(ruta_json)
     main()

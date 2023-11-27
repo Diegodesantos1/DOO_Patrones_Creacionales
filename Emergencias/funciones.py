@@ -104,7 +104,7 @@ def main():
                 carpeta_actual, ruta)
             if carpeta_para_documento:
                 nombre = input("Ingrese el nombre del documento: ")
-                tipo = input("Ingrese el tipo del documento: ")
+                tipo = "documento"
                 tamaño = input("Ingrese el tamaño del documento: ")
                 documento = Documento(nombre, tipo, tamaño)
                 carpeta_para_documento.agregar_documento(documento)

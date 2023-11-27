@@ -42,13 +42,21 @@ class Documento(ArchivoSAMUR):
 
 
 class Carpeta(ArchivoSAMUR):
-    def __init__(self, nombre, contenido=[], carpeta_padre=None):
+    def __init__(self, nombre, tipo, contenido=None):
         self.nombre = nombre
+        self.tipo = tipo
+        if contenido is None:
+            contenido = []
         self.contenido = contenido
-        self.carpeta_padre = carpeta_padre
 
     def obtener_nombre(self):
         return self.nombre
+
+    def obtener_contenido(self):
+        return self.contenido
+
+    def obtener_tipo(self):
+        return self.tipo
 
     def obtener_tamaño(self):
         total_tamaño = 0
@@ -107,8 +115,8 @@ class Carpeta(ArchivoSAMUR):
     def to_dict(self):
         return {
             'nombre': self.nombre,
-            'tipo': 'carpeta',
-            'contenido': [contenido.to_dict() for contenido in self.contenido]
+            'tipo': self.tipo,
+            'contenido': [elemento.to_dict() for elemento in self.contenido]
         }
 
 

@@ -15,12 +15,41 @@
         {
             "nombre": "fafafafa",
             "tipo": "carpeta",
-            "contenido": []
+            "contenido": [
+                {
+                    "nombre": "dios",
+                    "tipo": "documento",
+                    "tama\u00f1o": "44 kb"
+                }
+            ]
         },
         {
             "nombre": "Nombrenuevo",
             "tipo": "documento",
             "tama\u00f1o": "45 MB"
+        },
+        {
+            "nombre": "A DIOS LE PIDO",
+            "tipo": "carpeta",
+            "contenido": [
+                {
+                    "nombre": "OJO CUIDAO",
+                    "tipo": "carpeta",
+                    "contenido": [
+                        {
+                            "nombre": "chupa",
+                            "tipo": "carpeta",
+                            "contenido": [
+                                {
+                                    "nombre": "doy grasias",
+                                    "tipo": "documento",
+                                    "tama\u00f1o": "1 KB"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

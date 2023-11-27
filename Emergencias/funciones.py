@@ -31,8 +31,8 @@ def cargar_estructura_desde_json(ruta):
                     Documento(item['nombre'], item['tipo'], item['tamaño']))
             elif item['tipo'] == 'carpeta':
                 contenido.append(
-                    Carpeta(item['nombre'], item['contenido']))
-        return Carpeta(nombre, contenido)
+                    Carpeta(item['nombre'], item['tipo'], item['contenido']))
+        return Carpeta(nombre, tipo, contenido)
     else:
         return None
 
@@ -41,9 +41,13 @@ estructura = cargar_estructura_desde_json(ruta_json)
 
 
 def guardar_json(nombre_archivo, estructura):
-    estructura_serializable = estructura.to_dict()
-    with open(nombre_archivo, 'w') as archivo_salida:
-        json.dump(estructura_serializable, archivo_salida, indent=4)
+    try:
+        estructura_serializable = estructura.to_dict()
+        with open(nombre_archivo, 'w') as archivo_salida:
+            json.dump(estructura_serializable, archivo_salida, indent=4)
+        print(f"Guardado exitosamente en '{nombre_archivo}'.")
+    except Exception as e:
+        print(f"Error al guardar en '{nombre_archivo}': {e}")
 
 
 def mostrar_contenido_json(ruta):
@@ -137,7 +141,17 @@ def main():
                     nombre_documento, atributo, nuevo_valor)
                 guardar_json(ruta_json, estructura)
         elif opcion == 5:
-            pass
+            ruta = input(
+                "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
+            carpeta_para_carpeta = seleccionar_carpeta_por_ruta(
+                carpeta_actual, ruta)
+            if carpeta_para_carpeta:
+                nombre = input("Ingrese el nombre de la carpeta: ")
+                tipo = "carpeta"
+                contenido = []
+                carpeta = Carpeta(nombre, tipo, contenido)
+                carpeta_para_carpeta.agregar_documento(carpeta)
+                guardar_json(ruta_json, estructura)
         elif opcion == 6:
             pass
         elif opcion == 7:

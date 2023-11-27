@@ -50,6 +50,14 @@ class Carpeta(ArchivoSAMUR):
     def agregar_documento(self, documento):
         self.contenido.append(documento)
 
+    def eliminar_documento(self, nombre):
+        for documento in self.contenido:
+            if isinstance(documento, Documento) and documento.obtener_nombre() == nombre:
+                self.contenido.remove(documento)
+                print(f"Documento '{nombre}' eliminado con éxito.")
+                return
+        print(f"No se encontró el documento '{nombre}' en esta carpeta.")
+
     def agregar_carpeta(self, carpeta):
         self.contenido.append(carpeta)
 

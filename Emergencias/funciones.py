@@ -19,7 +19,7 @@ def cargar_json(ruta):
 ruta_json = 'Emergencias/data/prueba.json'
 
 
-def cargar_datos_json(ruta):
+def cargar_estructura_desde_json(ruta):
     datos_json = cargar_json(ruta)
     if datos_json:
         nombre = datos_json['nombre']
@@ -37,7 +37,7 @@ def cargar_datos_json(ruta):
         return None
 
 
-estructura = cargar_datos_json(ruta_json)
+estructura = cargar_estructura_desde_json(ruta_json)
 
 
 def guardar_json(nombre_archivo, estructura):
@@ -46,7 +46,7 @@ def guardar_json(nombre_archivo, estructura):
         json.dump(estructura_serializable, archivo_salida, indent=4)
 
 
-def mostrar_json(ruta):
+def mostrar_contenido_json(ruta):
     datos_json = cargar_json(ruta)
     if datos_json:
         print(json.dumps(datos_json, indent=4, ensure_ascii=False))
@@ -79,6 +79,7 @@ def seleccionar_carpeta_por_ruta(carpeta_actual, ruta):
 
 ruta_json = 'Emergencias/data/prueba.json'
 
+
 def mostrar_menu():
     print("1. Mostrar JSON")
     print("2. Agregar documento")
@@ -95,7 +96,7 @@ def main():
         opcion = int(input("Ingrese una opción: "))
 
         if opcion == 1:
-            mostrar_json(ruta_json)
+            mostrar_contenido_json(ruta_json)
         elif opcion == 2:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -109,12 +110,17 @@ def main():
                 carpeta_para_documento.agregar_documento(documento)
                 guardar_json(ruta_json, estructura)
         elif opcion == 3:
-            nombre = input("Ingrese el nombre de la carpeta a agregar: ")
-            nueva_carpeta = Carpeta(nombre, carpeta_actual)
-            carpeta_actual.agregar_carpeta(nueva_carpeta)
-            guardar_json(ruta_json, estructura)
+            pass
         elif opcion == 4:
-            guardar_json(ruta_json, estructura)
+            ruta = input(
+                "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
+            carpeta_para_eliminar = seleccionar_carpeta_por_ruta(
+                carpeta_actual, ruta)
+            if carpeta_para_eliminar:
+                nombre_documento = input(
+                    "Ingrese el nombre del documento a eliminar: ")
+                carpeta_para_eliminar.eliminar_documento(nombre_documento)
+                guardar_json(ruta_json, estructura)
         elif opcion == 5:
             break
         else:
@@ -122,5 +128,5 @@ def main():
 
 
 if __name__ == '__main__':
-    estructura = cargar_datos_json(ruta_json)
+    estructura = cargar_estructura_desde_json(ruta_json)
     main()

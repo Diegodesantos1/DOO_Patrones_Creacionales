@@ -13,13 +13,13 @@
             "tama\u00f1o": "20 KB"
         },
         {
-            "nombre": "fafafafa",
+            "nombre": "funciona todo",
             "tipo": "carpeta",
             "contenido": [
                 {
-                    "nombre": "dios",
-                    "tipo": "documento",
-                    "tama\u00f1o": "44 kb"
+                    "nombre": "yo",
+                    "tipo": "carpeta",
+                    "contenido": []
                 }
             ]
         },
@@ -29,25 +29,13 @@
             "tama\u00f1o": "45 MB"
         },
         {
-            "nombre": "A DIOS LE PIDO",
+            "nombre": "yolo",
             "tipo": "carpeta",
             "contenido": [
                 {
-                    "nombre": "OJO CUIDAO",
-                    "tipo": "carpeta",
-                    "contenido": [
-                        {
-                            "nombre": "chupa",
-                            "tipo": "carpeta",
-                            "contenido": [
-                                {
-                                    "nombre": "doy grasias",
-                                    "tipo": "documento",
-                                    "tama\u00f1o": "1 KB"
-                                }
-                            ]
-                        }
-                    ]
+                    "nombre": "web",
+                    "tipo": "enlace",
+                    "url": "htttps://tengohambre.com"
                 }
             ]
         }

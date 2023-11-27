@@ -5,7 +5,7 @@
         {
             "nombre": "Papel",
             "tipo": "documento",
-            "tama\u00f1o": "4000 KB"
+            "tama\u00f1o": "33 KB"
         },
         {
             "nombre": "receta",
@@ -16,6 +16,11 @@
             "nombre": "fafafafa",
             "tipo": "carpeta",
             "contenido": []
+        },
+        {
+            "nombre": "Nombrenuevo",
+            "tipo": "documento",
+            "tama\u00f1o": "45 MB"
         }
     ]
 }

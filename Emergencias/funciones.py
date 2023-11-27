@@ -122,7 +122,20 @@ def main():
                 carpeta_para_eliminar.eliminar_documento(nombre_documento)
                 guardar_json(ruta_json, estructura)
         elif opcion == 4:
-            pass
+            ruta = input(
+                "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
+            carpeta_para_modificar = seleccionar_carpeta_por_ruta(
+                carpeta_actual, ruta)
+            if carpeta_para_modificar:
+                nombre_documento = input(
+                    "Ingrese el nombre del documento a modificar: ")
+                atributo = input(
+                    "Ingrese el atributo a modificar (nombre, tamaño): ")
+                nuevo_valor = input(
+                    f"Ingrese el nuevo valor para '{atributo}': ")
+                carpeta_para_modificar.modificar_documento(
+                    nombre_documento, atributo, nuevo_valor)
+                guardar_json(ruta_json, estructura)
         elif opcion == 5:
             pass
         elif opcion == 6:

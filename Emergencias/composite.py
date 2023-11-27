@@ -47,20 +47,6 @@ class Carpeta(ArchivoSAMUR):
         self.contenido = contenido
         self.carpeta_padre = carpeta_padre
 
-    def agregar_documento(self, documento):
-        self.contenido.append(documento)
-
-    def eliminar_documento(self, nombre):
-        for documento in self.contenido:
-            if isinstance(documento, Documento) and documento.obtener_nombre() == nombre:
-                self.contenido.remove(documento)
-                print(f"Documento '{nombre}' eliminado con éxito.")
-                return
-        print(f"No se encontró el documento '{nombre}' en esta carpeta.")
-
-    def agregar_carpeta(self, carpeta):
-        self.contenido.append(carpeta)
-
     def obtener_nombre(self):
         return self.nombre
 
@@ -86,6 +72,37 @@ class Carpeta(ArchivoSAMUR):
                 if carpeta_encontrada:
                     return carpeta_encontrada
         return None
+
+    def agregar_documento(self, documento):
+        self.contenido.append(documento)
+
+    def eliminar_documento(self, nombre):
+        for documento in self.contenido:
+            if isinstance(documento, Documento) and documento.obtener_nombre() == nombre:
+                self.contenido.remove(documento)
+                print(f"Documento '{nombre}' eliminado con éxito.")
+                return
+        print(f"No se encontró el documento '{nombre}' en esta carpeta.")
+
+    def modificar_documento(self, nombre_documento, atributo, nuevo_valor):
+        documento = self.obtener_documento(nombre_documento)
+        if documento:
+            if atributo == "nombre":
+                documento.nombre = nuevo_valor
+            elif atributo == "tipo":
+                documento.tipo = nuevo_valor
+            elif atributo == "tamaño":
+                documento.tamaño = nuevo_valor
+
+            print(f"Documento '{nombre_documento}' modificado exitosamente.")
+            return True
+        else:
+            print(f"No se encontró el documento '{
+                  nombre_documento}' en esta carpeta.")
+            return False
+
+    def agregar_carpeta(self, carpeta):
+        self.contenido.append(carpeta)
 
     def to_dict(self):
         return {

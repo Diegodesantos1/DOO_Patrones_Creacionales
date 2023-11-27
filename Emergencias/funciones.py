@@ -1,7 +1,7 @@
 import json
 
-from composite import Documento, Carpeta, Enlace
-from proxy import Proxy
+from Emergencias.composite import Documento, Carpeta, Enlace
+from Emergencias.proxy import Proxy
 
 
 def cargar_json(ruta):
@@ -123,8 +123,6 @@ def mostrar_menu():
     print("11. Salir")
 
 
-
-
 def main_base():
     while True:
         print("1. Mostrar JSON")
@@ -137,7 +135,6 @@ def main_base():
             break
         else:
             print("Opción inválida.")
-
 
 
 def main(estructura):
@@ -268,7 +265,6 @@ def main(estructura):
     return estructura
 
 
-
 def main_proxy():
     usuario = input("Ingrese su nombre de usuario: ")
     contraseña = input("Ingrese su contraseña: ")
@@ -281,6 +277,3 @@ def main_proxy():
         print("Acceso autorizado, con permisos limitados.")
         main_base()
 
-
-if __name__ == "__main__":
-    main_proxy()

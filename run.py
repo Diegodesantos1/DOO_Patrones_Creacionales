@@ -1,6 +1,6 @@
 import os
 
-"""os.system("pip install -r requirements.txt")"""
+os.system("pip install -r requirements.txt")
 eleccion = int(
     input("¿Qué ejercicio quieres ejecutar?\n1 --> Emergencias\n2 --> Pizzeria\n3 --> SAMUR\n"))
 
@@ -20,4 +20,4 @@ elif eleccion == 2:
 elif eleccion == 3:
     os.system("cls")
     from Emergencias.funciones import *
-    main(estructura)
+    main_proxy()

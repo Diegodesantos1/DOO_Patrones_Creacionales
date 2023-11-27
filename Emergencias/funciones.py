@@ -83,9 +83,11 @@ ruta_json = 'Emergencias/data/prueba.json'
 def mostrar_menu():
     print("1. Mostrar JSON")
     print("2. Agregar documento")
-    print("3. Agregar carpeta")
-    print("4. Eliminar documento")
-    print("5. Salir")
+    print("3. Eliminar documento")
+    print("4. Modificar documento")
+    print("5. Agregar carpeta")
+    print("6. Eliminar carpeta")
+    print("7. Salir")
 
 
 def main():
@@ -110,8 +112,6 @@ def main():
                 carpeta_para_documento.agregar_documento(documento)
                 guardar_json(ruta_json, estructura)
         elif opcion == 3:
-            pass
-        elif opcion == 4:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
             carpeta_para_eliminar = seleccionar_carpeta_por_ruta(
@@ -121,7 +121,13 @@ def main():
                     "Ingrese el nombre del documento a eliminar: ")
                 carpeta_para_eliminar.eliminar_documento(nombre_documento)
                 guardar_json(ruta_json, estructura)
+        elif opcion == 4:
+            pass
         elif opcion == 5:
+            pass
+        elif opcion == 6:
+            pass
+        elif opcion == 7:
             break
         else:
             print("Opción inválida.")

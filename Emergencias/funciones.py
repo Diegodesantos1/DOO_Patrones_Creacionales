@@ -1,6 +1,6 @@
 import json
 
-from composite import ArchivoSAMUR, Documento, Carpeta, Enlace
+from Emergencias.composite import Documento, Carpeta, Enlace
 
 
 def cargar_json(ruta):
@@ -212,4 +212,3 @@ def main(estructura):
 
     return estructura
 
-main(estructura)

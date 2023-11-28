@@ -88,3 +88,4 @@ ID,Tipo,Precio,Entrante,Pizza,Bebida,Postre,Descuento
 105,Triple,19.5,"['Ensalada', 'Patatas fritas', 'Empanadillas']","['Funghi', 'Funghi', 'Funghi']","['Cóctel', 'Café', 'Café']","['Tarta de chocolate', 'Flan', 'Fruta']",10% de descuento
 106,Triple,19.5,"['Ensalada', 'Ensalada', 'Ensalada']","['Cuatro estaciones', 'Diávola', 'Margarita']","['Cóctel', 'Refresco', 'Té']","['Tarta de queso', 'Tarta de chocolate', 'Fruta']",15% de descuento
 107,Doble,13.5,"['Croquetas', 'Ensalada']","['Cuatro quesos', 'Cuatro quesos']","['Cóctel', 'Té']","['Tarta de chocolate', 'Helado']",10% de descuento
+108,Triple,19.5,"['Ensalada', 'Croquetas', 'Nuggets']","['Barbacoa', 'Cuatro quesos', 'Diávola']","['Refresco', 'Agua', 'Café']","['Tarta de queso', 'Fruta', 'Yogur']",10% de descuento

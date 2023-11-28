@@ -1,0 +1,15 @@
+[2023-11-28 01:18:10] El usuario admin ha visto los archivos.
+[2023-11-28 01:18:36] El usuario admin ha modificado el enlace Colaboradores SAMUR.
+[2023-11-28 01:19:33] El usuario admin ha visto los archivos.
+[2023-11-28 01:19:42] El usuario admin ha guardado los archivos.
+[2023-11-28 01:21:15] El usuario admin ha creado el documento Equipo de patrulla.
+[2023-11-28 01:21:16] El usuario admin ha visto los archivos.
+[2023-11-28 01:21:28] El usuario admin ha creado la carpeta URLS interesantes.
+[2023-11-28 01:21:33] El usuario admin ha visto los archivos.
+[2023-11-28 01:22:28] El usuario admin ha creado el enlace Info.
+[2023-11-28 01:22:29] El usuario admin ha visto los archivos.
+[2023-11-28 01:22:30] El usuario admin ha guardado los archivos.
+[2023-11-28 01:25:04] El usuario admin ha visto los archivos.
+[2023-11-28 01:25:26] El usuario admin ha creado el documento Cookies.
+[2023-11-28 01:25:27] El usuario admin ha visto los archivos.
+[2023-11-28 01:25:28] El usuario admin ha guardado los archivos.

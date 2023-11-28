@@ -27,6 +27,9 @@ class Documento(ArchivoSAMUR):
         self.tipo = tipo
         self.tamaño = tamaño
 
+    def __str__(self):
+        return f"{self.nombre}"
+    
     def obtener_nombre(self):
         return self.nombre
 
@@ -184,6 +187,9 @@ class Enlace(ArchivoSAMUR):
         self.nombre = nombre
         self.tipo = tipo
         self.url = url
+
+    def __str__(self):
+        return f"{self.nombre}"
 
     def obtener_nombre(self):
         return self.nombre

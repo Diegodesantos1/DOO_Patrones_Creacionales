@@ -3,11 +3,6 @@
     "tipo": "carpeta",
     "contenido": [
         {
-            "nombre": "Papel",
-            "tipo": "documento",
-            "tama\u00f1o": "33 KB"
-        },
-        {
             "nombre": "Equipo de Rescate",
             "tipo": "documento",
             "tama\u00f1o": "20 KB"
@@ -19,7 +14,13 @@
                 {
                     "nombre": "Ambulancias",
                     "tipo": "carpeta",
-                    "contenido": []
+                    "contenido": [
+                        {
+                            "nombre": "Listado de ambulancias",
+                            "tipo": "documento",
+                            "tama\u00f1o": "40 MB"
+                        }
+                    ]
                 }
             ]
         },
@@ -33,14 +34,56 @@
             "tipo": "carpeta",
             "contenido": [
                 {
-                    "nombre": "web",
-                    "tipo": "enlace",
-                    "url": "htttps://tengohambre.com"
-                },
-                {
                     "nombre": "credenciales",
                     "tipo": "documento",
                     "tama\u00f1o": "23 KB"
+                },
+                {
+                    "nombre": "dominios SAMUR",
+                    "tipo": "documento",
+                    "tama\u00f1o": "45 KB"
+                }
+            ]
+        },
+        {
+            "nombre": "Material",
+            "tipo": "documento",
+            "tama\u00f1o": "40 MB"
+        },
+        {
+            "nombre": "P\u00e1gina oficial",
+            "tipo": "enlace",
+            "url": "https://es.wikipedia.org/wiki/S\u00e1mur-Protecci\u00f3n_Civil"
+        },
+        {
+            "nombre": "\u00daltimos Rescates",
+            "tipo": "carpeta",
+            "contenido": [
+                {
+                    "nombre": "Noviembre2023",
+                    "tipo": "documento",
+                    "tama\u00f1o": "1 GB"
+                }
+            ]
+        },
+        {
+            "nombre": "Equipo de patrulla",
+            "tipo": "documento",
+            "tama\u00f1o": "20 KB"
+        },
+        {
+            "nombre": "URLS interesantes",
+            "tipo": "carpeta",
+            "contenido": [
+                {
+                    "nombre": "Info",
+                    "tipo": "enlace",
+                    "url": "https://alertantes.org"
+                },
+                {
+                    "nombre": "Cookies",
+                    "tipo": "documento",
+                    "tama\u00f1o": "300 KB"
                 }
             ]
         }

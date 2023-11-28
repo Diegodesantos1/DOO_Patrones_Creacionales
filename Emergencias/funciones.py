@@ -1,7 +1,15 @@
+from datetime import datetime
 import json
 
 from Emergencias.composite import Documento, Carpeta, Enlace
 from Emergencias.proxy import Proxy
+
+
+
+def logger(accion, usuario):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open('Emergencias/data/log.txt', 'a') as log:
+        log.write(f"[{timestamp}] El usuario {usuario} {accion}.\n")
 
 
 def cargar_json(ruta):
@@ -106,9 +114,6 @@ def seleccionar_carpeta_por_ruta(carpeta_actual, ruta):
     return carpeta_temp
 
 
-ruta_json = 'Emergencias/data/prueba.json'
-
-
 def mostrar_menu():
     print("1. Mostrar JSON")
     print("2. Agregar documento")
@@ -124,6 +129,7 @@ def mostrar_menu():
 
 
 def main_base():
+    global usuario
     while True:
         print("1. Mostrar JSON")
         print("2. Salir")
@@ -131,6 +137,7 @@ def main_base():
 
         if opcion == 1:
             mostrar_contenido_json(ruta_json)
+            logger("ha visto los archivos", usuario)
         elif opcion == 2:
             break
         else:
@@ -138,6 +145,7 @@ def main_base():
 
 
 def main(estructura):
+    global usuario
     carpeta_actual = estructura
     while True:
         mostrar_menu()
@@ -145,6 +153,7 @@ def main(estructura):
 
         if opcion == 1:
             mostrar_contenido_json(ruta_json)
+            logger("ha visto los archivos", usuario)
         elif opcion == 2:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -157,6 +166,7 @@ def main(estructura):
                 documento = Documento(nombre, tipo, tamaño)
                 carpeta_para_documento.agregar_documento(documento)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha creado el documento {nombre}", usuario)
         elif opcion == 3:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -167,6 +177,7 @@ def main(estructura):
                     "Ingrese el nombre del documento a eliminar: ")
                 carpeta_para_eliminar.eliminar_documento(nombre_documento)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha eliminado el documento {nombre_documento}", usuario)
         elif opcion == 4:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -182,6 +193,7 @@ def main(estructura):
                 carpeta_para_modificar.modificar_documento(
                     nombre_documento, atributo, nuevo_valor)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha modificado el documento {nombre_documento}", usuario)
         elif opcion == 5:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -194,16 +206,18 @@ def main(estructura):
                 carpeta = Carpeta(nombre, tipo, contenido)
                 carpeta_para_carpeta.agregar_documento(carpeta)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha creado la carpeta {nombre}", usuario)
         elif opcion == 6:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
             carpeta_para_eliminar = seleccionar_carpeta_por_ruta(
                 carpeta_actual, ruta)
             if carpeta_para_eliminar:
-                nombre_documento = input(
+                nombre_carpeta = input(
                     "Ingrese el nombre de la carpeta a eliminar: ")
-                carpeta_para_eliminar.eliminar_carpeta(nombre_documento)
+                carpeta_para_eliminar.eliminar_carpeta(nombre_carpeta)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha eliminadola carpeta {nombre_carpeta}", usuario)
         elif opcion == 7:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -218,6 +232,7 @@ def main(estructura):
                 carpeta_para_modificar.modificar_carpeta(
                     nombre_carpeta, nombre, nuevo_valor)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha modificado la carpeta {nombre_carpeta}", usuario)
         elif opcion == 8:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -230,16 +245,18 @@ def main(estructura):
                 enlace = Enlace(nombre, tipo, url)
                 carpeta_para_enlace.agregar_enlace(enlace)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha creado el enlace {nombre}", usuario)
         elif opcion == 9:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
             carpeta_para_eliminar = seleccionar_carpeta_por_ruta(
                 carpeta_actual, ruta)
             if carpeta_para_eliminar:
-                nombre_documento = input(
+                nombre_enlace = input(
                     "Ingrese el nombre del enlace a eliminar: ")
-                carpeta_para_eliminar.eliminar_enlace(nombre_documento)
+                carpeta_para_eliminar.eliminar_enlace(nombre_enlace)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha eliminado el enlace {nombre_enlace}", usuario)
         elif opcion == 10:
             ruta = input(
                 "Ingrese la ruta de la carpeta (p.ej., 'Documentos'): ")
@@ -255,9 +272,11 @@ def main(estructura):
                 carpeta_para_modificar.modificar_enlace(
                     nombre_enlace, atributo, nuevo_valor)
                 guardar_json(ruta_json, estructura)
+                logger(f"ha modificado el enlace {nombre_enlace}", usuario)
         elif opcion == 11:
             if estructura:
                 guardar_json(ruta_json, estructura)
+                logger("ha guardado los archivos", usuario)
             break
         else:
             print("Opción inválida.")
@@ -266,6 +285,7 @@ def main(estructura):
 
 
 def main_proxy():
+    global usuario
     usuario = input("Ingrese su nombre de usuario: ")
     contraseña = input("Ingrese su contraseña: ")
     usuario_real = Proxy(estructura, usuario, contraseña)

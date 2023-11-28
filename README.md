@@ -2,7 +2,7 @@
 
 En este [repositorio](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales) queda resuelta la práctica de los Patrones Creacionales.
 
-<h2 align="center">Análisis Modular de las Activaciones del SAMUR-Protección Civil en Madrid con Abstract Factory</h2>
+<h2 align="center">1ª Parte: Análisis Modular de las Activaciones del SAMUR-Protección Civil en Madrid con Abstract Factory</h2>
 
 El SAMUR-Protección Civil es el servicio de atención a urgencias y emergencias sanitarias extrahospitalarias en el municipio de Madrid. Su labor es esencial para garantizar la seguridad y el bienestar de los ciudadanos en situaciones de emergencia. A lo largo del año, el SAMUR lleva a cabo múltiples "activaciones" en respuesta a diversas situaciones, desde accidentes de tráfico hasta emergencias médicas.
 
@@ -42,10 +42,33 @@ Análisis y Representación: Utiliza las fábricas creadas para generar distinto
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen4.png)
 
+<h2 align="center">2ª Parte: Sistema Avanzado de Gestión Documental del SAMUR-Protección Civil con Composite y Proxy</h2>
+
+El SAMUR-Protección Civil, tras su proceso de digitalización, se enfrenta al reto de administrar una cantidad masiva de documentos digitales relacionados con sus activaciones y operaciones. Esta documentación no solo consiste en informes y registros, sino que también incluye imágenes, vídeos, audios y otros tipos de archivos multimedia. La necesidad de garantizar un acceso rápido pero seguro a esta información es esencial, especialmente cuando se trata de datos sensibles o confidenciales.
+
+<h3 align="center">Objetivos</h3>
+
+***
+Utilizar el patrón de diseño Composite para modelar la estructura de documentos del sistema.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen24.png)
+
+
+Implementar el patrón Proxy para controlar y registrar el acceso a documentos específicos.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen25.png)
+
+Desarrollar en Python las clases y la lógica necesaria para representar y gestionar los documentos, enlaces y carpetas, garantizando la seguridad y trazabilidad mediante el uso del proxy.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Estructurales/blob/main/UML/Samur.png)
+
+Implementar funciones que faciliten la navegación, creación, modificación y eliminación de elementos en el sistema.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen26.png)
 
 ***
 
-<h2 align="center">Sistema Integral de Creación y Gestión de Pizzas Gourmet con Almacenamiento en CSV utilizando el Patrón Builder</h2>
+<h2 align="center">1ª Parte: Sistema Integral de Creación y Gestión de Pizzas Gourmet con Almacenamiento en CSV utilizando el Patrón Builder</h2>
 
 ***
 
@@ -81,7 +104,6 @@ Desarrollar una interfaz de usuario amigable que guíe al cliente en el proceso 
 Incorporar un sistema de recomendaciones que sugiera ingredientes, técnicas y maridajes basados en las elecciones previas del cliente.
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen10.png)
-
 
 Desarrollar un módulo que guarde cada pizza personalizada en un archivo CSV, almacenando cada detalle, desde los ingredientes hasta el maridaje recomendado.
 
@@ -130,6 +152,43 @@ Y si ya hemos creado el usuario:
 Para el admin hay un visualizador de todos los usuarios y contraseñas:
 
 ![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen23.png)
+
+<h2 align="center">2ª Parte: Sistema Integral de Creación y Gestión de Pizzas Gourmet con Almacenamiento en CSV utilizando el Patrón Builder</h2>
+
+***
+
+Tras el éxito inicial de su plataforma digital de creación y gestión de pizzas gourmet personalizadas, la cadena "Delizioso" desea llevar su propuesta al siguiente nivel. Ahora, aparte de permitir la personalización individual de pizzas, quiere ofrecer a sus clientes la posibilidad de combinar sus creaciones en menús personalizados, que podrían incluir entradas, bebidas, pizzas y postres. Estos menús pueden ser creados tanto por el cliente como por el equipo culinario de "Delizioso", con opciones preestablecidas que representan la esencia de la marca.
+
+<h3 align="center">Objetivos</h3>
+
+***
+Desarrollo de Menús Personalizados:
+
+Introducir la noción de un "menú", que puede contener varios elementos: entradas, bebidas, pizzas (que ya han sido definidas previamente con su sistema de creación de pizzas) y postres.
+
+
+
+Un "menú" puede ser simple (contener elementos básicos) o compuesto (incluir otros menús más pequeños, como un "Combo Pareja" que incluye dos menús individuales).
+Cada "menú" tendrá un código único y un precio, que se determina como la suma de los precios de sus elementos, con un descuento según la promoción aplicada.
+
+
+Implementar el patrón Composite para modelar la relación entre los elementos y menús, facilitando la creación, modificación y cálculo de precios de menús compuestos.
+
+Continuar utilizando el patrón Builder para la creación detallada de las pizzas.
+
+Ampliar el sistema de almacenamiento en CSV para incluir los menús personalizados, de forma que se pueda registrar y recuperar la información de menús individuales y compuestos.
+
+Permitir que, a partir de un menú almacenado, se pueda reconstruir toda la estructura del menú con sus elementos individuales y precios.
+Restricciones:
+
+Las librerías estándar de Python para la interacción con archivos CSV están permitidas.
+
+Se espera un diseño modular y orientado a objetos, con una clara separación de responsabilidades.
+
+La implementación del cálculo del precio de un "menú" debe hacerse en tiempo de ejecución y ser eficiente.
+
+
+***
 
 Al final del ejercicio, el estudiante deberá justificar el uso del patrón Builder y COMPOSITE y explicar cómo se logra la robustez y adaptabilidad del sistema, destacando las ventajas de su diseño frente a otros posibles enfoques.
 
@@ -184,3 +243,5 @@ Ambos patrones ofrecen ventajas significativas:
 ## Conclusión
 
 El uso conjunto de los patrones Builder y Composite ha sido crucial en la aplicación de pizzería web. La combinación de ambos ha permitido una organización estructurada, flexibilidad en la construcción de objetos complejos y adaptabilidad a cambios futuros. Estos patrones ofrecen una solución robusta, separando responsabilidades y simplificando la construcción y manipulación de elementos y menús, destacando frente a otros enfoques por su capacidad de manejar cambios de manera efectiva y estructurada.
+
+

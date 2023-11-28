@@ -1,6 +1,6 @@
-<h1 align="center">Patrones Creacionales</h1>
+<h1 align="center">Patrones Estructurales</h1>
 
-En este [repositorio](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales) queda resuelta la práctica de los Patrones Creacionales.
+En este [repositorio](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales) queda resuelta la práctica de los Patrones Estructurales.
 
 <h2 align="center">1ª Parte: Análisis Modular de las Activaciones del SAMUR-Protección Civil en Madrid con Abstract Factory</h2>
 
@@ -166,27 +166,33 @@ Desarrollo de Menús Personalizados:
 
 Introducir la noción de un "menú", que puede contener varios elementos: entradas, bebidas, pizzas (que ya han sido definidas previamente con su sistema de creación de pizzas) y postres.
 
-
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen27.png)
 
 Un "menú" puede ser simple (contener elementos básicos) o compuesto (incluir otros menús más pequeños, como un "Combo Pareja" que incluye dos menús individuales).
 Cada "menú" tendrá un código único y un precio, que se determina como la suma de los precios de sus elementos, con un descuento según la promoción aplicada.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen28.png)
 
 Implementar el patrón Composite para modelar la relación entre los elementos y menús, facilitando la creación, modificación y cálculo de precios de menús compuestos.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Estructurales/blob/main/UML/Pizzeria.png)
+
 Continuar utilizando el patrón Builder para la creación detallada de las pizzas.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen29.png)
+
 Ampliar el sistema de almacenamiento en CSV para incluir los menús personalizados, de forma que se pueda registrar y recuperar la información de menús individuales y compuestos.
+
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen30.png)
 
 Permitir que, a partir de un menú almacenado, se pueda reconstruir toda la estructura del menú con sus elementos individuales y precios.
 Restricciones:
 
-Las librerías estándar de Python para la interacción con archivos CSV están permitidas.
-
-Se espera un diseño modular y orientado a objetos, con una clara separación de responsabilidades.
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen31.png)
 
 La implementación del cálculo del precio de un "menú" debe hacerse en tiempo de ejecución y ser eficiente.
 
+![image](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales/blob/main/imagenes/imagen32.png)
 
 ***
 

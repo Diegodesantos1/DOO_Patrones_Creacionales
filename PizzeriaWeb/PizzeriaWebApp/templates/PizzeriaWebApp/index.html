@@ -31,6 +31,8 @@
         <button id="pizza">Pedir Pizza</button>
         <p>¿No sabes qué pizza pedir?</p>
         <button id="recomendaciones">Recomendaciones</button>
+        <p>¿Te atreves con nuestros increíbles menús?</p>
+        <button id="menu">Menús</button>
     </div>
     <section>
         <img src="{% static 'PizzeriaWebApp/img/Barbacoa.jpg' %}" alt="Pizza">
@@ -48,11 +50,15 @@
     <script>
         const button = document.querySelector('#pizza');
         const button2 = document.querySelector('#recomendaciones');
+        const button3 = document.querySelector('#menu');
         button.addEventListener('click', () => {
             window.location.href = "{% url 'pizza' %}";
         });
         button2.addEventListener('click', () => {
             window.location.href = "{% url 'recomendaciones' %}";
+        });
+        button3.addEventListener('click', () => {
+            window.location.href = "{% url 'menu' %}";
         });
     </script>
 </body>

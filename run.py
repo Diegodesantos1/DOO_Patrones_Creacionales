@@ -2,7 +2,7 @@ import os
 
 os.system("pip install -r requirements.txt")
 eleccion = int(
-    input("¿Qué ejercicio quieres ejecutar?\n1 --> Emergencias\n2 --> Pizzeria\n3 --> SAMUR\n"))
+    input("¿Qué ejercicio quieres ejecutar?\n1 --> Emergencias\n2 --> Pizzeria\n3 --> Gestión de archivos\n"))
 
 if eleccion == 1:
     os.system("cls")

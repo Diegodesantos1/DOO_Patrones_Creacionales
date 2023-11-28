@@ -1,6 +1,6 @@
 <h1 align="center">Patrones Estructurales</h1>
 
-En este [repositorio](https://github.com/Diegodesantos1/DOO_Patrones_Creacionales) queda resuelta la práctica de los Patrones Estructurales.
+En este [repositorio](https://github.com/Diegodesantos1/DOO_Patrones_Estructurales) queda resuelta la práctica de los Patrones Estructurales.
 
 <h2 align="center">1ª Parte: Análisis Modular de las Activaciones del SAMUR-Protección Civil en Madrid con Abstract Factory</h2>
 
